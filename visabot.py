@@ -34,6 +34,8 @@ def webhook():
     print ("webhook is been hit ONCE ONLY")
     if reqContext.get("result").get("action") == "input.welcome":
        return welcome()
+    elif reqContext.get("result").get("action") == "input.asktheuser":
+       return asktheuser(reqContext)
     elif reqContext.get("result").get("action") == "input.nationality":
        return userNationality(reqContext)
     elif reqContext.get("result").get("action") == "input.destinationcountry":
@@ -136,10 +138,10 @@ def reply(user_id, msg):
 
 #************************************************************************************#
 #                                                                                    #
-#   Below method is to get the Facebook Quick Reply Webhook Handling - Wikipedia     #
+#   Tell USER about Visa Check Bot - ASK TWO QUESTIONS                               #
 #                                                                                    #
 #************************************************************************************#
-def userNationality(reqContext):
+def asktheuser(reqContext):
     print (reqContext.get("result").get("action"))
     option = reqContext.get("result").get("action")
     res = {
@@ -160,13 +162,67 @@ def userNationality(reqContext):
                     "sender_action": "typing_on"
               },
               {
-                 "text": "Here is my first question..."
-              },
+                  "text": "Ready?",
+                  "quick_replies": [
+                 {
+                  "content_type": "text",
+                  "title": "Yes",
+                  "payload": "Yes",
+                 },
+                 {
+                  "content_type": "text",
+                  "title": "No",
+                  "payload": "No",
+                  }
+                  ]
+                 }
+             ]
+           } 
+         };
+    res = json.dumps(res, indent=4)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
+
+#************************************************************************************#
+#                                                                                    #
+#   Asking the USER the FIRST QUESTION - What's Your Nationality?                    #
+#                                                                                    #
+#************************************************************************************#
+def userNationality(reqContext):
+    print (reqContext.get("result").get("action"))
+    option = reqContext.get("result").get("action")
+    res = {
+        "speech": "First Question",
+        "displayText": "First Question",
+        "data" : {
+        "facebook" : [
               {
-                    "sender_action": "typing_on"
-              },
+                 "text": "1. What is your nationality?"
+              }
+             ]
+           } 
+         };
+    res = json.dumps(res, indent=4)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
+
+#************************************************************************************#
+#                                                                                    #
+#   Asking the USER the SECOND QUESTION - What's Your Destination Country?           #
+#                                                                                    #
+#************************************************************************************#
+def userDestinationCountry(reqContext):
+    print (reqContext.get("result").get("action"))
+    option = reqContext.get("result").get("action")
+    res = {
+        "speech": "Second Question",
+        "displayText": "Second Question",
+        "data" : {
+        "facebook" : [
               {
-                 "text": "What is your nationality?"
+                 "text": "2. Which country do you want to travel?"
               }
              ]
            } 
