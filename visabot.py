@@ -7,7 +7,6 @@ import urllib.request, urllib.parse, urllib.error
 import json
 import os
 import sys
-import psycopg2
 import urlparse
 import emoji
 
