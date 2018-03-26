@@ -35,9 +35,9 @@ def webhook():
     if reqContext.get("result").get("action") == "input.welcome":
        return welcome()
     elif reqContext.get("result").get("action") == "input.nationality":
-       return userNationality()
+       return userNationality(reqContext)
     elif reqContext.get("result").get("action") == "input.destinationcountry":
-       return userDestinationCountry()
+       return userDestinationCountry(reqContext)
     else:
        print("Good Bye")
 
