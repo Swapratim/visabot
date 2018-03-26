@@ -84,7 +84,7 @@ def welcome():
                       "template_type" : "generic",
                        "elements" : [ 
                                  {
-                                   "title" : "Hi " + first_name + "! " + emoji.emojize(':wave:', use_aliases=True),
+                                   "title" : "Welcome " + first_name + "! ",
                                    "image_url" : "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg",
                                  } 
                            ]
@@ -103,7 +103,7 @@ def welcome():
                  {
                   "content_type": "text",
                   "title": "Yeah Sure",
-                  "payload": "Yeah sure",
+                  "payload": "Yeah Sure",
                   "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZLSAsTl9tNQAG72yb9P4YV4EMjsFYxZ6eJbD6JS1_wnfthxJP"
                  },
                  {
