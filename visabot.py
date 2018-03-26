@@ -19,8 +19,6 @@ from flask import make_response
 context = Flask(__name__)
 # Facbook Access Token
 ACCESS_TOKEN = "EAADSsDjm6gIBANlzUbBmbFLGpNvZBhnZCEw71BSMvwQZCK8n9KjaY5Pf8P5ZAZBlt9mKcLHe2AmU5hgq7XZAc4vedP5ISpyuRIBKuWMvYx6YI6976r5qpZBsI8vSoU4pmqvVqffjNVJuvCttk7EykTb9tUfHWCnjfivwKUZAA1S4WQZDZD"
-# Google Access Token
-Google_Acces_Token = "key=AIzaSyDNYsLn4JGIR4UaZMFTAgDB9gKN3rty2aM&cx=003066316917117435589%3Avcms6hy5lxs&q="
 
 #************************************************************************************#
 #                                                                                    #
@@ -36,6 +34,10 @@ def webhook():
     print ("webhook is been hit ONCE ONLY")
     if reqContext.get("result").get("action") == "input.welcome":
        return welcome()
+    elif reqContext.get("result").get("action") == "input.nationality":
+       return userNationality()
+    elif reqContext.get("result").get("action") == "input.destinationcountry":
+       return userDestinationCountry()
     else:
        print("Good Bye")
 
@@ -48,7 +50,7 @@ def webhook():
 user_name = None
 def welcome():
     global user_name
-    print ("within welcome method")
+    #print ("within welcome method")
     data = request.json
     print (data)
     if data is None:
@@ -66,7 +68,7 @@ def welcome():
     first_name = data.get('first_name')
     print (first_name)
     user_name = data.get('first_name')
-    speech1 = "I am 'Marvin' - your personal assistant"
+    speech1 = "I'm Visa CheckBot - your one stop solution for visa related enquiry"
     res = {
           "speech": speech1,
           "displayText": speech1,
@@ -82,8 +84,8 @@ def welcome():
                       "template_type" : "generic",
                        "elements" : [ 
                                  {
-                                   "title" : "Hi " + first_name + "! I'm your one stop solution for visa related enquiry" + emoji.emojize(':wave:', use_aliases=True),
-                                   "image_url" : "http://gdurl.com/vc1o",
+                                   "title" : "Hi " + first_name + "! " + emoji.emojize(':wave:', use_aliases=True),
+                                   "image_url" : "https://www.us-passport-service-guide.com/image-files/travel-visa.jpg",
                                  } 
                            ]
                        } 
@@ -96,30 +98,19 @@ def welcome():
                  "text": speech1
                   },
                  {
-                    "sender_action": "typing_on"
-                  },
-                 {
-                 "attachment":{
-                        "type":"image", 
-                        "payload":{
-                        "url":"https://media.giphy.com/media/1qO2XGCGx7Rte/giphy.gif"
-                       }
-                      }
-                  },
-                 {
-                  "text": "Do you want to know more about me?",
+                  "text": "So, shall we start looking for your visa enquiry?",
                   "quick_replies": [
                  {
                   "content_type": "text",
                   "title": "Yeah Sure",
-                  "payload": "Ummm, yeah sure",
-                  "image_url": "http://www.thehindubusinessline.com/multimedia/dynamic/02337/bl12_smiley_jpg_2337780e.jpg"
+                  "payload": "Yeah sure",
+                  "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZLSAsTl9tNQAG72yb9P4YV4EMjsFYxZ6eJbD6JS1_wnfthxJP"
                  },
                  {
                   "content_type": "text",
                   "title": "No Thanks",
-                  "payload": "No, thank you",
-                  "image_url": "https://www.colourbox.com/preview/7036940-exited-emoticon.jpg"
+                  "payload": "No Thanks",
+                  "image_url": "https://3.bp.blogspot.com/-2Q4mCe03fEg/VuOR92Jk6bI/AAAAAAAAMAw/YCY_ej--zEoSybT_PseTp6p0-G7Y-kGfw/s1600/Smiley-Red-rating.jpg"
                    }
                   ]
                  }
@@ -142,7 +133,48 @@ def reply(user_id, msg):
     print (data)
     resp = requests.post("https://graph.facebook.com/v2.6/me/messages?access_token=" + ACCESS_TOKEN, json=data)
     print(resp.content)
- 
+
+#************************************************************************************#
+#                                                                                    #
+#   Below method is to get the Facebook Quick Reply Webhook Handling - Wikipedia     #
+#                                                                                    #
+#************************************************************************************#
+def userNationality(reqContext):
+    #print (reqContext.get("result").get("action"))
+    option = reqContext.get("result").get("action")
+    res = {
+        "speech": "Please provide the topic you want to search in Wikipedia",
+        "displayText": "Please provide the topic you want to search in Wikipedia",
+        "data" : {
+        "facebook" : [
+               {
+                "text": "Great! I'll ask two questions only."
+               },
+              {
+                    "sender_action": "typing_on"
+              },
+              {
+                 "text": "Then only I can precisely tell whether you need a VISA or NOT to travel your destination country."
+              },
+              {
+                    "sender_action": "typing_on"
+              },
+              {
+                 "text": "Here is my first question..."
+              },
+              {
+                    "sender_action": "typing_on"
+              },
+              {
+                 "text": "What is your nationality?"
+              }
+             ]
+           } 
+         };
+    res = json.dumps(res, indent=4)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
 
 #************************************************************************************#
 #                                                                                    #
