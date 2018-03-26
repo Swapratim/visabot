@@ -85,7 +85,7 @@ def welcome():
                        "elements" : [ 
                                  {
                                    "title" : "Hi " + first_name + "! " + emoji.emojize(':wave:', use_aliases=True),
-                                   "image_url" : "https://www.us-passport-service-guide.com/image-files/travel-visa.jpg",
+                                   "image_url" : "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg",
                                  } 
                            ]
                        } 
@@ -140,11 +140,11 @@ def reply(user_id, msg):
 #                                                                                    #
 #************************************************************************************#
 def userNationality(reqContext):
-    #print (reqContext.get("result").get("action"))
+    print (reqContext.get("result").get("action"))
     option = reqContext.get("result").get("action")
     res = {
-        "speech": "Please provide the topic you want to search in Wikipedia",
-        "displayText": "Please provide the topic you want to search in Wikipedia",
+        "speech": "Great! I'll ask two questions only",
+        "displayText": "Great! I'll ask two questions only",
         "data" : {
         "facebook" : [
                {
