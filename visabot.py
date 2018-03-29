@@ -217,7 +217,7 @@ def userNationality(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def userDestinationCountry(reqContext):
-    print (reqContext.get("result").get("action"))
+    print (reqContext)
     global nationality
     nationality = reqContext.get("result").get("action")
     print (nationality)
