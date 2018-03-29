@@ -221,7 +221,7 @@ def userDestinationCountry(reqContext):
     print ("nationality: " + resolvedQuery)
     global nationality
     nationality = resolvedQuery
-    print (nationality)
+    print ("userDestinationCountry Method nationality::: " + nationality)
     res = {
         "speech": "Second Question",
         "displayText": "Second Question",
@@ -249,7 +249,8 @@ def wikipedia_search(reqContext):
     print ("destinationcountry: " + resolvedQuery)
     global destinationcountry
     destinationcountry = resolvedQuery
-    print (destinationcountry)
+    print ("destinationcountry: " + destinationcountry)
+    print ("wikipedia_search Method nationality" + nationality)
     google_query = "https://en.wikipedia.org/w/api.php?action=parse&page=Visa_requirements_for_" + nationality + "_citizens&prop=text&format=json"
 ###########################################################
     if google_query is None:
