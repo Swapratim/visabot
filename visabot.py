@@ -217,7 +217,12 @@ def userNationality(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def userDestinationCountry(reqContext):
-    print (reqContext)
+    req = reqContext.get_json(silent=True, force=True)
+    print("Within Search function......!!")
+    resolvedQuery = reqContext.get("result").get("resolvedQuery")
+    print ("resolvedQuery: " + resolvedQuery)
+    result = req.get("result")
+    print (result)
     global nationality
     nationality = reqContext.get("result").get("action")
     print (nationality)
