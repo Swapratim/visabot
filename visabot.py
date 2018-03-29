@@ -218,7 +218,7 @@ def userNationality(reqContext):
 #************************************************************************************#
 def userDestinationCountry(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
-    print ("resolvedQuery: " + resolvedQuery)
+    print ("nationality: " + resolvedQuery)
     global nationality
     nationality = resolvedQuery
     print (nationality)
@@ -246,16 +246,10 @@ def userDestinationCountry(reqContext):
 
 def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
-    print ("resolvedQuery: " + resolvedQuery)
+    print ("destinationcountry: " + resolvedQuery)
     global destinationcountry
     destinationcountry = resolvedQuery
     print (destinationcountry)
-    print ("resolvedQuery: " + resolvedQuery)
-    true_false = True
-    result = req.get("result")
-    parameters = result.get("parameters")
-    search_list0 = parameters.get("any")
-    #print ("search_list0" + search_list0)
     google_query = "https://en.wikipedia.org/w/api.php?action=parse&page=Visa_requirements_for_" + nationality + "_citizens&prop=text&format=json"
 ###########################################################
     if google_query is None:
