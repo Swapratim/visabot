@@ -166,13 +166,13 @@ def asktheuser(reqContext):
                   "quick_replies": [
                  {
                   "content_type": "text",
-                  "title": "Yes",
-                  "payload": "Yes",
+                  "title": "I'm Ready",
+                  "payload": "I'm Ready",
                  },
                  {
                   "content_type": "text",
-                  "title": "No",
-                  "payload": "No",
+                  "title": "No Thanks",
+                  "payload": "No Thanks",
                   }
                   ]
                  }
