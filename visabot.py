@@ -194,7 +194,7 @@ def asktheuser(reqContext):
 def userNationality(reqContext):
     print (reqContext.get("result").get("action"))
     option = reqContext.get("result").get("action")
-    print option
+    print (option)
     res = {
         "speech": "First Question",
         "displayText": "First Question",
@@ -220,7 +220,7 @@ def userDestinationCountry(reqContext):
     print (reqContext.get("result").get("action"))
     global nationality
     nationality = reqContext.get("result").get("action")
-    print nationality
+    print (nationality)
     res = {
         "speech": "Second Question",
         "displayText": "Second Question",
