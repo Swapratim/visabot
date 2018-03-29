@@ -218,10 +218,10 @@ def userNationality(reqContext):
 #************************************************************************************#
 def userDestinationCountry(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
-    print ("nationality: " + resolvedQuery)
-    global nationality
+    #print ("nationality: " + resolvedQuery)
+    global nationality = " "
     nationality = resolvedQuery
-    print ("userDestinationCountry Method nationality::: " + nationality)
+    print ("userDestinationCountry Method nationality --> " + nationality)
     res = {
         "speech": "Second Question",
         "displayText": "Second Question",
