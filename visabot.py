@@ -40,6 +40,8 @@ def webhook():
        return userNationality(reqContext)
     elif reqContext.get("result").get("action") == "input.destinationcountry":
        return userDestinationCountry(reqContext)
+    elif reqContext.get("result").get("action") == "input.wikipediasearch":
+       return wikipedia_search(reqContext)
     else:
        print("Good Bye")
 
@@ -234,35 +236,11 @@ def userDestinationCountry(reqContext):
 
 #************************************************************************************#
 #                                                                                    #
-#   Below method is to get the Facebook Quick Reply Webhook Handling - Wikipedia     #
-#                                                                                    #
-#************************************************************************************#
-def wikipedia_search(reqContext):
-    #print (reqContext.get("result").get("action"))
-    option = reqContext.get("result").get("action")
-    res = {
-        "speech": "Please provide the topic you want to search in Wikipedia",
-        "displayText": "Please provide the topic you want to search in Wikipedia",
-        "data" : {
-        "facebook" : [
-               {
-                "text": "Please write the topic you want to search in Wikipedia"
-               }
-             ]
-           } 
-         };
-    res = json.dumps(res, indent=4)
-    r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
-    return r
-
-#************************************************************************************#
-#                                                                                    #
 #   This method is to get the Wikipedia Information via Google API                   #
 #                                                                                    #
 #************************************************************************************#
-# Searchhook is for searching for Wkipedia information via Google API
-def searchhook(reqContext):
+
+def wikipedia_search(reqContext):
     req = request.get_json(silent=True, force=True)
     print("Within Search function......!!")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
