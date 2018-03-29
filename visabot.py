@@ -217,12 +217,8 @@ def userNationality(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def userDestinationCountry(reqContext):
-    req = reqContext.get_json(silent=True, force=True)
-    print("Within Search function......!!")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     print ("resolvedQuery: " + resolvedQuery)
-    result = req.get("result")
-    print (result)
     global nationality
     nationality = reqContext.get("result").get("action")
     print (nationality)
@@ -249,9 +245,8 @@ def userDestinationCountry(reqContext):
 #************************************************************************************#
 
 def wikipedia_search(reqContext):
-    req = request.get_json(silent=True, force=True)
-    print("Within Search function......!!")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
+    print ("resolvedQuery: " + resolvedQuery)
     global destinationcountry
     destinationcountry = reqContext.get("result").get("action")
     print (destinationcountry)
