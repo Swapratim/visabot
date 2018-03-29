@@ -263,8 +263,8 @@ def wikipedia_search(reqContext):
 #    
 ############################################################
     res = {
-          "speech": speech,
-          "displayText": speech,
+          "speech": "Visa Status",
+          "displayText": "Visa Status",
            "data" : {
               "facebook" : [
                   {
