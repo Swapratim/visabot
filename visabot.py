@@ -219,7 +219,7 @@ def userNationality(reqContext):
 def userDestinationCountry(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     #print ("nationality: " + resolvedQuery)
-    global nationality = " "
+    global nationality = "."
     nationality = resolvedQuery
     print ("userDestinationCountry Method nationality --> " + nationality)
     res = {
