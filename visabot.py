@@ -260,7 +260,7 @@ def wikipedia_search(reqContext):
     result = urllib.request.urlopen(google_query).read()
     #print (result)
     data = json.loads(result)
-    print ("JSON Formtatted DATA -> -> -> ->" + data)
+    print (data)
 ############################################################
 #    
 ############################################################
