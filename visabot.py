@@ -265,7 +265,7 @@ def wikipedia_search(reqContext):
     #print (data)
     page = requests.get('https://en.wikipedia.org/wiki/Visa_requirements_for_' + nationality + '_citizens')
     tree = html.fromstring(page.content)
-    print tree
+    print (tree)
 ############################################################
 #    
 ############################################################
