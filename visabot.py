@@ -250,7 +250,7 @@ def userDestinationCountry(reqContext):
 
 def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
-    #print ("destinationcountry: " + resolvedQuery)
+    print ("destinationcountry: " + resolvedQuery)
     global destinationcountry
     destinationcountry = resolvedQuery
     print ("destinationcountry: " + destinationcountry)
@@ -278,7 +278,7 @@ def wikipedia_search(reqContext):
            continue
 
     visa_status = infotoString.partition("\n| {{")[2].partition("}}<ref>")[0]
-    print = visa_status
+    print (visa_status)
      #print (info)
 ############################################################
 #    
