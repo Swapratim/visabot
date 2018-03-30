@@ -284,6 +284,17 @@ def wikipedia_search(reqContext):
     print (visa_status_final)
     visa_status = visa_status_final.split("|",1)[1]
     print (visa_status)
+
+    if visa_status == "Visa required":
+        image_url = "https://www.iconsdb.com/icons/preview/red/visa-xxl.png"
+    elif visa_status == "Visa not required":
+        image_url = "https://www.iconsdb.com/icons/preview/green/visa-xxl.png"
+    elif visa_status == "eVisa":
+        image_url = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
+    elif visa_status == "Visa on arrival":
+        image_url = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
+    elif visa_status == "eVisa / Visa on arrival":
+        image_url = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
 ############################################################
 #    
 ############################################################
@@ -302,12 +313,12 @@ def wikipedia_search(reqContext):
                       "template_type" : "generic",
                        "elements" : [ 
                                  {
-                                   "title" : "Hi",
-                                   "image_url" : "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg",
+                                   "title" : visa_status,
+                                   "image_url" : image_url,
                                    "subtitle" : "",
                                    "buttons": [{
                                         "type": "web_url",
-                                        "url": "www.google.com",
+                                        "url": google_query,
                                         "title": "More info"
                                     }]
                                  } 
@@ -316,40 +327,20 @@ def wikipedia_search(reqContext):
                    }
                 },
                  {
-                 "text": "WOW"
+                 "text": "Want to start over?"
                   },
                  {
                   "text": "Click on the below options to start over again",
                   "quick_replies": [
                  {
                   "content_type": "text",
-                  "title": "News",
-                  "payload": "News",
-                  "image_url": "http://www.freeiconspng.com/uploads/newspaper-icon-20.jpg"
-                 },
+                  "title": "Yes",
+                  "payload": "Yes",
+                  },
                  {
                   "content_type": "text",
-                  "title": "Weather",
-                  "payload": "weather",
-                  "image_url": "https://www.mikeafford.com/store/store-images/ww01_example_light_rain_showers.png"
-                   },
-                  {
-                  "content_type": "text",
-                  "title": "Wikipedia",
-                  "payload": "wikipedia",
-                  "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
-                   },
-                  {
-                  "content_type": "text",
-                  "title": "YouTube",
-                  "payload": "YouTube",
-                  "image_url": "https://cdn1.iconfinder.com/data/icons/logotypes/32/youtube-512.png"
-                   },
-                  {
-                  "content_type": "text",
-                  "title": "Contact Me",
-                  "payload": "contact",
-                  "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
+                  "title": "No",
+                  "payload": "No",
                   }
                   ]
                  }
