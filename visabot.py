@@ -268,7 +268,7 @@ def wikipedia_search(reqContext):
     #tree = html.fromstring(page.content)
     #print (tree)
     for flagship in data:
-       print("%s: %d" % (flagship, data))
+       print("%s: %s" % (flagship, data))
 ############################################################
 #    
 ############################################################
