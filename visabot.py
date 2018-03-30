@@ -2,6 +2,8 @@
 
 from __future__ import print_function
 from future import standard_library
+from lxml import html
+import requests
 standard_library.install_aliases()
 import urllib.request, urllib.parse, urllib.error
 import json
@@ -260,7 +262,10 @@ def wikipedia_search(reqContext):
     result = urllib.request.urlopen(google_query).read()
     #print (result)
     data = json.loads(result)
-    print (data)
+    #print (data)
+    page = requests.get('https://en.wikipedia.org/wiki/Visa_requirements_for_' + nationality + '_citizens')
+    tree = html.fromstring(page.content)
+    print tree
 ############################################################
 #    
 ############################################################
