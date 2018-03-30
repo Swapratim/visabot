@@ -255,7 +255,7 @@ def wikipedia_search(reqContext):
     print ("destinationcountry: " + destinationcountry)
     #print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
-    nationality1 = str(nationality + jsoncountryappendage)
+    destinationcountry1 = str(destinationcountry + jsoncountryappendage)
     #google_query = "https://en.wikipedia.org/w/api.php?action=parse&page=Visa_requirements_for_" + nationality + "_citizens&prop=text&format=json"
     google_query = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationality + "_citizens"
 ###########################################################
@@ -271,11 +271,11 @@ def wikipedia_search(reqContext):
     #print (tree)
     #for flagship in data:
     #   print("%s: %s" % (flagship, data))
-    print (nationality1)
+    print (destinationcountry1)
     data1 = str(data)
     wikidata = data1.split("{{flag|")
     for info in wikidata:
-        if nationality1 in info:
+        if destinationcountry1 in info:
            print ("I'm in IF loop, therefore I'm already in FOR loop")
            infotoString = str(info)
            print (infotoString)
