@@ -254,7 +254,8 @@ def wikipedia_search(reqContext):
     destinationcountry = resolvedQuery
     print ("destinationcountry: " + destinationcountry)
     print ("wikipedia_search Method nationality --> " + nationality)
-    google_query = "https://en.wikipedia.org/w/api.php?action=parse&page=Visa_requirements_for_" + nationality + "_citizens&prop=text&format=json"
+    #google_query = "https://en.wikipedia.org/w/api.php?action=parse&page=Visa_requirements_for_" + nationality + "_citizens&prop=text&format=json"
+    google_query = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationality + "_citizens"
 ###########################################################
     if google_query is None:
         return {}
@@ -263,9 +264,11 @@ def wikipedia_search(reqContext):
     #print (result)
     data = json.loads(result)
     #print (data)
-    page = requests.get('https://en.wikipedia.org/wiki/Visa_requirements_for_' + nationality + '_citizens')
-    tree = html.fromstring(page.content)
-    print (tree)
+    #page = requests.get('https://en.wikipedia.org/wiki/Visa_requirements_for_' + nationality + '_citizens')
+    #tree = html.fromstring(page.content)
+    #print (tree)
+    for flagship in data:
+       print("%s: %d" % (flagship, data))
 ############################################################
 #    
 ############################################################
