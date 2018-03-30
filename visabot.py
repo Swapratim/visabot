@@ -250,7 +250,7 @@ def userDestinationCountry(reqContext):
 
 def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
-    print ("destinationcountry: " + resolvedQuery)
+    #print ("destinationcountry: " + resolvedQuery)
     global destinationcountry
     destinationcountry = resolvedQuery
     print ("destinationcountry: " + destinationcountry)
