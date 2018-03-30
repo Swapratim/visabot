@@ -280,8 +280,10 @@ def wikipedia_search(reqContext):
     print (infotoString)
     visa_status_primary = infotoString.split("{{",1)[1] 
     print (visa_status_primary)
-    visa_status_final = infotoString.split("{{",1)[0]
+    visa_status_final = visa_status_primary.split("}}<ref>",1)[0]
     print (visa_status_final)
+    visa_status = visa_status_final.split("|",1)[1]
+    print (visa_status)
 ############################################################
 #    
 ############################################################
