@@ -251,16 +251,16 @@ def wikipedia_search(reqContext):
     global destinationcountry
     destinationcountry = resolvedQuery
     print ("destinationcountry: " + destinationcountry)
-    print ("wikipedia_search Method nationality" + nationality)
+    print ("wikipedia_search Method nationality --> " + nationality)
     google_query = "https://en.wikipedia.org/w/api.php?action=parse&page=Visa_requirements_for_" + nationality + "_citizens&prop=text&format=json"
 ###########################################################
     if google_query is None:
         return {}
     print("google_query::::"+google_query)
     result = urllib.request.urlopen(google_query).read()
-    print (result)
+    #print (result)
     data = json.loads(result)
-    print ("data = json.loads(result)")
+    print ("JSON Formtatted DATA -> -> -> ->" + data)
 ############################################################
 #    
 ############################################################
