@@ -269,9 +269,9 @@ def wikipedia_search(reqContext):
     #print (tree)
     #for flagship in data:
     #   print("%s: %s" % (flagship, data))
-    data = data.split("{{flag|")
-    for info in data:
-    print info
+    wikidata = data.split("{{flag|")
+    for info in wikidata:
+        print (info)
 ############################################################
 #    
 ############################################################
