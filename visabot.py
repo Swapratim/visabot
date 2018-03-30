@@ -254,7 +254,7 @@ def wikipedia_search(reqContext):
     destinationcountry = resolvedQuery
     print ("destinationcountry: " + destinationcountry)
     #print ("wikipedia_search Method nationality --> " + nationality)
-    nationality = nationality + "}}"
+    nationality1 = str(nationality + "}}")
     #google_query = "https://en.wikipedia.org/w/api.php?action=parse&page=Visa_requirements_for_" + nationality + "_citizens&prop=text&format=json"
     google_query = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationality + "_citizens"
 ###########################################################
@@ -273,7 +273,7 @@ def wikipedia_search(reqContext):
     data1 = str(data)
     wikidata = data1.split("{{flag|")
     for info in wikidata:
-        if info.find(nationality) == -1:
+        if info.find(nationality1) == -1:
            continue
         else:
             print (info)
