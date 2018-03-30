@@ -253,17 +253,17 @@ def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     #print ("destinationcountry: " + resolvedQuery)
     global destinationcountry
-    destinationcountry = resolvedQuery
-    #print ("destinationcountry: " + destinationcountry)
+    destinationcountry = str(resolvedQuery)
+    print ("destinationcountry: " + destinationcountry)
     #print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
     destinationcountry1 = str(destinationcountry + jsoncountryappendage)
     #google_query = "https://en.wikipedia.org/w/api.php?action=parse&page=Visa_requirements_for_" + nationality + "_citizens&prop=text&format=json"
-    google_query = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationality + "_citizens"
+    google_query = str("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationality + "_citizens")
 ###########################################################
     if google_query is None:
         return {}
-    #print("google_query::::"+google_query)
+    print("google_query::::"+google_query)
     result = urllib.request.urlopen(google_query).read()
     #print (result)
     data = json.loads(result)
@@ -287,15 +287,15 @@ def wikipedia_search(reqContext):
     print (visa_status)
 
     if visa_status == "Visa required":
-        image_url_final = "https://www.iconsdb.com/icons/preview/red/visa-xxl.png"
+        image_url_final = str("https://www.iconsdb.com/icons/preview/red/visa-xxl.png")
     elif visa_status == "Visa not required":
-        image_url_final = "https://www.iconsdb.com/icons/preview/green/visa-xxl.png"
+        image_url_final = str("https://www.iconsdb.com/icons/preview/green/visa-xxl.png")
     elif visa_status == "eVisa":
-        image_url_final = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
+        image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
     elif visa_status == "Visa on arrival":
-        image_url_final = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
+        image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
     elif visa_status == "eVisa / Visa on arrival":
-        image_url_final = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
+        image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
 ############################################################
 #    
 ############################################################
