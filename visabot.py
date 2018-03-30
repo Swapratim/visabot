@@ -56,6 +56,7 @@ def webhook():
 user_name = None
 nationality = None
 infotoString = None
+image_url_final = None
 def welcome():
     global user_name
     #print ("within welcome method")
