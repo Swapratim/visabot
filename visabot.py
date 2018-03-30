@@ -318,7 +318,7 @@ def wikipedia_search(reqContext):
                                    "subtitle" : "",
                                    "buttons": [{
                                         "type": "web_url",
-                                        "url": google_query,
+                                        "url": "https://en.wikipedia.org/wiki/Visa_requirements_for_" + nationality + "_citizens",
                                         "title": "More info"
                                     }]
                                  } 
@@ -327,10 +327,7 @@ def wikipedia_search(reqContext):
                    }
                 },
                  {
-                 "text": "Want to start over?"
-                  },
-                 {
-                  "text": "Click on the below options to start over again",
+                  "text": "Want to start over?",
                   "quick_replies": [
                  {
                   "content_type": "text",
