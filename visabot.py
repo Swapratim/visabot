@@ -55,6 +55,7 @@ def webhook():
 #************************************************************************************#
 user_name = None
 nationality = None
+infotoString = None
 def welcome():
     global user_name
     #print ("within welcome method")
@@ -265,12 +266,6 @@ def wikipedia_search(reqContext):
     result = urllib.request.urlopen(google_query).read()
     #print (result)
     data = json.loads(result)
-    #print (data)
-    #page = requests.get('https://en.wikipedia.org/wiki/Visa_requirements_for_' + nationality + '_citizens')
-    #tree = html.fromstring(page.content)
-    #print (tree)
-    #for flagship in data:
-    #   print("%s: %s" % (flagship, data))
     print (destinationcountry1)
     data1 = str(data)
     wikidata = data1.split("{{flag|")
@@ -281,6 +276,9 @@ def wikipedia_search(reqContext):
            print (infotoString)
         else:
            continue
+
+    visa_status = infotoString.partition("\n| {{")[2].partition("}}<ref>")[0]
+    print = visa_status
      #print (info)
 ############################################################
 #    
