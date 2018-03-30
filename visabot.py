@@ -273,10 +273,8 @@ def wikipedia_search(reqContext):
     data1 = str(data)
     wikidata = data1.split("{{flag|")
     for info in wikidata:
-        if info.find(nationality1) == -1:
-           continue
-        else:
-            print (info)
+        if nationality1 in info:
+           print (info)
      #print (info)
 ############################################################
 #    
