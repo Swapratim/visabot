@@ -250,10 +250,10 @@ def userDestinationCountry(reqContext):
 
 def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
-    print ("destinationcountry: " + resolvedQuery)
+    #print ("destinationcountry: " + resolvedQuery)
     global destinationcountry
     destinationcountry = resolvedQuery
-    print ("destinationcountry: " + destinationcountry)
+    #print ("destinationcountry: " + destinationcountry)
     #print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
     destinationcountry1 = str(destinationcountry + jsoncountryappendage)
@@ -262,11 +262,11 @@ def wikipedia_search(reqContext):
 ###########################################################
     if google_query is None:
         return {}
-    print("google_query::::"+google_query)
+    #print("google_query::::"+google_query)
     result = urllib.request.urlopen(google_query).read()
     #print (result)
     data = json.loads(result)
-    print (destinationcountry1)
+    #print (destinationcountry1)
     data1 = str(data)
     wikidata = data1.split("{{flag|")
     for info in wikidata:
