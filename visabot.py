@@ -286,15 +286,15 @@ def wikipedia_search(reqContext):
     print (visa_status)
 
     if visa_status == "Visa required":
-        image_url = "https://www.iconsdb.com/icons/preview/red/visa-xxl.png"
+        image_url_final = "https://www.iconsdb.com/icons/preview/red/visa-xxl.png"
     elif visa_status == "Visa not required":
-        image_url = "https://www.iconsdb.com/icons/preview/green/visa-xxl.png"
+        image_url_final = "https://www.iconsdb.com/icons/preview/green/visa-xxl.png"
     elif visa_status == "eVisa":
-        image_url = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
+        image_url_final = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
     elif visa_status == "Visa on arrival":
-        image_url = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
+        image_url_final = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
     elif visa_status == "eVisa / Visa on arrival":
-        image_url = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
+        image_url_final = "http://www.iconsplace.com/icons/preview/yellow/visa-256.png"
 ############################################################
 #    
 ############################################################
@@ -314,7 +314,7 @@ def wikipedia_search(reqContext):
                        "elements" : [ 
                                  {
                                    "title" : visa_status,
-                                   "image_url" : image_url,
+                                   "image_url" : image_url_final,
                                    "subtitle" : "",
                                    "buttons": [{
                                         "type": "web_url",
