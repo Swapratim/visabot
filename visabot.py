@@ -278,7 +278,7 @@ def wikipedia_search(reqContext):
            continue
     print ("NECESSARY STRING -->")
     print (infotoString)
-    visa_status = infotoString.split("\n| {{",1)[1] 
+    visa_status = infotoString.split("{{",1)[1] 
     print (visa_status)
      #print (info)
 ############################################################
