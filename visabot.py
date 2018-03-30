@@ -271,11 +271,16 @@ def wikipedia_search(reqContext):
     #print (tree)
     #for flagship in data:
     #   print("%s: %s" % (flagship, data))
+    print (nationality1)
     data1 = str(data)
     wikidata = data1.split("{{flag|")
     for info in wikidata:
         if nationality1 in info:
-           print (info)
+           print ("I'm in IF loop, therefore I'm already in FOR loop")
+           infotoString = str(info)
+           print (infotoString)
+        else:
+           continue
      #print (info)
 ############################################################
 #    
