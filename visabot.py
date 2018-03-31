@@ -317,8 +317,8 @@ def wikipedia_search(reqContext):
                if "}}\n|" in visa_status_primary[0]:
                    visa_status = visa_status_primary[0].split("\n|")[1]
                    print ("5th CATEGORY --->" + visa_status)
-            elif "Visitor" in visa_status_primary[0]:
-                   if "}}\n|" in visa_status_primary[0]:
+           elif "Visitor" in visa_status_primary[0]:
+                if "}}\n|" in visa_status_primary[0]:
                    visa_status = visa_status_primary[0].split("\n|")[1]
                    print ("5th CATEGORY --->" + visa_status)
     else:
