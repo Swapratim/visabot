@@ -279,8 +279,8 @@ def wikipedia_search(reqContext):
     print ("NECESSARY STRING -->")
     # Check all artifacts which are to be removed to get the VISA INFORMATION
     print (infotoStringFinal)
-    if "\n| {{" in infotoStringFinal:
-        visa_status_primary = infotoStringFinal.split("\n| {{",1)[1] 
+    if "}} \n| {{" in infotoStringFinal:
+        visa_status_primary = infotoStringFinal.split("}} \n| {{",1)[1] 
         print ("After splitting \n| {{, here is the 2nd part -->" + visa_status_primary)
     elif "}} (" in infotoStringFinal:
         visa_status_primary = infotoStringFinal.split("}} (",1)[1]
@@ -314,6 +314,9 @@ def wikipedia_search(reqContext):
         if "|" in visa_status_temp_2:
             visa_status = visa_status_temp_2.split("|",1)[1]
             print ("If still VISA holds any more PIPE(316)-->" + visa_status)
+        elif "}}" in visa_status_temp_2:
+            visa_status = visa_status_temp_2.split("}}",1)[0]
+            print ("If still VISA holds any more }}(319)-->" + visa_status)
         else:
             visa_status = visa_status_temp_2
     else:
