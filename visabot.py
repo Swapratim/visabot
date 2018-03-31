@@ -287,15 +287,17 @@ def wikipedia_search(reqContext):
 
     if "|" in visa_status_temp_1:
         visa_status = visa_status_temp_1.split("|",1)[1]
+        visa_status_temp_2 = visa_status_temp_1.split("|",1)[1]
         print (visa_status)
+            if "|" in visa_status_temp_2:
+                visa_status = visa_status_temp_2.split("|",1)[1]
+                print (visa_status)
+            else:
+                visa_status = visa_status_temp_2
     else:
         visa_status = visa_status_temp_1
     
-    if "|" in visa_status_temp_2:
-        visa_status = visa_status_temp_2.split("|",1)[1]
-        print (visa_status)
-    else:
-        visa_status = visa_status_temp_2
+    
 
     if visa_status == "Visa required":
         image_url_final = str("https://www.iconsdb.com/icons/preview/red/visa-xxl.png")
