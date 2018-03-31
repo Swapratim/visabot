@@ -328,13 +328,11 @@ def wikipedia_search(reqContext):
             visa_status = visa_status_primary.split(")\n*",1)[0]
             print ("After splitting )\n*, here is the 1st part -->" + visa_status_primary)
     else:
-        visa_status_primary = infotoStringFinal 
-        print ("No change in VISA Status -->" + visa_status_primary)
+        visa_status = infotoStringFinal 
+        print ("No change in VISA Status -->" + visa_status)
 
     #########################################################################
     
-    
-    print ("Finally printing VISA info before assigning to image URL -->" + visa_status)
     #########################################################################
     if visa_status == "Visa required":
         image_url_final = str("https://www.iconsdb.com/icons/preview/red/visa-xxl.png")
