@@ -315,11 +315,11 @@ def wikipedia_search(reqContext):
            # 5th CATEGORY like, Thailand}}\n| Visa on arrival\n| e-Visa for 60 Days\n|-\n|
            if "Visa" in visa_status_primary[0]:
                if "}}" in visa_status_primary[0]:
-                   visa_status = visa_status_primary[0].split("|")[1].strip("\n")
+                   visa_status = visa_status_primary[0].split("|")[1].splitlines()
                    print ("5th CATEGORY --->" + visa_status)
            elif "Visitor" in visa_status_primary[0]:
                 if "}}" in visa_status_primary[0]:
-                   visa_status = visa_status_primary[0].split("|")[1].strip("\n")
+                   visa_status = visa_status_primary[0].split("|")[1].splitlines()
                    print ("5th CATEGORY --->" + visa_status)
     else:
         visa_status = infotoStringFinal 
