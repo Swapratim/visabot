@@ -289,11 +289,11 @@ def wikipedia_search(reqContext):
         visa_status = visa_status_temp_1.split("|",1)[1]
         visa_status_temp_2 = visa_status_temp_1.split("|",1)[1]
         print (visa_status)
-            if "|" in visa_status_temp_2:
-                visa_status = visa_status_temp_2.split("|",1)[1]
-                print (visa_status)
-            else:
-                visa_status = visa_status_temp_2
+        if "|" in visa_status_temp_2:
+            visa_status = visa_status_temp_2.split("|",1)[1]
+            print (visa_status)
+        else:
+            visa_status = visa_status_temp_2
     else:
         visa_status = visa_status_temp_1
     
