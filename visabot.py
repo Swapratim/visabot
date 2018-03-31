@@ -285,45 +285,49 @@ def wikipedia_search(reqContext):
         #visa_status_primary = infotoStringFinal.split("\n| {{",1)[1]
         visa_status_primary = infotoStringFinal.split("}}<ref>")
         print ("After splitting }}<ref>, here is the 2nd part -->" + visa_status_primary[0])
+        # Checking for the 1st && 3rd CATEGORY, like --> Denmark}} \n| {{no|Visa required OR Thailand}} \n| {{yes|Visa not required  Germany}}\n| {{free|{{sort|EU|Visa not required}}
+        if "{{" in visa_status_primary[0]:
+           visa_status_temp_1 = visa_status_primary[0].split("{{")
+           print ("Splitting the {{ from the string and select LAST PART-->" + visa_status_temp_1[1])
+           # Checking for the 3rd CATEGORY, like --> Germany}}\n| {{free|{{sort|EU|Visa not required}}
+           if "|{{" in visa_status_temp_1[1]:
+               visa_status_temp_2 = visa_status_temp_1[1].split("|{{")
+               visa_status_temp_3 = visa_status_temp_2[1]
+               print ("3rd category: FINAL visa_status_temp_3 -->" + visa_status_temp_3)
+               visa_status_temp_4 = visa_status_temp_3.split("|")
+               visa_status_temp_5 = visa_status_temp_4[2]
+               print ("3rd category: FINAL visa_status_temp_5 -->" + visa_status_temp_5)
+               visa_status_temp_6 = visa_status_temp_5.split("}}")
+               visa_status = visa_status_temp_6[0]
+               print ("3rd category: FINAL visa_status -->" + visa_status)
+           # Checking for the 1st CATEGORY, like --> Denmark}} \n| {{no|Visa required OR Thailand}} \n| {{yes|Visa not required
+           elif "|" in visa_status_temp_1[1]:
+               visa_status_temp_2 = visa_status_temp_1[1].split("|")
+               visa_status = visa_status_temp_2[1]
+               print ("1st category: FINAL visa_status -->" + visa_status)
+        # Checking for the 2nd CATEGORY, like --> Malaysia}} (e-Visa required)\n* 
+        elif "(" in visa_status_primary[0]:
+           visa_status_temp_1 = visa_status_primary[0].split("(")
+           print ("Splitting the {{ from the string and select LAST PART-->" + visa_status_temp_1[1])
+           if ")" in visa_status_temp_1[1]:
+               visa_status_temp_2 = visa_status_temp_1[1].split(")")
+               visa_status = visa_status_temp_2[0]
+               print ("2ns category: FINAL visa_status -->" + visa_status)
+        else:
+           visa_status = visa_status_primary[0]
+           print ("ELSE: No exception found, so assigning same variable to visa_status_temp_1-->" + visa_status)
     elif "}}" in infotoStringFinal:
-        visa_status_primary = infotoStringFinal.split("}} (",1)[1]
-        print ("After splitting }} (, here is the 2nd part -->" + visa_status_primary)
+        visa_status_primary = infotoStringFinal.split("}}")
+        print ("After splitting }}, here is the 2nd part -->" + visa_status_primary)
         if ")\n*" in visa_status_primary:
-            visa_status_primary = visa_status_primary.split(")\n*",1)[0]
+            visa_status = visa_status_primary.split(")\n*",1)[0]
             print ("After splitting )\n*, here is the 1st part -->" + visa_status_primary)
     else:
         visa_status_primary = infotoStringFinal 
         print ("No change in VISA Status -->" + visa_status_primary)
 
     #########################################################################
-    if "}}" in visa_status_primary and "*Visa*" in visa_status_primary:
-        visa_status_final = visa_status_primary.split("}}",1)[0]
-        print ("Now stripping the string by }} and get the 1st part -->" + visa_status_final)
-    else:
-        visa_status_final = visa_status_primary
-        print ("No splitting occurred for ELSE(301)->" + visa_status_final)
-    #######Checking for More artifacts before Visa Required info (like free|{{sort|EU|Visa not required)############
-    if "|" in visa_status_final:
-        visa_status_temp_1 = visa_status_final.split("|",1)[1]
-        print ("In new VISA string, remove 1st PIPE(305)-->" + visa_status_temp_1)
-    else:
-        visa_status_temp_1 = visa_status_final
-        print ("No splitting occurred for ELSE(308)->" + visa_status_temp_1)
-    ########Checking for 2nd and 3rd PIPE removal from the VISA String########
-    if "|" in visa_status_temp_1:
-        visa_status = visa_status_temp_1.split("|",1)[1]
-        visa_status_temp_2 = visa_status_temp_1.split("|",1)[1]
-        print ("Splitting the VISA string from 2nd PIPE and getting 2nd part-->" + visa_status)
-        if "|" in visa_status_temp_2:
-            visa_status = visa_status_temp_2.split("|",1)[1]
-            print ("If still VISA holds any more PIPE(316)-->" + visa_status)
-        elif "}}" in visa_status_temp_2:
-            visa_status = visa_status_temp_2.split("}}",1)[0]
-            print ("If still VISA holds any more }}(319)-->" + visa_status)
-        else:
-            visa_status = visa_status_temp_2
-    else:
-        visa_status = visa_status_temp_1
+    
     
     print ("Finally printing VISA info before assigning to image URL -->" + visa_status)
     #########################################################################
