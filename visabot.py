@@ -335,6 +335,8 @@ def wikipedia_search(reqContext):
         image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
     elif visa_status == "eVisa / Visa on arrival":
         image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
+    else:
+        image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
 ############################################################
 #    
 ############################################################
