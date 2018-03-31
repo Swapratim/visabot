@@ -281,11 +281,13 @@ def wikipedia_search(reqContext):
     print (infotoStringFinal)
     if "\n| {{" in infotoStringFinal:
         visa_status_primary = infotoStringFinal.split("\n| {{",1)[1] 
-        print (visa_status_primary)
+        print ("visa_status_primary-->" + visa_status_primary)
     elif "}} (" in infotoStringFinal:
         visa_status_primary = infotoStringFinal.split("}} (",1)[1]
         if ")\n*" in visa_status_primary:
             visa_status_primary = visa_status_primary.split(")\n*",1)[0]
+    else:
+        visa_status_primary = infotoStringFinal 
     #########################################################################
     if "}}" in visa_status_final:
         visa_status_final = visa_status_primary.split("}}",1)[0]
