@@ -289,7 +289,7 @@ def wikipedia_search(reqContext):
     else:
         visa_status_primary = infotoStringFinal 
     #########################################################################
-    if "}}" in visa_status_final:
+    if "}}" in visa_status_primary:
         visa_status_final = visa_status_primary.split("}}",1)[0]
         print (visa_status_final)
     else:
