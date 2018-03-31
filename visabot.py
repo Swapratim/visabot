@@ -288,6 +288,7 @@ def wikipedia_search(reqContext):
         print ("After splitting }}<ref>, here is the 2nd part -->" + visa_status_primary[0])
         # Checking for the 1st && 3rd CATEGORY, like --> Denmark}} \n| {{no|Visa required OR Thailand}} \n| {{yes|Visa not required  Germany}}\n| {{free|{{sort|EU|Visa not required}}
         if "|{{" in visa_status_primary[0]:
+           print ("3rd CETGORY--->")
            # Germany}}\n| {{free|{{sort|EU|Visa not required}} || sort|EU|Visa not required}} || sort|EU|Visa not required || Visa not required
            visa_status = visa_status_primary[0].split("{{")[2].split("}}")[0].split("|")[2].split("}}")[0]
            print ("3rd category: FINAL visa_status -->" + visa_status)
