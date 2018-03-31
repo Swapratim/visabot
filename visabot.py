@@ -281,26 +281,30 @@ def wikipedia_search(reqContext):
     print (infotoStringFinal)
     if "\n| {{" in infotoStringFinal:
         visa_status_primary = infotoStringFinal.split("\n| {{",1)[1] 
-        print ("visa_status_primary-->" + visa_status_primary)
+        print ("After splitting \n| {{, here is the 2nd part -->" + visa_status_primary)
     elif "}} (" in infotoStringFinal:
         visa_status_primary = infotoStringFinal.split("}} (",1)[1]
+        print ("After splitting }} (, here is the 2nd part -->" + visa_status_primary)
         if ")\n*" in visa_status_primary:
             visa_status_primary = visa_status_primary.split(")\n*",1)[0]
+            print ("After splitting )\n*, here is the 1st part -->" + visa_status_primary)
     else:
         visa_status_primary = infotoStringFinal 
+
     #########################################################################
-    if "}}" in visa_status_primary:
+    if "}}" in visa_status_primary and "*Visa*" in visa_status_primary:
         visa_status_final = visa_status_primary.split("}}",1)[0]
         print (visa_status_final)
     else:
         visa_status_final = visa_status_primary
-
+    #######Checking for More artifacts before Visa Required info (like free|{{sort|EU|Visa not required)############
     if "|" in visa_status_final:
         visa_status_temp_1 = visa_status_final.split("|",1)[1]
         print (visa_status_temp_1)
     else:
         visa_status_temp_1 = visa_status_final
 
+    ########Checking for 2nd and 3rd PIPE removal from the VISA String########
     if "|" in visa_status_temp_1:
         visa_status = visa_status_temp_1.split("|",1)[1]
         visa_status_temp_2 = visa_status_temp_1.split("|",1)[1]
@@ -313,8 +317,8 @@ def wikipedia_search(reqContext):
     else:
         visa_status = visa_status_temp_1
     
-    
-
+    print ("Finally printing VISA info before assigning to image URL -->" + visa_status)
+    #########################################################################
     if visa_status == "Visa required":
         image_url_final = str("https://www.iconsdb.com/icons/preview/red/visa-xxl.png")
     elif visa_status == "Visa not required":
