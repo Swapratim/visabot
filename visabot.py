@@ -277,13 +277,27 @@ def wikipedia_search(reqContext):
         else:
            continue
     print ("NECESSARY STRING -->")
+    # Check all artifacts which are to be removed to get the VISA INFORMATION
     print (infotoStringFinal)
-    visa_status_primary = infotoStringFinal.split("\n| {{",1)[1] 
-    print (visa_status_primary)
-    visa_status_final = visa_status_primary.split("}}",1)[0]
-    print (visa_status_final)
-    visa_status_temp_1 = visa_status_final.split("|",1)[1]
-    print (visa_status_temp_1)
+    if "\n| {{" in infotoStringFinal:
+        visa_status_primary = infotoStringFinal.split("\n| {{",1)[1] 
+        print (visa_status_primary)
+    elif "}} (" in infotoStringFinal:
+        visa_status_primary = infotoStringFinal.split("}} (",1)[1]
+        if ")\n*" in visa_status_primary:
+            visa_status_primary = visa_status_primary.split(")\n*",1)[0]
+    #########################################################################
+    if "}}" in visa_status_final:
+        visa_status_final = visa_status_primary.split("}}",1)[0]
+        print (visa_status_final)
+    else:
+        visa_status_final = visa_status_primary
+
+    if "|" in visa_status_temp_1:
+        visa_status_temp_1 = visa_status_final.split("|",1)[1]
+        print (visa_status_temp_1)
+    else:
+        visa_status_temp_1 = visa_status_final
 
     if "|" in visa_status_temp_1:
         visa_status = visa_status_temp_1.split("|",1)[1]
