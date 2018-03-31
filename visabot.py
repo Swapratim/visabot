@@ -286,7 +286,17 @@ def wikipedia_search(reqContext):
         visa_status_primary = infotoStringFinal.split("}}<ref>")
         print ("After splitting }}<ref>, here is the 2nd part -->" + visa_status_primary[0])
         # Checking for the 1st && 3rd CATEGORY, like --> Denmark}} \n| {{no|Visa required OR Thailand}} \n| {{yes|Visa not required  Germany}}\n| {{free|{{sort|EU|Visa not required}}
-        if "{{" in visa_status_primary[0]:
+        if "|{{" in visa_status_primary[0]:
+           print ("3rd Category -> 1st clause of |{{ --> " + visa_status_primary[0])
+           visa_status_temp_1 = visa_status_primary[0].split("{{")
+           print ("Splitting the {{ from the string and select LAST PART-->" + visa_status_temp_1[1])
+           visa_status_temp_4 = visa_status_temp_3.split("|")
+           visa_status_temp_5 = visa_status_temp_4[2]
+           print ("3rd category: FINAL visa_status_temp_5 -->" + visa_status_temp_5)
+           visa_status_temp_6 = visa_status_temp_5.split("}}")
+           visa_status = visa_status_temp_6[0]
+           print ("3rd category: FINAL visa_status -->" + visa_status)
+        elif "{{" in visa_status_primary[0]:
            visa_status_temp_1 = visa_status_primary[0].split("{{")
            print ("Splitting the {{ from the string and select LAST PART-->" + visa_status_temp_1[1])
            # Checking for the 3rd CATEGORY, like --> Germany}}\n| {{free|{{sort|EU|Visa not required}}
