@@ -290,28 +290,30 @@ def wikipedia_search(reqContext):
             print ("After splitting )\n*, here is the 1st part -->" + visa_status_primary)
     else:
         visa_status_primary = infotoStringFinal 
+        print ("No change in VISA Status -->" + visa_status_primary)
 
     #########################################################################
     if "}}" in visa_status_primary and "*Visa*" in visa_status_primary:
         visa_status_final = visa_status_primary.split("}}",1)[0]
-        print (visa_status_final)
+        print ("Now stripping the string by }} and get the 1st part -->" + visa_status_final)
     else:
         visa_status_final = visa_status_primary
+        print ("No splitting occurred for ELSE(301)->" + visa_status_final)
     #######Checking for More artifacts before Visa Required info (like free|{{sort|EU|Visa not required)############
     if "|" in visa_status_final:
         visa_status_temp_1 = visa_status_final.split("|",1)[1]
-        print (visa_status_temp_1)
+        print ("In new VISA string, remove 1st PIPE(305)-->" + visa_status_temp_1)
     else:
         visa_status_temp_1 = visa_status_final
-
+        print ("No splitting occurred for ELSE(308)->" + visa_status_temp_1)
     ########Checking for 2nd and 3rd PIPE removal from the VISA String########
     if "|" in visa_status_temp_1:
         visa_status = visa_status_temp_1.split("|",1)[1]
         visa_status_temp_2 = visa_status_temp_1.split("|",1)[1]
-        print (visa_status)
+        print ("Splitting the VISA string from 2nd PIPE and getting 2nd part-->" + visa_status)
         if "|" in visa_status_temp_2:
             visa_status = visa_status_temp_2.split("|",1)[1]
-            print (visa_status)
+            print ("If still VISA holds any more PIPE(316)-->" + visa_status)
         else:
             visa_status = visa_status_temp_2
     else:
