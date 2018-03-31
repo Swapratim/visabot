@@ -279,7 +279,7 @@ def wikipedia_search(reqContext):
     print ("NECESSARY STRING -->")
     # Check all artifacts which are to be removed to get the VISA INFORMATION
     print (infotoStringFinal)
-    print ("Section splitlines -->" + infotoStringFinal.splitlines()
+    #print ("Section splitlines -->" + infotoStringFinal.splitlines()
 
     if "Visa" in infotoStringFinal:
         visa_status_primary = infotoStringFinal.split("\n| {{",1)[1] 
