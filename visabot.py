@@ -292,7 +292,7 @@ def wikipedia_search(reqContext):
            visa_status_temp_1 = visa_status_primary[0].split("{{")
            print ("Splitting the {{ from the string and select LAST PART-->" + visa_status_temp_1[2])
            # sort|EU|Visa not required}}
-           visa_status_temp_2 = visa_status_temp_1[2]).split("}}")
+           visa_status_temp_2 = visa_status_temp_1[2].split("}}")
            print ("Splitting the {{ from the string and select LAST PART-->" + visa_status_temp_2[0])
            # sort|EU|Visa not required
            visa_status_temp_3 = visa_status_temp_2[0].split("|")
