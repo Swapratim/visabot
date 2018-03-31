@@ -55,7 +55,6 @@ def webhook():
 #************************************************************************************#
 user_name = None
 nationality = None
-infotoString = "0"
 def welcome():
     global user_name
     #print ("within welcome method")
@@ -266,19 +265,20 @@ def wikipedia_search(reqContext):
     result = urllib.request.urlopen(google_query).read()
     #print (result)
     data = json.loads(result)
-    #print (destinationcountry1)
+    infotoStringFinal = "0"
     data1 = str(data)
     wikidata = data1.split("{{flag|")
     for info in wikidata:
         if destinationcountry1 in info:
            print ("I'm in IF loop, therefore I'm already in FOR loop")
            infotoString = str(info)
+           infotoStringFinal = str(info)
            print (infotoString)
         else:
            continue
     print ("NECESSARY STRING -->")
-    #print (infotoString)
-    visa_status_primary = infotoString.split("{{",1)[1] 
+    print (infotoStringFinal)
+    visa_status_primary = infotoStringFinal.split("{{",1)[1] 
     print (visa_status_primary)
     visa_status_final = visa_status_primary.split("}}",1)[0]
     print (visa_status_final)
