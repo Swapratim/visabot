@@ -291,7 +291,7 @@ def wikipedia_search(reqContext):
         if "|{{" in visa_status_primary[0]:
            print ("3rd Category -> 1st clause of |{{ --> " + visa_status_primary[0])
            # Germany}}\n| {{free|{{sort|EU|Visa not required}}
-           visa_status = visa_status_primary[0].split("{{")[2].split("}}")[0].split("|")[2]..split("}}")[0]
+           visa_status = visa_status_primary[0].split("{{")[2].split("}}")[0].split("|")[2].split("}}")[0]
            print ("3rd category: FINAL visa_status -->" + visa_status)
         elif "{{" in visa_status_primary[0]:
            visa_status_temp_1 = visa_status_primary[0].split("{{")
