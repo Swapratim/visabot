@@ -55,8 +55,7 @@ def webhook():
 #************************************************************************************#
 user_name = None
 nationality = None
-infotoString = None
-image_url_final = None
+#infotoString = None
 def welcome():
     global user_name
     #print ("within welcome method")
@@ -283,8 +282,20 @@ def wikipedia_search(reqContext):
     print (visa_status_primary)
     visa_status_final = visa_status_primary.split("}}",1)[0]
     print (visa_status_final)
-    visa_status = visa_status_final.split("|",1)[1]
-    print (visa_status)
+    visa_status_temp_1 = visa_status_final.split("|",1)[1]
+    print (visa_status_temp_1)
+
+    if "|" in visa_status_temp_1:
+        visa_status = visa_status_temp_1.split("|",1)[1]
+        print (visa_status)
+    else:
+        visa_status = visa_status_temp_1
+    
+    if "|" in visa_status_temp_2:
+        visa_status = visa_status_temp_2.split("|",1)[1]
+        print (visa_status)
+    else:
+        visa_status = visa_status_temp_2
 
     if visa_status == "Visa required":
         image_url_final = str("https://www.iconsdb.com/icons/preview/red/visa-xxl.png")
