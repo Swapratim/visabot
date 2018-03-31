@@ -55,7 +55,7 @@ def webhook():
 #************************************************************************************#
 user_name = None
 nationality = None
-#infotoString = None
+infotoString = "0"
 def welcome():
     global user_name
     #print ("within welcome method")
