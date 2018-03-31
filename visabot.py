@@ -224,7 +224,7 @@ def userDestinationCountry(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     #print ("nationality: " + resolvedQuery)
     global nationality
-    nationality = resolvedQuery
+    nationality = str(resolvedQuery).title()
     print ("userDestinationCountry Method nationality --> " + nationality)
     res = {
         "speech": "Second Question",
@@ -252,7 +252,7 @@ def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     #print ("destinationcountry: " + resolvedQuery)
     global destinationcountry
-    destinationcountry = str(resolvedQuery)
+    destinationcountry = str(resolvedQuery).title()
     print ("destinationcountry: " + destinationcountry)
     #print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
