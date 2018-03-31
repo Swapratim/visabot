@@ -252,6 +252,7 @@ def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     #print ("destinationcountry: " + resolvedQuery)
     global destinationcountry
+    destinationcountry = "countryname"
     destinationcountry = str(resolvedQuery).title() #To capitalize the first letter
     print ("destinationcountry: " + destinationcountry)
     #print ("wikipedia_search Method nationality --> " + nationality)
