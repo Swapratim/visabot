@@ -252,7 +252,7 @@ def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     #print ("destinationcountry: " + resolvedQuery)
     global destinationcountry
-    destinationcountry = str(resolvedQuery).title()
+    destinationcountry = str(resolvedQuery).title() #To capitalize the first letter
     print ("destinationcountry: " + destinationcountry)
     #print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
@@ -271,7 +271,7 @@ def wikipedia_search(reqContext):
     data1 = str(data)
     wikidata = data1.split("{{flag|")
     for info in wikidata:
-        if destinationcountry1 in info and "{{flagicon|" not in info:
+        if destinationcountry1 in info and "}}." not in info and "{{flagicon|" not in info:
            print ("I'm in IF loop, therefore I'm already in FOR loop")
            infotoString = str(info)
            infotoStringFinal = str(info)
