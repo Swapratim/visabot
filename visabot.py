@@ -256,6 +256,7 @@ def wikipedia_search(reqContext):
     #print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
     destinationcountry1 = str(destinationcountry + jsoncountryappendage)
+    google_query = "0"
     #google_query = "https://en.wikipedia.org/w/api.php?action=parse&page=Visa_requirements_for_" + nationality + "_citizens&prop=text&format=json"
     google_query = str("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationality + "_citizens")
 ###########################################################
