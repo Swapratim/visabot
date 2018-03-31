@@ -312,6 +312,11 @@ def wikipedia_search(reqContext):
         else:
            visa_status = visa_status_primary[0]
            print ("ELSE: No exception found, so assigning same variable to visa_status_temp_1-->" + visa_status)
+           # 5th CATEGORY like, Thailand}}\n| Visa on arrival\n| e-Visa for 60 Days\n|-\n|
+           if "Visa" in visa_status_primary[0] or "*Visitor*" in visa_status_primary[0]:
+               if "}}\n|" in visa_status_primary[0]:
+                   visa_status = visa_status_primary[0].split("\n|")[1]
+                   print ("5th CATEGORY --->" + visa_status)
     else:
         visa_status = infotoStringFinal 
         print ("No change in VISA Status -->" + visa_status)
