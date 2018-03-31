@@ -317,8 +317,8 @@ def wikipedia_search(reqContext):
         print ("No change in VISA Status -->" + visa_status)
         # 4th CATEGORY like, Australia}}\n| {{yes|[[eVisitor]]}}<ref>{{Timatic|nationality=DK|destination=AU}}
         if "]]" in infotoStringFinal:
-            print ("Check 4th Category-->" + infotoStringFinal.split("]]").[0].split("[[")[1])
-            visa_status = infotoStringFinal.split("]]").[0].split("[[")[1]
+            print ("Check 4th Category-->" + infotoStringFinal.split("]]")[0].split("[[")[1])
+            visa_status = infotoStringFinal.split("]]")[0].split("[[")[1]
 
     #########################################################################
     
