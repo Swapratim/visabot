@@ -318,16 +318,10 @@ def wikipedia_search(reqContext):
            if ")" in visa_status_temp_1[1]:
                visa_status_temp_2 = visa_status_temp_1[1].split(")")
                visa_status = visa_status_temp_2[0]
-               print ("2ns category: FINAL visa_status -->" + visa_status)
+               print ("2nd CATEGORY: FINAL visa_status -->" + visa_status_temp_1[1].split(")")[0])
         else:
            visa_status = visa_status_primary[0]
            print ("ELSE: No exception found, so assigning same variable to visa_status_temp_1-->" + visa_status)
-    elif "}}" in infotoStringFinal:
-        visa_status_primary = infotoStringFinal.split("}}")
-        print ("After splitting }}, here is the 2nd part -->" + visa_status_primary)
-        if ")\n*" in visa_status_primary:
-            visa_status = visa_status_primary.split(")\n*",1)[0]
-            print ("After splitting )\n*, here is the 1st part -->" + visa_status_primary)
     else:
         visa_status = infotoStringFinal 
         print ("No change in VISA Status -->" + visa_status)
