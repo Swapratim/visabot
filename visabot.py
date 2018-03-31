@@ -195,7 +195,6 @@ def asktheuser(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def userNationality(reqContext):
-    nationality = "0"
     print (reqContext.get("result").get("action"))
     option = reqContext.get("result").get("action")
     print (option)
@@ -221,6 +220,7 @@ def userNationality(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def userDestinationCountry(reqContext):
+    nationality = ""
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     #print ("nationality: " + resolvedQuery)
     global nationality
@@ -281,28 +281,33 @@ def wikipedia_search(reqContext):
     print ("NECESSARY STRING -->")
     # Check all artifacts which are to be removed to get the VISA INFORMATION
     print (infotoStringFinal)
-    
+    #print ("Section splitlines -->" + infotoStringFinal.splitlines()
+
     if "Visa" in infotoStringFinal:
         #visa_status_primary = infotoStringFinal.split("\n| {{",1)[1]
         visa_status_primary = infotoStringFinal.split("}}<ref>")
         print ("After splitting }}<ref>, here is the 2nd part -->" + visa_status_primary[0])
         # Checking for the 1st && 3rd CATEGORY, like --> Denmark}} \n| {{no|Visa required OR Thailand}} \n| {{yes|Visa not required  Germany}}\n| {{free|{{sort|EU|Visa not required}}
         if "|{{" in visa_status_primary[0]:
-           print ("3rd CETGORY--->")
-           # Germany}}\n| {{free|{{sort|EU|Visa not required}} || sort|EU|Visa not required}} || sort|EU|Visa not required || Visa not required
-           visa_status = visa_status_primary[0].split("{{")[2].split("}}")[0].split("|")[2].split("}}")[0]
+           print ("3rd Category -> 1st clause of |{{ --> " + visa_status_primary[0])
+           # Germany}}\n| {{free|{{sort|EU|Visa not required}}
+           visa_status = visa_status_primary[0].split("{{")[2].split("}}")[0].split("|")[2]..split("}}")[0]
            print ("3rd category: FINAL visa_status -->" + visa_status)
         elif "{{" in visa_status_primary[0]:
+           visa_status_temp_1 = visa_status_primary[0].split("{{")
            print ("Splitting the {{ from the string and select LAST PART-->" + visa_status_temp_1[1])
            # Checking for the 1st CATEGORY, like --> Denmark}} \n| {{no|Visa required OR Thailand}} \n| {{yes|Visa not required
            if "|" in visa_status_temp_1[1]:
                visa_status = visa_status_primary[0].split("{{")[1].split("|")[1]
+               #visa_status = visa_status_temp_2[1]
                print ("1st category: FINAL visa_status -->" + visa_status)
         # Checking for the 2nd CATEGORY, like --> Malaysia}} (e-Visa required)\n* 
         elif "(" in visa_status_primary[0]:
+           visa_status_temp_1 = visa_status_primary[0].split("(")
            print ("Splitting the {{ from the string and select LAST PART-->" + visa_status_temp_1[1])
            if ")" in visa_status_temp_1[1]:
                visa_status = visa_status_temp_1[1].split(")")[0]
+               #visa_status = visa_status_temp_2[0]
                print ("2nd CATEGORY: FINAL visa_status -->" + visa_status_temp_1[1].split(")")[0])
         else:
            visa_status = visa_status_primary[0]
