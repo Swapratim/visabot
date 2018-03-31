@@ -282,8 +282,8 @@ def wikipedia_search(reqContext):
     if "Visa" in infotoStringFinal:
         print ("Section +1 -->" + infotoStringFinal.splitlines()
         #print ("Section -1 -->" + infotoStringFinal.split('\n| {{')[-1])
-        visa_status_primary = infotoStringFinal.split("\n| {{",1)[1] 
-        print ("After splitting \n| {{, here is the 2nd part -->" + visa_status_primary)
+        #visa_status_primary = infotoStringFinal.split("\n| {{",1)[1] 
+        #print ("After splitting \n| {{, here is the 2nd part -->" + visa_status_primary)
     elif "}} (" in infotoStringFinal:
         visa_status_primary = infotoStringFinal.split("}} (",1)[1]
         print ("After splitting }} (, here is the 2nd part -->" + visa_status_primary)
