@@ -238,9 +238,10 @@ def userDestinationCountry(reqContext):
     nationality = str(resolvedQuery).title()
 
     # Loading the Nationality list to validate nationality input:
-    for data_item in data['nationality']:
-        print (data_item)
-        if data_item == nationality:
+    for data_item in data:
+        str_nationality = str(data_item['nationality'])
+        print (str_nationality)
+        if str_nationality == nationality:
            print ("This is the CORRECT nationality--->" + nationality)
         else:
            print ("Please check spelling of your nationality and put again.")
