@@ -54,7 +54,6 @@ def webhook():
 #                                                                                    #
 #************************************************************************************#
 user_name = None
-nationality = None
 def welcome():
     global user_name
     #print ("within welcome method")
@@ -105,7 +104,7 @@ def welcome():
                  "text": speech1
                   },
                  {
-                  "text": "So, shall we start looking for your visa enquiry?",
+                  "text": "So, let's start. Shall we?",
                   "quick_replies": [
                  {
                   "content_type": "text",
@@ -195,6 +194,7 @@ def asktheuser(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def userNationality(reqContext):
+    nationality = None
     print (reqContext.get("result").get("action"))
     option = reqContext.get("result").get("action")
     print (option)
