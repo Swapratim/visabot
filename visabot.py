@@ -195,7 +195,7 @@ def asktheuser(reqContext):
 #   Asking the USER the FIRST QUESTION - What's Your Nationality?                    #
 #                                                                                    #
 #************************************************************************************#
-
+data = None
 def userNationality(reqContext):
     print (reqContext.get("result").get("action"))
     destinationcountry = str("DESTINATION")
@@ -203,6 +203,7 @@ def userNationality(reqContext):
     with open(file_path) as f:
        data = json.loads(f.read())
        print(data[0]['nationality'])
+    global data
     res = {
         "speech": "First Question",
         "displayText": "First Question",
@@ -231,7 +232,19 @@ def userDestinationCountry(reqContext):
     destinationcountry = str("DESTINATION")
     print ("Within userDestinationCountry METHOD")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
+
+    # Loading nationality input
     nationality = str(resolvedQuery).title()
+
+    # Loading the Nationality list to validate nationality input:
+    for data_item in data['nationality']:
+        print (data_item['nationality'])
+        if data_item['nationality'] == nationality:
+           print ("This is the CORRECT nationality--->" + nationality)
+        else:
+           print ("Please check spelling of your nationality and put again.")
+
+    
     print ("userDestinationCountry Method nationality --> " + nationality)
     res = {
         "speech": "Second Question",
