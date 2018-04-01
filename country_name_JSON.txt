@@ -10,8 +10,8 @@
         "num_code": "248",
         "alpha_2_code": "AX",
         "alpha_3_code": "ALA",
-        "en_short_name": "\u00c5land Islands",
-        "nationality": "\u00c5land Island"
+        "en_short_name": "Aland Islands",
+        "nationality": "Aland Island"
     },
     {
         "num_code": "8",
@@ -185,7 +185,7 @@
         "num_code": "68",
         "alpha_2_code": "BO",
         "alpha_3_code": "BOL",
-        "en_short_name": "Bolivia (Plurinational State of)",
+        "en_short_name": "Bolivia",
         "nationality": "Bolivian"
     },
     {
@@ -207,7 +207,7 @@
         "alpha_2_code": "BW",
         "alpha_3_code": "BWA",
         "en_short_name": "Botswana",
-        "nationality": "Motswana, Botswanan"
+        "nationality": "Botswanan"
     },
     {
         "num_code": "74",
@@ -249,7 +249,7 @@
         "alpha_2_code": "BF",
         "alpha_3_code": "BFA",
         "en_short_name": "Burkina Faso",
-        "nationality": "Burkinab\u00e9"
+        "nationality": "Burkinab Faso"
     },
     {
         "num_code": "108",
@@ -332,7 +332,7 @@
         "num_code": "166",
         "alpha_2_code": "CC",
         "alpha_3_code": "CCK",
-        "en_short_name": "Cocos (Keeling) Islands",
+        "en_short_name": "Cocos Islands",
         "nationality": "Cocos Island"
     },
     {
@@ -360,7 +360,7 @@
         "num_code": "180",
         "alpha_2_code": "CD",
         "alpha_3_code": "COD",
-        "en_short_name": "Congo (Democratic Republic of the)",
+        "en_short_name": "Congo",
         "nationality": "Congolese"
     },
     {
@@ -381,7 +381,7 @@
         "num_code": "384",
         "alpha_2_code": "CI",
         "alpha_3_code": "CIV",
-        "en_short_name": "C\u00f4te d'Ivoire",
+        "en_short_name": "Cote Ivoire",
         "nationality": "Ivorian"
     },
     {
@@ -397,13 +397,6 @@
         "alpha_3_code": "CUB",
         "en_short_name": "Cuba",
         "nationality": "Cuban"
-    },
-    {
-        "num_code": "531",
-        "alpha_2_code": "CW",
-        "alpha_3_code": "CUW",
-        "en_short_name": "Cura\u00e7ao",
-        "nationality": "Cura\u00e7aoan"
     },
     {
         "num_code": "196",
@@ -822,14 +815,14 @@
         "num_code": "408",
         "alpha_2_code": "KP",
         "alpha_3_code": "PRK",
-        "en_short_name": "Korea (Democratic People's Republic of)",
+        "en_short_name": "North Korea",
         "nationality": "North Korean"
     },
     {
         "num_code": "410",
         "alpha_2_code": "KR",
         "alpha_3_code": "KOR",
-        "en_short_name": "Korea (Republic of)",
+        "en_short_name": "South Korea",
         "nationality": "South Korean"
     },
     {
@@ -920,7 +913,7 @@
         "num_code": "807",
         "alpha_2_code": "MK",
         "alpha_3_code": "MKD",
-        "en_short_name": "Macedonia (the former Yugoslav Republic of)",
+        "en_short_name": "Macedonia",
         "nationality": "Macedonian"
     },
     {
@@ -1011,14 +1004,14 @@
         "num_code": "583",
         "alpha_2_code": "FM",
         "alpha_3_code": "FSM",
-        "en_short_name": "Micronesia (Federated States of)",
+        "en_short_name": "Micronesia",
         "nationality": "Micronesian"
     },
     {
         "num_code": "498",
         "alpha_2_code": "MD",
         "alpha_3_code": "MDA",
-        "en_short_name": "Moldova (Republic of)",
+        "en_short_name": "Moldova",
         "nationality": "Moldovan"
     },
     {
@@ -1026,7 +1019,7 @@
         "alpha_2_code": "MC",
         "alpha_3_code": "MCO",
         "en_short_name": "Monaco",
-        "nationality": "Mon\u00e9gasque, Monacan"
+        "nationality": "Monacan"
     },
     {
         "num_code": "496",
@@ -1110,7 +1103,7 @@
         "alpha_2_code": "NZ",
         "alpha_3_code": "NZL",
         "en_short_name": "New Zealand",
-        "nationality": "New Zealand, NZ"
+        "nationality": "New Zealand"
     },
     {
         "num_code": "558",
@@ -1263,8 +1256,8 @@
         "num_code": "638",
         "alpha_2_code": "RE",
         "alpha_3_code": "REU",
-        "en_short_name": "R\u00e9union",
-        "nationality": "R\u00e9unionese, R\u00e9unionnais"
+        "en_short_name": "Reunion",
+        "nationality": "Reunionese"
     },
     {
         "num_code": "642",
@@ -1355,14 +1348,14 @@
         "alpha_2_code": "ST",
         "alpha_3_code": "STP",
         "en_short_name": "Sao Tome and Principe",
-        "nationality": "S\u00e3o Tom\u00e9an"
+        "nationality": "Sao Tomean"
     },
     {
         "num_code": "682",
         "alpha_2_code": "SA",
         "alpha_3_code": "SAU",
         "en_short_name": "Saudi Arabia",
-        "nationality": "Saudi, Saudi Arabian"
+        "nationality": "Saudi Arabian"
     },
     {
         "num_code": "686",
