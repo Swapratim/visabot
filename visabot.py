@@ -9,7 +9,8 @@ import urllib.request, urllib.parse, urllib.error
 import json
 import os
 import sys
-import urlparse
+#import urlparse
+from urllib.parse import urljoin
 import emoji
 
 from flask import Flask
