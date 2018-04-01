@@ -245,6 +245,9 @@ def userDestinationCountry(reqContext):
         if str_nationality == nationality:
            correct_nationality = nationality
            print ("This is the CORRECT nationality--->" + nationality)
+        elif nationality in str_nationality:
+           nationality = str_nationality
+           print ("Whole Nationality name-->" + nationality)
         
     if not correct_nationality:
         print ("This is not a valid citizenship. Please enter a valid citizenship")
@@ -279,6 +282,18 @@ def wikipedia_search(reqContext):
     #To capitalize the first letter
     destinationcountry = str(resolvedQuery_wiki).title() 
     print ("destinationcountry: " + destinationcountry)
+
+    # Loading the Nationality list to validate nationality input:
+    for data_item in data:
+        str_destinationcountry = str(data_item['en_short_name'])
+        if str_destinationcountry == destinationcountry:
+           correct_str_destinationcountry = destinationcountry
+           print ("This is the CORRECT destinationcountry--->" + nationality)
+        elif destinationcountry in str_destinationcountry:
+           destinationcountry = str_destinationcountry
+           print ("Whole country name-->" + destinationcountry)
+
+
     print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
     destinationcountry1 = str(destinationcountry + jsoncountryappendage)
