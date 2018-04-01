@@ -305,9 +305,9 @@ def wikipedia_search(reqContext):
     print("google_query::::"+google_query)
     result = urllib.request.urlopen(google_query).read()
     #print (result)
-    data = json.loads(result)
+    data1 = json.loads(result)
     infotoStringFinal = "0"
-    data1 = str(data)
+    data1 = str(data1)
     wikidata = data1.split("{{flag|")
     for info in wikidata:
         if destinationcountry1 in info and "}}." not in info and "{{flagicon|" not in info:
