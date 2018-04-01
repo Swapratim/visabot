@@ -239,8 +239,8 @@ def userDestinationCountry(reqContext):
 
     # Loading the Nationality list to validate nationality input:
     for data_item in data['nationality']:
-        print (data_item['nationality'])
-        if data_item['nationality'] == nationality:
+        print (data_item)
+        if data_item == nationality:
            print ("This is the CORRECT nationality--->" + nationality)
         else:
            print ("Please check spelling of your nationality and put again.")
