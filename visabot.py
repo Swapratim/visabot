@@ -199,11 +199,10 @@ def asktheuser(reqContext):
 def userNationality(reqContext):
     print (reqContext.get("result").get("action"))
     destinationcountry = str("DESTINATION")
-    path = 'country_name_JSON.txt'
-    country_file = open(path,'r')
-    country_file.read()
-    data = str(json.loads(country_file))
-    print (data)
+    file_path = '/app/country_name_JSON.txt'
+    with open(file_path) as f:
+       data = json.loads(f.read())
+       print(data[0]['nationality'])
     res = {
         "speech": "First Question",
         "displayText": "First Question",
