@@ -197,7 +197,6 @@ def asktheuser(reqContext):
 
 def userNationality(reqContext):
     print (reqContext.get("result").get("action"))
-    option = reqContext.get("result").get("action")
     res = {
         "speech": "First Question",
         "displayText": "First Question",
@@ -224,9 +223,9 @@ def userDestinationCountry(reqContext):
     global destinationcountry
     nationality = ""
     destinationcountry = ""
-    nationality = str(resolvedQuery).title()
     print ("Within userDestinationCountry METHOD")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
+    nationality = str(resolvedQuery).title()
     print ("userDestinationCountry Method nationality --> " + nationality)
     res = {
         "speech": "Second Question",
@@ -251,11 +250,11 @@ def userDestinationCountry(reqContext):
 #************************************************************************************#
 
 def wikipedia_search(reqContext):
-    resolvedQuery = reqContext.get("result").get("resolvedQuery")
+    resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
     #print ("destinationcountry: " + resolvedQuery)
     #destinationcountry = "countryname"
     #To capitalize the first letter
-    destinationcountry = str(resolvedQuery).title() 
+    destinationcountry = str(resolvedQuery_wiki).title() 
     print ("destinationcountry: " + destinationcountry)
     print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
