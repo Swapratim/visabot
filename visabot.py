@@ -199,7 +199,7 @@ data = None
 def userNationality(reqContext):
     global data
     print (reqContext.get("result").get("action"))
-    destinationcountry = str("DESTINATION")
+    #destinationcountry = str("DESTINATION")
     file_path = '/app/country_name_JSON.txt'
     with open(file_path) as f:
        data = json.loads(f.read())
@@ -226,6 +226,7 @@ def userNationality(reqContext):
 #   Asking the USER the SECOND QUESTION - What's Your Destination Country?           #
 #                                                                                    #
 #************************************************************************************#
+destinationcountry = ""
 def userDestinationCountry(reqContext):
     global nationality
     global destinationcountry
@@ -251,6 +252,7 @@ def userDestinationCountry(reqContext):
         
     if not correct_nationality:
         print ("This is not a valid citizenship. Please enter a valid citizenship")
+        
 
     print ("userDestinationCountry Method nationality --> " + nationality)
     res = {
@@ -277,8 +279,7 @@ def userDestinationCountry(reqContext):
 
 def wikipedia_search(reqContext):
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
-    #print ("destinationcountry: " + resolvedQuery)
-    #destinationcountry = "countryname"
+    
     #To capitalize the first letter
     destinationcountry = str(resolvedQuery_wiki).title() 
     print ("destinationcountry: " + destinationcountry)
@@ -297,9 +298,12 @@ def wikipedia_search(reqContext):
     print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
     destinationcountry1 = str(destinationcountry + jsoncountryappendage)
-    google_query = "0"
-    google_query = str("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationality + "_citizens")
+    if nationality:
+       google_query = str("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationality + "_citizens")
+    else:   
+       print ("Nationality value NULL, hence NO API Calling...!!!")
     ###########################################################
+
     if google_query is None:
         return {}
     print("google_query::::"+google_query)
@@ -307,8 +311,8 @@ def wikipedia_search(reqContext):
     #print (result)
     data1 = json.loads(result)
     infotoStringFinal = "0"
-    data1 = str(data1)
-    wikidata = data1.split("{{flag|")
+    #data1 = str(data1)
+    wikidata = str(data1).split("{{flag|")
     for info in wikidata:
         if destinationcountry1 in info and "}}." not in info and "{{flagicon|" not in info:
            print ("I'm in IF loop, therefore I'm already in FOR loop")
