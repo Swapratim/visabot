@@ -36,13 +36,13 @@ def webhook():
     print ("webhook is been hit ONCE ONLY")
     if reqContext.get("result").get("action") == "input.welcome":
        return welcome()
-    elif reqContext.get("result").get("action") == "input.asktheuser":
+    elif reqContext.get("result").get("action") == "asktheuser":
        return asktheuser(reqContext)
-    elif reqContext.get("result").get("action") == "input.nationality":
+    elif reqContext.get("result").get("action") == "nationality":
        return userNationality(reqContext)
-    elif reqContext.get("result").get("action") == "input.destinationcountry":
+    elif reqContext.get("result").get("action") == "destinationcountry":
        return userDestinationCountry(reqContext)
-    elif reqContext.get("result").get("action") == "input.wikipediasearch":
+    elif reqContext.get("result").get("action") == "wikipediasearch":
        return wikipedia_search(reqContext)
     else:
        print("Good Bye")
@@ -253,7 +253,8 @@ def wikipedia_search(reqContext):
     #print ("destinationcountry: " + resolvedQuery)
     global destinationcountry
     destinationcountry = "countryname"
-    destinationcountry = str(resolvedQuery).title() #To capitalize the first letter
+    #To capitalize the first letter
+    destinationcountry = str(resolvedQuery).title() 
     print ("destinationcountry: " + destinationcountry)
     #print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
