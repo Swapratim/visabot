@@ -246,7 +246,7 @@ def userDestinationCountry(reqContext):
 #   This method is to get the Wikipedia Information via Google API                   #
 #                                                                                    #
 #************************************************************************************#
-
+destinationcountry = ""
 def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     #print ("destinationcountry: " + resolvedQuery)
@@ -255,7 +255,7 @@ def wikipedia_search(reqContext):
     #To capitalize the first letter
     destinationcountry = str(resolvedQuery).title() 
     print ("destinationcountry: " + destinationcountry)
-    #print ("wikipedia_search Method nationality --> " + nationality)
+    print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
     destinationcountry1 = str(destinationcountry + jsoncountryappendage)
     google_query = "0"
