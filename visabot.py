@@ -222,8 +222,9 @@ def userNationality(reqContext):
 def userDestinationCountry(reqContext):
     global nationality
     global destinationcountry
-    nationality = str(resolvedQuery).title()
+    nationality = ""
     destinationcountry = ""
+    nationality = str(resolvedQuery).title()
     print ("Within userDestinationCountry METHOD")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     print ("userDestinationCountry Method nationality --> " + nationality)
