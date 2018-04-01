@@ -246,9 +246,6 @@ def userDestinationCountry(reqContext):
         if str_nationality == nationality:
            correct_nationality = nationality
            print ("This is the CORRECT nationality--->" + nationality)
-        elif nationality in str_nationality:
-           nationality = str_nationality
-           print ("Whole Nationality name-->" + nationality)
         
     if not correct_nationality:
         print ("This is not a valid citizenship. Please enter a valid citizenship")
@@ -289,11 +286,8 @@ def wikipedia_search(reqContext):
         str_destinationcountry = str(data_item['en_short_name'])
         if str_destinationcountry == destinationcountry:
            correct_str_destinationcountry = destinationcountry
-           print ("This is the CORRECT destinationcountry--->" + nationality)
-        elif destinationcountry in str_destinationcountry:
-           destinationcountry = str_destinationcountry
-           print ("Whole country name-->" + destinationcountry)
-
+           print ("This is the CORRECT destinationcountry--->" + destinationcountry)
+        
 
     print ("wikipedia_search Method nationality --> " + nationality)
     jsoncountryappendage = "}}"
