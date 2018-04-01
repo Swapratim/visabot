@@ -194,8 +194,9 @@ def asktheuser(reqContext):
 #   Asking the USER the FIRST QUESTION - What's Your Nationality?                    #
 #                                                                                    #
 #************************************************************************************#
+nationality = ""
 def userNationality(reqContext):
-    global nationality = str(reqContext.get("result").get("action"))
+    global nationality
     print (reqContext.get("result").get("action"))
     option = reqContext.get("result").get("action")
     res = {
