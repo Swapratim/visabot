@@ -230,13 +230,16 @@ def userNationality(reqContext):
 
 def userDestinationCountry(reqContext):
     global nationality
-    nationality = str("NATIONALITY")
+    nationality = ""
     correct_nationality = ""
     print ("Within userDestinationCountry METHOD")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
 
     # Loading nationality input
-    nationality = str(resolvedQuery).title()
+    if not nationality:
+       nationality = str(resolvedQuery).title()
+    else:
+       print ("No value assignment-->" + nationality)
 
     # Loading the Nationality list to validate nationality input:
     for data_item in data:
