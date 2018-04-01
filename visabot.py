@@ -28,11 +28,12 @@ ACCESS_TOKEN = "EAADSsDjm6gIBANlzUbBmbFLGpNvZBhnZCEw71BSMvwQZCK8n9KjaY5Pf8P5ZAZB
 #    All Webhook requests lands within the method --webhook                          #
 #                                                                                    #
 #************************************************************************************#
+reqContext = None
 # Webhook requests are coming to this method
 @context.route('/webhook', methods=['POST'])
 def webhook():
     reqContext = request.get_json(silent=True, force=True)
-    print(json.dumps(reqContext, indent=4))
+    #print(json.dumps(reqContext, indent=4))
     print(reqContext.get("result").get("action"))
     print ("webhook is been hit ONCE ONLY")
     if reqContext.get("result").get("action") == "input.welcome":
@@ -199,7 +200,6 @@ data = None
 def userNationality(reqContext):
     global data
     print (reqContext.get("result").get("action"))
-    #destinationcountry = str("DESTINATION")
     file_path = '/app/country_name_JSON.txt'
     with open(file_path) as f:
        data = json.loads(f.read())
