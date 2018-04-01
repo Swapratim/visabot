@@ -196,7 +196,6 @@ def asktheuser(reqContext):
 #************************************************************************************#
 
 def userNationality(reqContext):
-    global nationality
     print (reqContext.get("result").get("action"))
     option = reqContext.get("result").get("action")
     res = {
@@ -221,6 +220,7 @@ def userNationality(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def userDestinationCountry(reqContext):
+    #global nationality
     print ("Within userDestinationCountry METHOD")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     nationality = str(resolvedQuery).title()
@@ -250,7 +250,7 @@ def userDestinationCountry(reqContext):
 def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     #print ("destinationcountry: " + resolvedQuery)
-    global destinationcountry
+    #global destinationcountry
     destinationcountry = "countryname"
     #To capitalize the first letter
     destinationcountry = str(resolvedQuery).title() 
