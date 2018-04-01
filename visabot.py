@@ -194,10 +194,9 @@ def asktheuser(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def userNationality(reqContext):
-    nationality = None
+    nationality = "countryname"
     print (reqContext.get("result").get("action"))
     option = reqContext.get("result").get("action")
-    print (option)
     res = {
         "speech": "First Question",
         "displayText": "First Question",
@@ -220,9 +219,9 @@ def userNationality(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def userDestinationCountry(reqContext):
+    print ("Within userDestinationCountry METHOD")
     global nationality
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
-    #print ("nationality: " + resolvedQuery)
     nationality = str(resolvedQuery).title()
     print ("userDestinationCountry Method nationality --> " + nationality)
     res = {
