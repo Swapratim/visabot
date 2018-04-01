@@ -194,7 +194,7 @@ def asktheuser(reqContext):
 #   Asking the USER the FIRST QUESTION - What's Your Nationality?                    #
 #                                                                                    #
 #************************************************************************************#
-nationality = ""
+
 def userNationality(reqContext):
     global nationality
     print (reqContext.get("result").get("action"))
@@ -246,7 +246,7 @@ def userDestinationCountry(reqContext):
 #   This method is to get the Wikipedia Information via Google API                   #
 #                                                                                    #
 #************************************************************************************#
-destinationcountry = ""
+
 def wikipedia_search(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     #print ("destinationcountry: " + resolvedQuery)
