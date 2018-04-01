@@ -231,6 +231,7 @@ def userDestinationCountry(reqContext):
     global destinationcountry
     nationality = str("NATIONALITY")
     destinationcountry = str("DESTINATION")
+    correct_nationality = ""
     print ("Within userDestinationCountry METHOD")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
 
@@ -240,13 +241,14 @@ def userDestinationCountry(reqContext):
     # Loading the Nationality list to validate nationality input:
     for data_item in data:
         str_nationality = str(data_item['nationality'])
-        print (str_nationality)
+        #print (str_nationality)
         if str_nationality == nationality:
+           correct_nationality = nationality
            print ("This is the CORRECT nationality--->" + nationality)
-        else:
-           print ("Please check spelling of your nationality and put again.")
+        
+    if not correct_nationality:
+        print ("This is not a valid citizenship. Please enter a valid citizenship")
 
-    
     print ("userDestinationCountry Method nationality --> " + nationality)
     res = {
         "speech": "Second Question",
