@@ -32,6 +32,7 @@ reqContext = None
 # Webhook requests are coming to this method
 @context.route('/webhook', methods=['POST'])
 def webhook():
+    global reqContext
     reqContext = request.get_json(silent=True, force=True)
     #print(json.dumps(reqContext, indent=4))
     print(reqContext.get("result").get("action"))
