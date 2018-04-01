@@ -195,8 +195,7 @@ def asktheuser(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def userNationality(reqContext):
-    nationality = str(reqContext.get("result").get("action"))
-    global nationality
+    global nationality = str(reqContext.get("result").get("action"))
     print (reqContext.get("result").get("action"))
     option = reqContext.get("result").get("action")
     res = {
