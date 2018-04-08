@@ -61,6 +61,8 @@ def webhook():
 user_name = None
 global nationality
 global destinationcountry
+nationality = ""
+destinationcountry = ""
 def welcome():
     global user_name
     #print ("within welcome method")
@@ -251,7 +253,7 @@ def userDestinationCountry(reqContext):
     correct_nationality = ''
     print ("Within userDestinationCountry METHOD")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
-
+    
     # Loading nationality input
     if not nationality:
        nationality = str(resolvedQuery).title()
