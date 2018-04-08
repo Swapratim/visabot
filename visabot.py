@@ -255,9 +255,10 @@ def userDestinationCountry(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     
     # Loading nationality input
-    nationality = str(resolvedQuery).title()
     global nationality
-
+    nationality = ""
+    nationality = str(resolvedQuery).title()
+    
     # if not nationality:
        # nationality = str(resolvedQuery).title()
     # else:
@@ -321,8 +322,10 @@ def wikipedia_search(reqContext):
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
     global nationalityNEW
     #To capitalize the first letter
-    destinationcountry = str(resolvedQuery_wiki).title() 
     global destinationcountry
+    destinationcountry = ""
+    destinationcountry = str(resolvedQuery_wiki).title() 
+    
     print ("destinationcountry: " + destinationcountry)
 
     # Loading Nationality List into Array to validate against the user nationality input
