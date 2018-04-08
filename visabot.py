@@ -202,8 +202,8 @@ def userNationality(reqContext):
     #global data
     print (reqContext.get("result").get("action"))
     res = {
-        "speech": "First Question",
-        "displayText": "First Question",
+        "speech": "1. What is your nationality?",
+        "displayText": "1. What is your nationality?",
         "data" : {
         "facebook" : [
               {
@@ -252,7 +252,7 @@ def userDestinationCountry(reqContext):
     if not nationality:
        nationality = str(resolvedQuery).title()
     else:
-       print ("No value assignment-->" + nationality)
+       print ("No value assignment to nationality-->")
 
     # Loading Nationality List into Array to validate against the user nationality input
     file_path = '/app/country_name_JSON.txt'
@@ -279,7 +279,7 @@ def userDestinationCountry(reqContext):
     print ("userDestinationCountry Method nationality --> " + nationality)
     res = {
         "speech": "Second Question",
-        "displayText": "Second Question",
+        "displayText": speech,
         "data" : {
         "facebook" : [
               {
@@ -427,7 +427,7 @@ def wikipedia_search(reqContext):
 ############################################################
     res = {
           "speech": "Visa Status",
-          "displayText": "Visa Status",
+          "displayText": visa_status,
            "data" : {
               "facebook" : [
                   {
