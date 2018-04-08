@@ -305,7 +305,7 @@ def userDestinationCountry(reqContext):
 
 def wikipedia_search(reqContext):
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
-    
+    global nationalityNEW
     #To capitalize the first letter
     destinationcountry = str(resolvedQuery_wiki).title() 
     print ("destinationcountry: " + destinationcountry)
@@ -319,12 +319,12 @@ def wikipedia_search(reqContext):
         
 
     print ("wikipedia_search Method nationality --> " + nationality)
+    nationalityNEW = nationality
     jsoncountryappendage = "}}"
     destinationcountry1 = str(destinationcountry + jsoncountryappendage)
-    if nationality:
-       google_query = str("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationality + "_citizens")
-       global nationality
-       nationality = ''
+    if nationalityNEW:
+       google_query = str("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationalityNEW + "_citizens")
+       nationalityNEW = ''
     else:   
        print ("Nationality value NULL, hence NO API Calling...!!!")
     ###########################################################
