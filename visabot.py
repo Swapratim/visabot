@@ -271,6 +271,7 @@ def userDestinationCountry(reqContext):
     # Loading the Nationality list to validate nationality input:
     for data_item in data:
         str_nationality = str(data_item['nationality'])
+        break
         #print (str_nationality)
         if str_nationality == nationality:
            correct_nationality = nationality
@@ -308,6 +309,9 @@ def userDestinationCountry(reqContext):
 #************************************************************************************#
 
 def wikipedia_search(reqContext):
+    if nationality == "False":
+       break
+       exit()
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
     global nationalityNEW
     #To capitalize the first letter
@@ -323,6 +327,7 @@ def wikipedia_search(reqContext):
     # Loading the Nationality list to validate nationality input:
     for data_item in data:
         str_destinationcountry = str(data_item['en_short_name'])
+        break
         if str_destinationcountry == destinationcountry:
            correct_str_destinationcountry = destinationcountry
            print ("This is the CORRECT destinationcountry--->" + destinationcountry)
@@ -355,6 +360,7 @@ def wikipedia_search(reqContext):
            infotoString = str(info)
            infotoStringFinal = str(info)
            print (infotoString)
+           break
         else:
            continue
     print ("NECESSARY STRING -->")
