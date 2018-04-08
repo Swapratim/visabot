@@ -271,18 +271,21 @@ def userDestinationCountry(reqContext):
     # Loading the Nationality list to validate nationality input:
     for data_item in data:
         str_nationality = str(data_item['nationality'])
-        break
         #print (str_nationality)
         if str_nationality == nationality:
            correct_nationality = nationality
            print ("This is the CORRECT nationality--->" + nationality)
+           break
         
-    if not correct_nationality:
-        print ("This is not a valid citizenship. Please enter a valid citizenship")
-        speech = "This is not a valid citizenship. Please enter a valid citizenship"
-        userNationalityRecheck()
-    else:
+        
+    if correct_nationality:
+        print ("2. Which country do you want to travel?")
         speech = "2. Which country do you want to travel?"
+        
+    else:
+        speech = "This is not a valid citizenship. Please enter a valid citizenship"
+        print ("This is not a valid citizenship. Please enter a valid citizenship")
+        userNationalityRecheck()
         
 
     print ("userDestinationCountry Method nationality --> " + nationality)
