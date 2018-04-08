@@ -306,6 +306,12 @@ def wikipedia_search(reqContext):
     destinationcountry = str(resolvedQuery_wiki).title() 
     print ("destinationcountry: " + destinationcountry)
 
+    # Loading Nationality List into Array to validate against the user nationality input
+    file_path = '/app/country_name_JSON.txt'
+    with open(file_path) as f:
+       data = json.loads(f.read())
+       print("First Element from Nationality_List -->" + data[0]['nationality'])
+
     # Loading the Nationality list to validate nationality input:
     for data_item in data:
         str_destinationcountry = str(data_item['en_short_name'])
