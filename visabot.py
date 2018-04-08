@@ -35,7 +35,7 @@ def webhook():
     global reqContext
     reqContext = request.get_json(silent=True, force=True)
     #print(json.dumps(reqContext, indent=4))
-    print(reqContext.get("result").get("action"))
+    print("webhook---->" + reqContext.get("result").get("action"))
     print ("webhook is been hit ONCE ONLY")
     if reqContext.get("result").get("action") == "input.welcome":
        return welcome()
@@ -46,8 +46,10 @@ def webhook():
     elif reqContext.get("result").get("action") == "nationalityrecheck":
        return userNationalityRecheck()
     elif reqContext.get("result").get("action") == "destinationcountry":
+       print ("User Input-->Citizenship -->" + reqContext.get("result").get("resolvedQuery"))
        return userDestinationCountry(reqContext)
     elif reqContext.get("result").get("action") == "wikipediasearch":
+       print ("User Input-->Country Name -->" + reqContext.get("result").get("resolvedQuery"))
        return wikipedia_search(reqContext)
     else:
        print("Good Bye")
@@ -225,15 +227,16 @@ def userNationality(reqContext):
 
 
 def userNationalityRecheck():
+    print ("******userNationalityRecheck********")
     nationality = ""
     destinationcountry = ""
     res = {
-        "speech": "First Question",
-        "displayText": "1. What is your nationality",
+        "speech": "2nd Question",
+        "displayText": "2. Which country do you want to travel?",
         "data" : {
         "facebook" : [
               {
-                 "text": "1. What is your nationality?"
+                 "text": "2. Which country do you want to travel?"
               }
              ]
            } 
@@ -314,9 +317,9 @@ def userDestinationCountry(reqContext):
 #************************************************************************************#
 
 def wikipedia_search(reqContext):
-    if nationality == "False":
-        print ("***Nationality is False, hence exiting!!!")
-        exit()
+    # if nationality == "False":
+        # print ("***Nationality is False, hence exiting!!!")
+        # exit()
     
     print ("***Nationality has the latest input-->" + nationality)
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
