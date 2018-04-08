@@ -313,7 +313,11 @@ def userDestinationCountry(reqContext):
 
 def wikipedia_search(reqContext):
     if nationality == "False":
-       exit()
+        print ("***Nationality is False, hence exiting!!!")
+        exit()
+    else:
+        print ("***Nationality has the latest input-->" + nationality)
+        continue
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
     global nationalityNEW
     #To capitalize the first letter
