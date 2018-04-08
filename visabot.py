@@ -222,6 +222,29 @@ def userNationality(reqContext):
     r.headers['Content-Type'] = 'application/json'
     return r
 
+
+def userNationalityRecheck():
+    file_path = '/app/country_name_JSON.txt'
+    with open(file_path) as f:
+       data = json.loads(f.read())
+       print(data[0]['nationality'])
+    
+    res = {
+        "speech": "First Question",
+        "displayText": "1. What is your nationality",
+        "data" : {
+        "facebook" : [
+              {
+                 "text": "1. What is your nationality?"
+              }
+             ]
+           } 
+         };
+    res = json.dumps(res, indent=4)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
+
 #************************************************************************************#
 #                                                                                    #
 #   Asking the USER the SECOND QUESTION - What's Your Destination Country?           #
@@ -230,8 +253,8 @@ def userNationality(reqContext):
 
 def userDestinationCountry(reqContext):
     global nationality
-    nationality = ""
-    correct_nationality = ""
+    nationality = ''
+    correct_nationality = ''
     print ("Within userDestinationCountry METHOD")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
 
@@ -251,6 +274,10 @@ def userDestinationCountry(reqContext):
         
     if not correct_nationality:
         print ("This is not a valid citizenship. Please enter a valid citizenship")
+        speech = "This is not a valid citizenship. Please enter a valid citizenship"
+        userNationalityRecheck()
+    else:
+        speech = "2. Which country do you want to travel?"
         
 
     print ("userDestinationCountry Method nationality --> " + nationality)
@@ -260,7 +287,7 @@ def userDestinationCountry(reqContext):
         "data" : {
         "facebook" : [
               {
-                 "text": "2. Which country do you want to travel?"
+                 "text": speech
               }
              ]
            } 
@@ -296,6 +323,8 @@ def wikipedia_search(reqContext):
     destinationcountry1 = str(destinationcountry + jsoncountryappendage)
     if nationality:
        google_query = str("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationality + "_citizens")
+       global nationality
+       nationality = ''
     else:   
        print ("Nationality value NULL, hence NO API Calling...!!!")
     ###########################################################
@@ -415,6 +444,9 @@ def wikipedia_search(reqContext):
                                         "type": "web_url",
                                         "url": "https://en.wikipedia.org/wiki/Visa_requirements_for_" + nationality + "_citizens",
                                         "title": "More info"
+                                    },
+                                    {
+                                        "type": "element_share"
                                     }]
                                  } 
                            ]
