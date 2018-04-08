@@ -461,8 +461,8 @@ def wikipedia_search(reqContext):
                   "quick_replies": [
                  {
                   "content_type": "text",
-                  "title": "Yes",
-                  "payload": "Yes",
+                  "title": "Start Again",
+                  "payload": "Start Again",
                   },
                  {
                   "content_type": "text",
