@@ -199,13 +199,8 @@ def asktheuser(reqContext):
 #************************************************************************************#
 data = None
 def userNationality(reqContext):
-    global data
+    #global data
     print (reqContext.get("result").get("action"))
-    file_path = '/app/country_name_JSON.txt'
-    with open(file_path) as f:
-       data = json.loads(f.read())
-       print(data[0]['nationality'])
-    
     res = {
         "speech": "First Question",
         "displayText": "First Question",
@@ -224,11 +219,6 @@ def userNationality(reqContext):
 
 
 def userNationalityRecheck():
-    file_path = '/app/country_name_JSON.txt'
-    with open(file_path) as f:
-       data = json.loads(f.read())
-       print(data[0]['nationality'])
-    
     res = {
         "speech": "First Question",
         "displayText": "1. What is your nationality",
@@ -263,6 +253,12 @@ def userDestinationCountry(reqContext):
        nationality = str(resolvedQuery).title()
     else:
        print ("No value assignment-->" + nationality)
+
+    # Loading Nationality List into Array to validate against the user nationality input
+    file_path = '/app/country_name_JSON.txt'
+    with open(file_path) as f:
+       data = json.loads(f.read())
+       print("First Element from Nationality_List -->" + data[0]['nationality'])
 
     # Loading the Nationality list to validate nationality input:
     for data_item in data:
