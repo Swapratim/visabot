@@ -59,8 +59,8 @@ def webhook():
 #                                                                                    #
 #************************************************************************************#
 user_name = None
-global nationality
-global destinationcountry
+#global nationality
+#global destinationcountry
 nationality = "False"
 destinationcountry = "False"
 def welcome():
@@ -256,6 +256,7 @@ def userDestinationCountry(reqContext):
     
     # Loading nationality input
     nationality = str(resolvedQuery).title()
+    global nationality
 
     # if not nationality:
        # nationality = str(resolvedQuery).title()
@@ -321,6 +322,7 @@ def wikipedia_search(reqContext):
     global nationalityNEW
     #To capitalize the first letter
     destinationcountry = str(resolvedQuery_wiki).title() 
+    global destinationcountry
     print ("destinationcountry: " + destinationcountry)
 
     # Loading Nationality List into Array to validate against the user nationality input
