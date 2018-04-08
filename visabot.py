@@ -255,10 +255,12 @@ def userDestinationCountry(reqContext):
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     
     # Loading nationality input
-    if "False" in nationality:
-       nationality = str(resolvedQuery).title()
-    else:
-       print ("No value assignment to nationality-->")
+    nationality = str(resolvedQuery).title()
+
+    # if not nationality:
+       # nationality = str(resolvedQuery).title()
+    # else:
+       # print ("No value assignment to nationality-->")
 
     # Loading Nationality List into Array to validate against the user nationality input
     file_path = '/app/country_name_JSON.txt'
