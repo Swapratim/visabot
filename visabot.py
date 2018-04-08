@@ -59,7 +59,8 @@ def webhook():
 #                                                                                    #
 #************************************************************************************#
 user_name = None
-
+global nationality = ""
+global destinationcountry = ""
 def welcome():
     global user_name
     #print ("within welcome method")
@@ -201,7 +202,8 @@ def asktheuser(reqContext):
 #************************************************************************************#
 data = None
 def userNationality(reqContext):
-    #global data
+    nationality = ""
+    destinationcountry = ""
     print (reqContext.get("result").get("action"))
     res = {
         "speech": "1. What is your nationality?",
@@ -221,6 +223,8 @@ def userNationality(reqContext):
 
 
 def userNationalityRecheck():
+    nationality = ""
+    destinationcountry = ""
     res = {
         "speech": "First Question",
         "displayText": "1. What is your nationality",
@@ -244,8 +248,6 @@ def userNationalityRecheck():
 #************************************************************************************#
 
 def userDestinationCountry(reqContext):
-    global nationality
-    nationality = ''
     correct_nationality = ''
     print ("Within userDestinationCountry METHOD")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
