@@ -61,8 +61,8 @@ def webhook():
 user_name = None
 global nationality
 global destinationcountry
-nationality = ""
-destinationcountry = ""
+nationality = "False"
+destinationcountry = "False"
 def welcome():
     global user_name
     #print ("within welcome method")
@@ -204,8 +204,8 @@ def asktheuser(reqContext):
 #************************************************************************************#
 data = None
 def userNationality(reqContext):
-    nationality = ""
-    destinationcountry = ""
+    nationality = "False"
+    destinationcountry = "False"
     print (reqContext.get("result").get("action"))
     res = {
         "speech": "1. What is your nationality?",
@@ -250,12 +250,12 @@ def userNationalityRecheck():
 #************************************************************************************#
 
 def userDestinationCountry(reqContext):
-    correct_nationality = ''
+    correct_nationality = ""
     print ("Within userDestinationCountry METHOD")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
     
     # Loading nationality input
-    if not nationality:
+    if "False" in nationality:
        nationality = str(resolvedQuery).title()
     else:
        print ("No value assignment to nationality-->")
