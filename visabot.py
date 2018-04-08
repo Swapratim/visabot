@@ -310,7 +310,6 @@ def userDestinationCountry(reqContext):
 
 def wikipedia_search(reqContext):
     if nationality == "False":
-       break
        exit()
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
     global nationalityNEW
