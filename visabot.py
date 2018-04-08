@@ -44,7 +44,7 @@ def webhook():
     elif reqContext.get("result").get("action") == "nationality":
        return userNationality(reqContext)
     elif reqContext.get("result").get("action") == "nationalityrecheck":
-       return userNationalityRecheck(reqContext)
+       return userNationalityRecheck()
     elif reqContext.get("result").get("action") == "destinationcountry":
        return userDestinationCountry(reqContext)
     elif reqContext.get("result").get("action") == "wikipediasearch":
