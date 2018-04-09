@@ -395,12 +395,15 @@ def wikipedia_search(reqContext):
            
            # Checking for the 1st CATEGORY, like --> Denmark}} \n| {{no|Visa required OR Thailand}} \n| {{yes|Visa not required
            if "|" in visa_status_temp_1[1]:
-               visa_status = visa_status_primary[0].split("{{")[1].split("|")[1]
+               visa_status_almst_fnl = visa_status_primary[0].split("{{")[1].split("|")[1]
                #visa_status = visa_status_temp_2[1]
-               print ("1st category: FINAL visa_status -->" + visa_status)
-               if "}}" in visa_status:
-                   visa_status = visa_status.split("{{")[0]
+               print ("1st category: FINAL visa_status -->" + visa_status_almst_fnl)
+               if "}}" in visa_status_almst_fnl:
+                   visa_status_intermdt = visa_status_almst_fnl.split("{{")
+                   visa_status = visa_status_intermdt[0]
                    print ("If visa_status holds }} then split it -->" + visa_status)
+               else:
+                   visa_status = visa_status_almst_fnl
         
         # Checking for the 2nd CATEGORY, like --> Malaysia}} (e-Visa required)\n* 
         elif "(" in visa_status_primary[0]:
