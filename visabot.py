@@ -399,7 +399,7 @@ def wikipedia_search(reqContext):
                #visa_status = visa_status_temp_2[1]
                print ("1st category: FINAL visa_status -->" + visa_status_almst_fnl)
                if "}}" in visa_status_almst_fnl:
-                   visa_status_intermdt = visa_status_almst_fnl.split("}}")[0]
+                   visa_status = visa_status_almst_fnl.split("}}")[0]
                    print ("If visa_status holds }} then split it -->" + visa_status)
                else:
                    visa_status = visa_status_almst_fnl
