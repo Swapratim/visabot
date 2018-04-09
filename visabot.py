@@ -317,10 +317,6 @@ def userDestinationCountry(reqContext):
 #************************************************************************************#
 
 def wikipedia_search(reqContext):
-    # if nationality == "False":
-        # print ("***Nationality is False, hence exiting!!!")
-        # exit()
-    
     print ("***Nationality has the latest input-->" + nationality)
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
     global nationalityNEW
@@ -402,6 +398,9 @@ def wikipedia_search(reqContext):
                visa_status = visa_status_primary[0].split("{{")[1].split("|")[1]
                #visa_status = visa_status_temp_2[1]
                print ("1st category: FINAL visa_status -->" + visa_status)
+               if "}}" in visa_status:
+                   visa_status = visa_status.split("{{")[0]
+                   print ("If visa_status holds }} then split it -->" + visa_status)
         
         # Checking for the 2nd CATEGORY, like --> Malaysia}} (e-Visa required)\n* 
         elif "(" in visa_status_primary[0]:
