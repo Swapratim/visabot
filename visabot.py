@@ -45,6 +45,8 @@ def webhook():
        return userNationality(reqContext)
     elif reqContext.get("result").get("action") == "nationalityrecheck":
        return userNationalityRecheck()
+    elif reqContext.get("result").get("action") == "startover":
+       return startOver()
     elif reqContext.get("result").get("action") == "destinationcountry":
        print ("User Input-->Citizenship -->" + reqContext.get("result").get("resolvedQuery"))
        return userDestinationCountry(reqContext)
@@ -225,13 +227,13 @@ def userNationality(reqContext):
     r.headers['Content-Type'] = 'application/json'
     return r
 
-
+###     START AGAIN       ###
 def userNationalityRecheck():
     print ("******userNationalityRecheck********")
     nationality = ""
     destinationcountry = ""
     res = {
-        "speech": "2nd Question",
+        "speech": "Which country do you want to travel?",
         "displayText": "Which country do you want to travel?",
         "data" : {
         "facebook" : [
@@ -245,6 +247,26 @@ def userNationalityRecheck():
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
+
+###   Start Over        ###
+def startOver():
+    print ("*********startOver*************")
+    res = {
+        "speech": "What is your nationality?",
+        "displayText": "What is your nationality?",
+        "data" : {
+        "facebook" : [
+              {
+                 "text": "What is your nationality?"
+              }
+             ]
+           } 
+         };
+    res = json.dumps(res, indent=4)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
+
 
 #************************************************************************************#
 #                                                                                    #
