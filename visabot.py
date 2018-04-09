@@ -210,12 +210,12 @@ def userNationality(reqContext):
     destinationcountry = "False"
     print (reqContext.get("result").get("action"))
     res = {
-        "speech": "1. What is your nationality?",
-        "displayText": "1. What is your nationality?",
+        "speech": "What is your nationality?",
+        "displayText": "What is your nationality?",
         "data" : {
         "facebook" : [
               {
-                 "text": "1. What is your nationality?"
+                 "text": "What is your nationality?"
               }
              ]
            } 
@@ -232,11 +232,11 @@ def userNationalityRecheck():
     destinationcountry = ""
     res = {
         "speech": "2nd Question",
-        "displayText": "2. Which country do you want to travel?",
+        "displayText": "Which country do you want to travel?",
         "data" : {
         "facebook" : [
               {
-                 "text": "2. Which country do you want to travel?"
+                 "text": "Which country do you want to travel?"
               }
              ]
            } 
@@ -285,7 +285,7 @@ def userDestinationCountry(reqContext):
         
     if correct_nationality:
         print ("2. Which country do you want to travel?")
-        speech = "2. Which country do you want to travel?"
+        speech = "Which country do you want to travel?"
         
     else:
         speech = "This is not a valid citizenship. Please enter a valid citizenship"
