@@ -392,6 +392,7 @@ def wikipedia_search(reqContext):
     #data1 = str(data1)
     wikidata = str(data1).split("{{flag|")
     for info in wikidata:
+        print ("info within FOR Loop--->" + info)
         if destinationcountry1 in info and "}}." not in info and "{{flagicon|" not in info:
            print ("I'm in IF loop, therefore I'm already in FOR loop")
            infotoString = str(info)
