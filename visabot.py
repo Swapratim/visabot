@@ -251,6 +251,8 @@ def userNationalityRecheck():
 ###   Start Over        ###
 def startOver():
     print ("*********startOver*************")
+    nationality = ""
+    destinationcountry = ""
     res = {
         "speech": "What is your nationality?",
         "displayText": "What is your nationality?",
@@ -284,11 +286,6 @@ def userDestinationCountry(reqContext):
     nationality = ""
     nationality = str(resolvedQuery).title()
     
-    # if not nationality:
-       # nationality = str(resolvedQuery).title()
-    # else:
-       # print ("No value assignment to nationality-->")
-
     # Loading Nationality List into Array to validate against the user nationality input
     file_path = '/app/country_name_JSON.txt'
     with open(file_path) as f:
@@ -514,7 +511,7 @@ def wikipedia_search(reqContext):
                    }
                 },
                  {
-                  "text": "Write another country name to continue check VISA requirement",
+                  "text": "Write another country name to continue checking VISA requirement",
                   "quick_replies": [
                  {
                   "content_type": "text",
