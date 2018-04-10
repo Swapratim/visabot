@@ -123,13 +123,13 @@ def welcome():
                   "content_type": "text",
                   "title": "Yeah Sure",
                   "payload": "Yeah Sure",
-                  "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZLSAsTl9tNQAG72yb9P4YV4EMjsFYxZ6eJbD6JS1_wnfthxJP"
+                  "image_url": "http://gdurl.com/z1Rl"
                  },
                  {
                   "content_type": "text",
                   "title": "No Thanks",
                   "payload": "No Thanks",
-                  "image_url": "https://3.bp.blogspot.com/-2Q4mCe03fEg/VuOR92Jk6bI/AAAAAAAAMAw/YCY_ej--zEoSybT_PseTp6p0-G7Y-kGfw/s1600/Smiley-Red-rating.jpg"
+                  "image_url": "http://gdurl.com/qP5Q"
                    }
                   ]
                  }
