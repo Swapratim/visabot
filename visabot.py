@@ -392,7 +392,7 @@ def wikipedia_search(reqContext):
     #data1 = str(data1)
     wikidata = str(data1).split("{{flag|")
     for info in wikidata:
-        print ("info within FOR Loop--->" + info)
+        #print ("info within FOR Loop--->" + info)
         if destinationcountry1 in info and "}}." not in info and "{{flagicon|" not in info:
            print ("I'm in IF loop, therefore I'm already in FOR loop")
            #infotoString = str(info)
@@ -400,7 +400,7 @@ def wikipedia_search(reqContext):
            print (infotoStringFinal)
            break
         elif destinationcountry1 in info and "|state<!" in info:
-           print ("Except handling for Peru, Belgium and Costa Rica")
+           print ("Exception handling for Peru, Belgium and Costa Rica")
            infotoStringFinal = info.split("|state<!")[0]
            print ("Country name: -->" + infotoStringFinal)
         else:
