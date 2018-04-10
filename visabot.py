@@ -367,10 +367,10 @@ def wikipedia_search(reqContext):
     # Loading the Nationality list to validate nationality input:
     for data_item in data:
         str_destinationcountry = str(data_item['en_short_name'])
-        break
         if str_destinationcountry == destinationcountry:
            correct_str_destinationcountry = destinationcountry
            print ("This is the CORRECT destinationcountry--->" + destinationcountry)
+           break
         
 
     print ("wikipedia_search Method nationality --> " + nationality)
@@ -469,19 +469,11 @@ def wikipedia_search(reqContext):
     #########################################################################
     if visa_status == "Visa required":
         image_url_final = str("https://www.iconsdb.com/icons/preview/red/visa-xxl.png")
-    elif visa_status == "Visa not required":
+    elif visa_status == "Visa not required" or visa_status == "Freedom of movement":
         image_url_final = str("https://www.iconsdb.com/icons/preview/green/visa-xxl.png")
-    elif visa_status == "Freedom of movement":
-        image_url_final = str("https://www.iconsdb.com/icons/preview/green/visa-xxl.png")
-    elif visa_status == "e-Visa required":
+    elif visa_status == "e-Visa required" or visa_status == "eVisa" or visa_status == "Visa on arrival" or visa_status == "eVisa / Visa on arrival":
         image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
-    elif visa_status == "eVisa":
-        image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
-    elif visa_status == "Visa on arrival":
-        image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
-    elif visa_status == "eVisa / Visa on arrival":
-        image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
-    elif visa_status == "0":
+   elif visa_status == "0":
         image_url_final = "https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170701095/81349455-no-information-rubber-stamp.jpg"
         visa_status = "Hmm, No country name found"
         subtitle = "Please check spelling or see if it's a valid country name"
