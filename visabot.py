@@ -465,7 +465,7 @@ def wikipedia_search(reqContext):
             visa_status = infotoStringFinal.split("]]")[0].split("[[")[1]
 
     #########################################################################
-    
+    subtitle = "You need " + visa_status + " for " + destinationcountry
     #########################################################################
     if visa_status == "Visa required":
         image_url_final = str("https://www.iconsdb.com/icons/preview/red/visa-xxl.png")
@@ -481,6 +481,10 @@ def wikipedia_search(reqContext):
         image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
     elif visa_status == "eVisa / Visa on arrival":
         image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
+    elif visa_status == "0":
+        image_url_final = "https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170701095/81349455-no-information-rubber-stamp.jpg"
+        visa_status = "Hmm, No country name found"
+        subtitle = "Please check spelling or see if it's a valid country name"
     else:
         image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
 ############################################################
@@ -503,7 +507,7 @@ def wikipedia_search(reqContext):
                                  {
                                    "title" : visa_status,
                                    "image_url" : image_url_final,
-                                   "subtitle" : "You need " + visa_status + " for " + destinationcountry,
+                                   "subtitle" : subtitle,
                                    "buttons": [{
                                         "type": "web_url",
                                         "url": "https://en.wikipedia.org/wiki/Visa_requirements_for_" + nationality + "_citizens",
@@ -518,7 +522,7 @@ def wikipedia_search(reqContext):
                    }
                 },
                  {
-                  "text": "Write another country name to check VISA requirement",
+                  "text": "Write another country name to continue check VISA requirement",
                   "quick_replies": [
                  {
                   "content_type": "text",
