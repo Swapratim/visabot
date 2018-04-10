@@ -513,7 +513,7 @@ def wikipedia_search(reqContext):
                   "quick_replies": [
                  {
                   "content_type": "text",
-                  "title": "Start Again",
+                  "title": "Restart",
                   "payload": "startover",
                   },
                  {
