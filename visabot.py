@@ -374,6 +374,7 @@ def wikipedia_search(reqContext):
     nationalityNEW = nationality
     jsoncountryappendage = "}}"
     destinationcountry1 = str(destinationcountry + jsoncountryappendage)
+    print ("destinationcountry1--------->" + destinationcountry1)
     google_query = ''
     if nationalityNEW:
        google_query = str("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&&titles=Visa_requirements_for_" + nationalityNEW + "_citizens")
@@ -399,7 +400,7 @@ def wikipedia_search(reqContext):
            infotoStringFinal = str(info)
            print (infotoStringFinal)
            break
-        elif destinationcountry1 in info and "|state<!" in info:
+        elif destinationcountry in info and "|state<!" in info:
            print ("Exception handling for Peru, Belgium and Costa Rica")
            infotoStringFinal = info.split("|state<!")[0]
            print ("Country name: -->" + infotoStringFinal)
