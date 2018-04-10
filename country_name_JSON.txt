@@ -592,7 +592,7 @@
         "alpha_2_code": "GR",
         "alpha_3_code": "GRC",
         "en_short_name": "Greece",
-        "nationality": "Greek, Hellenic"
+        "nationality": "Greek"
     },
     {
         "num_code": "304",
