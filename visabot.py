@@ -123,13 +123,13 @@ def welcome():
                   "content_type": "text",
                   "title": "Yeah Sure",
                   "payload": "Yeah Sure",
-                  "image_url": "http://gdurl.com/LLC7"
+                  "image_url": "http://gdurl.com/eNYq"
                  },
                  {
                   "content_type": "text",
                   "title": "No Thanks",
                   "payload": "No Thanks",
-                  "image_url": "http://gdurl.com/XvK1"
+                  "image_url": "http://gdurl.com/uViQ"
                    }
                   ]
                  }
