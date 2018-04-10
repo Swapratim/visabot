@@ -363,7 +363,7 @@ def wikipedia_search(reqContext):
 
     # Loading the Nationality list to validate nationality input:
     for data_item in data:
-        str_destinationcountry = str(data_item['en_short_name'])
+        str_destinationcountry = str(data_item['country_name'])
         if str_destinationcountry == destinationcountry:
            correct_str_destinationcountry = destinationcountry
            print ("This is the CORRECT destinationcountry--->" + destinationcountry)
