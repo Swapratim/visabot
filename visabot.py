@@ -348,7 +348,16 @@ def wikipedia_search(reqContext):
     destinationcountry = str(resolvedQuery_wiki).title() 
     
     print ("destinationcountry: " + destinationcountry)
-
+    
+    # Check if the country name is abbreviated, put the correct names:
+    if "Uae" in destinationcountry:
+        destinationcountry = "United Arab Emirates"
+    elif "Usa" in destinationcountry or "Us" in destinationcountry and "Russia" not in destinationcountry and "Mauritius" not in destinationcountry and "Cyprus" not in destinationcountry and "Australia" not in destinationcountry and "Austria" not in destinationcountry and "Belarus" not in destinationcountry:
+        destinationcountry = "United States"
+    elif "Uk" in destinationcountry or "England" in  destinationcountry and "Ukraine" not in destinationcountry:
+        destinationcountry =  "United Kingdom"
+            
+    
     # Loading Nationality List into Array to validate against the user nationality input
     file_path = '/app/country_name_JSON.txt'
     with open(file_path) as f:
