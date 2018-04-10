@@ -475,8 +475,8 @@ def wikipedia_search(reqContext):
         image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
     elif visa_status == "0":
         image_url_final = "https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170701095/81349455-no-information-rubber-stamp.jpg"
-        visa_status = "Hmm, No country name found"
-        subtitle = "Please check spelling or see if it's a valid country name"
+        visa_status = "Hmm, No VISA details found"
+        subtitle = "Please check the spelling or see if it's a valid country name"
     else:
         image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
 ############################################################
