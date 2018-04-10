@@ -306,7 +306,7 @@ def userDestinationCountry(reqContext):
         
         
     if correct_nationality:
-        print ("2. Which country do you want to travel?")
+        print ("Which country do you want to travel?")
         speech = "Which country do you want to travel?"
         
     else:
@@ -494,7 +494,7 @@ def wikipedia_search(reqContext):
                                  {
                                    "title" : visa_status,
                                    "image_url" : image_url_final,
-                                   "subtitle" : "",
+                                   "subtitle" : "You need" + visa_status + "for" + destinationcountry,
                                    "buttons": [{
                                         "type": "web_url",
                                         "url": "https://en.wikipedia.org/wiki/Visa_requirements_for_" + nationality + "_citizens",
@@ -509,12 +509,12 @@ def wikipedia_search(reqContext):
                    }
                 },
                  {
-                  "text": "Want to start over?",
+                  "text": "Write another country name to check VISA requirement",
                   "quick_replies": [
                  {
                   "content_type": "text",
                   "title": "Start Again",
-                  "payload": "Start Again",
+                  "payload": "startover",
                   },
                  {
                   "content_type": "text",
