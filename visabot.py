@@ -494,7 +494,7 @@ def wikipedia_search(reqContext):
                                  {
                                    "title" : visa_status,
                                    "image_url" : image_url_final,
-                                   "subtitle" : "You need" + visa_status + "for" + destinationcountry,
+                                   "subtitle" : "You need " + visa_status + " for " + destinationcountry,
                                    "buttons": [{
                                         "type": "web_url",
                                         "url": "https://en.wikipedia.org/wiki/Visa_requirements_for_" + nationality + "_citizens",
