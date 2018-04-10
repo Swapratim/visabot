@@ -473,7 +473,7 @@ def wikipedia_search(reqContext):
         image_url_final = str("https://www.iconsdb.com/icons/preview/green/visa-xxl.png")
     elif visa_status == "e-Visa required" or visa_status == "eVisa" or visa_status == "Visa on arrival" or visa_status == "eVisa / Visa on arrival":
         image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
-   elif visa_status == "0":
+    elif visa_status == "0":
         image_url_final = "https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170701095/81349455-no-information-rubber-stamp.jpg"
         visa_status = "Hmm, No country name found"
         subtitle = "Please check spelling or see if it's a valid country name"
