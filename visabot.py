@@ -75,18 +75,24 @@ def welcome():
     if data is None:
         return {}
     entry = data.get('originalRequest')
-    dataall = entry.get('data')
-    sender = dataall.get('sender')
-    id = sender.get('id')
-    print ("id :" + id)
-    fb_info = "https://graph.facebook.com/v2.6/" + id + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + ACCESS_TOKEN
-    print (fb_info)
-    result = urllib.request.urlopen(fb_info).read()
-    print (result)
-    data = json.loads(result)
-    first_name = data.get('first_name')
-    print (first_name)
-    user_name = data.get('first_name')
+    platform = data.get('source')
+
+    if platform == "facebook":
+       #dataall = entry.get('data')
+       #sender = entry.get('data').get('sender')
+       id = entry.get('data').get('sender').get('id')
+       print ("id :" + id)
+       fb_info = "https://graph.facebook.com/v2.6/" + id + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + ACCESS_TOKEN
+       print (fb_info)
+       result = urllib.request.urlopen(fb_info).read()
+       print (result)
+       data = json.loads(result)
+       first_name = data.get('first_name')
+       print ("FACEBOOK: First Name -->" + first_name)
+    elif platform == "telegram":
+       first_name = entry.get('data').get('message').get('chat').get('first_name')
+       print ("TELEGRAM: First Name -->" + first_name)
+       
     speech1 = "I'm Visa CheckBot - your one stop solution for visa related enquiry"
     res = {
           "speech": speech1,
