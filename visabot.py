@@ -75,7 +75,8 @@ def welcome():
     if data is None:
         return {}
     entry = data.get('originalRequest')
-    platform = data.get('source')
+    platform = entry.get('source')
+    print ("PLATFORM -->" + platform)
 
     if platform == "facebook":
        #dataall = entry.get('data')
