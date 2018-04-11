@@ -86,6 +86,8 @@ def welcome():
     elif platform == "telegram":
        first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
        print ("TELEGRAM: First Name -->" + first_name)
+    elif platform == "skype":
+       print ("SKYPE: Within Python")
        
     speech1 = "I'm Visa CheckBot - your one stop solution for visa related enquiry. "
     res = {
@@ -143,9 +145,38 @@ def welcome():
                         [{ "callback_data": "No Thanks", "text": "No Thanks" }] 
                        ] 
                 },
-               }
-              }
-            };
+               },
+            "skype": {
+              "text": "Hey!! Up for a foreign trip? Here's the easiest way to find foreign country Visa requirement.",
+              "attachments": [
+                {
+                  "contentType": "application/vnd.microsoft.card.hero",
+                  "content": {
+                    "title": "Visa CheckBot",
+                    "subtitle": "Easiest way to find Visa requirement",
+                    "images": [
+                      {
+                        "url": "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg"
+                      }
+                    ],
+                    "buttons": [
+                      {
+                        "type": "imBack",
+                        "title": "Yeah Sure",
+                        "value": "Yeah Sure"
+                      },
+                      {
+                        "type": "imBack",
+                        "title": "No Thanks",
+                        "value": "No Thanks"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        };
     print (res)
     res = json.dumps(res, indent=4)
     r = make_response(res)
@@ -564,7 +595,7 @@ def wikipedia_search(reqContext):
                  }
                ],
             "telegram": {
-                 "text": subtitle,
+                 "text": subtitle + ". Write another country name to continue checking VISA requirement",
                  "reply_markup": { 
                    "inline_keyboard": [ 
                         [{ "callback_data": "startover", "text": "Restart" }], 
