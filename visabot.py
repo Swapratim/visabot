@@ -136,16 +136,13 @@ def welcome():
                 ],
             "telegram": {
                  "text": "Welcome in Telegram -->" + first_name + "! ",
-                 "reply_markup": {
-                  "keyboard": [
-                    [
-                        "Yeah Sure"
-                    ],
-                    [
-                        "No Thanks"
-                    ]
-                   ],
-                  }
+                 "reply_markup": { 
+                   "inline_keyboard": [ 
+                        [{ "callback_data": "Yeah Sure", "text": "Yeah Sure" } ], 
+                        [{ "callback_data": "No Thanks", "text": "No Thanks" } ] 
+                       ] 
+                },
+                "text": "So, let's start. Shall we?" 
                }
               }
             };
