@@ -136,13 +136,13 @@ def welcome():
                 ],
             "telegram": {
                  "photo": "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg",
+                 "text": "Welcome in Telegram -->" + first_name + "! " + speech1 + "So let's start, shall we?",
                  "reply_markup": { 
                    "inline_keyboard": [ 
                         [{ "callback_data": "Yeah Sure", "text": "Yeah Sure" }], 
                         [{ "callback_data": "No Thanks", "text": "No Thanks" }] 
                        ] 
                 },
-                "text": "Welcome in Telegram -->" + first_name + "! " + speech1 + "So let's start, shall we?",
                }
               }
             };
@@ -203,7 +203,16 @@ def asktheuser(reqContext):
                   }
                   ]
                  }
-             ]
+             ],
+        "telegram": {
+                 "text": "Great! I'll ask two questions only. Then only I can precisely tell whether you need a VISA or NOT to travel your destination country.",
+                 "reply_markup": { 
+                   "inline_keyboard": [ 
+                        [{ "callback_data": "I'm Ready", "text": "I'm Ready" }], 
+                        [{ "callback_data": "No Thanks", "text": "No Thanks" }] 
+                       ] 
+                },
+             }
            } 
          };
     res = json.dumps(res, indent=4)
@@ -229,7 +238,10 @@ def userNationality(reqContext):
               {
                  "text": "What is your nationality?"
               }
-             ]
+             ],
+        "telegram": {
+                 "text": "What is your nationality?"
+             }
            } 
          };
     res = json.dumps(res, indent=4)
@@ -250,7 +262,10 @@ def userNationalityRecheck():
               {
                  "text": "Which country do you want to travel?"
               }
-             ]
+             ],
+        "telegram": {
+                 "text": "Which country do you want to travel?"
+             }
            } 
          };
     res = json.dumps(res, indent=4)
@@ -271,7 +286,10 @@ def startOver():
               {
                  "text": "What is your nationality?"
               }
-             ]
+             ],
+        "telegram": {
+                 "text": "What is your nationality?"
+             }
            } 
          };
     res = json.dumps(res, indent=4)
@@ -331,7 +349,10 @@ def userDestinationCountry(reqContext):
               {
                  "text": speech
               }
-             ]
+             ],
+        "telegram": {
+                 "text": speech
+             }
            } 
          };
     res = json.dumps(res, indent=4)
@@ -541,8 +562,17 @@ def wikipedia_search(reqContext):
                   }
                   ]
                  }
-               ]
-             } 
+               ],
+            "telegram": {
+                 "text": subtitle,
+                 "reply_markup": { 
+                   "inline_keyboard": [ 
+                        [{ "callback_data": "startover", "text": "Restart" }], 
+                        [{ "callback_data": "No", "text": "No" }] 
+                       ] 
+                },
+             }
+           } 
          };
     res = json.dumps(res, indent=4)
     r = make_response(res)
