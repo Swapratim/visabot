@@ -74,7 +74,7 @@ def welcome():
     print ("PLATFORM -->" + platform)
 
     if platform == "facebook":
-       id = entry.get('data').get('sender').get('id')
+       id = data.get('originalRequest').get('data').get('sender').get('id')
        print ("id :" + id)
        fb_info = "https://graph.facebook.com/v2.6/" + id + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + ACCESS_TOKEN
        print (fb_info)
@@ -84,7 +84,7 @@ def welcome():
        first_name = data.get('first_name')
        print ("FACEBOOK: First Name -->" + first_name)
     elif platform == "telegram":
-       first_name = entry.get('data').get('message').get('chat').get('first_name')
+       first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
        print ("TELEGRAM: First Name -->" + first_name)
        
     speech1 = "I'm Visa CheckBot - your one stop solution for visa related enquiry"
