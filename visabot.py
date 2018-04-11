@@ -145,9 +145,7 @@ def welcome():
                         "No Thanks"
                     ]
                    ],
-                  "one_time_keyboard": false,
-                  "resize_keyboard": false
-                }
+                  }
                }
               }
             };
