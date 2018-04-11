@@ -87,6 +87,7 @@ def welcome():
        first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
        print ("TELEGRAM: First Name -->" + first_name)
     elif platform == "skype":
+       first_name = "to Visa CheckBot"
        print ("SKYPE: Within Python")
        
     speech1 = "I'm Visa CheckBot - your one stop solution for visa related enquiry. "
