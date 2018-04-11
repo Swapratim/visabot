@@ -140,9 +140,7 @@ def welcome():
                    "inline_keyboard": [ 
                         [{ "callback_data": "Yeah Sure", "text": "Yeah Sure" }], 
                         [{ "callback_data": "No Thanks", "text": "No Thanks" }] 
-                       ],
-                       "one_time_keyboard": true,
-                       "resize_keyboard": true   
+                       ] 
                 },
                }
               }
