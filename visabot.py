@@ -136,6 +136,18 @@ def welcome():
                 ],
             "telegram": {
                  "text": "Welcome in Telegram -->" + first_name + "! ",
+                 "reply_markup": {
+                  "keyboard": [
+                    [
+                        "Yeah Sure"
+                    ],
+                    [
+                        "No Thanks"
+                    ]
+                   ],
+                  "one_time_keyboard": true,
+                  "resize_keyboard": true
+                }
                }
               }
             };
