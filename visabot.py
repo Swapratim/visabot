@@ -135,7 +135,7 @@ def welcome():
                  }
                 ],
             "telegram": {
-                 "media": (http://shoes.com/sneakers.png),
+                 "photo_url": "http://shoes.com/sneakers.png",
                  "text": "Welcome in Telegram -->" + first_name + "! " + speech1 + "So let's start, shall we?",
                  "reply_markup": { 
                    "inline_keyboard": [ 
