@@ -62,25 +62,18 @@ def webhook():
 #   This method is to get the Facebook User Deatails via graph.facebook.com/v2.6     #
 #                                                                                    #
 #************************************************************************************#
-user_name = None
-#global nationality
-#global destinationcountry
 nationality = "False"
 destinationcountry = "False"
 def welcome():
-    global user_name
-    #print ("within welcome method")
     data = request.json
     print (data)
     if data is None:
         return {}
-    entry = data.get('originalRequest')
-    platform = entry.get('source')
+    #entry = data.get('originalRequest')
+    platform = data.get('originalRequest').get('source')
     print ("PLATFORM -->" + platform)
 
     if platform == "facebook":
-       #dataall = entry.get('data')
-       #sender = entry.get('data').get('sender')
        id = entry.get('data').get('sender').get('id')
        print ("id :" + id)
        fb_info = "https://graph.facebook.com/v2.6/" + id + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + ACCESS_TOKEN
@@ -140,7 +133,10 @@ def welcome():
                    }
                   ]
                  }
-                ]
+                ],
+            "telegram": {
+                 "text": "Welcome in Telegram -->" + first_name + "! ",
+               }
               }
             };
     print (res)
