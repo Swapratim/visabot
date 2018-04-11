@@ -135,14 +135,15 @@ def welcome():
                  }
                 ],
             "telegram": {
-                 "text": "Welcome in Telegram -->" + first_name + "! ",
+                 "text": "Welcome in Telegram -->" + first_name + "! /n  So let's start, shall we?",
                  "reply_markup": { 
                    "inline_keyboard": [ 
-                        [{ "callback_data": "Yeah Sure", "text": "Yeah Sure" } ], 
-                        [{ "callback_data": "No Thanks", "text": "No Thanks" } ] 
-                       ] 
+                        [{ "callback_data": "Yeah Sure", "text": "Yeah Sure" }], 
+                        [{ "callback_data": "No Thanks", "text": "No Thanks" }] 
+                       ],
+                       "one_time_keyboard": true,
+                       "resize_keyboard": true   
                 },
-                "text": "So, let's start. Shall we?" 
                }
               }
             };
