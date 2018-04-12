@@ -149,7 +149,6 @@ def welcome():
                },
             }
         },
-        "source": "Webhook",
   "messages": [
     {
       "type": 4,
