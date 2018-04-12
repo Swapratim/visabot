@@ -154,28 +154,26 @@ def welcome():
           "platform": "skype",
           "payload": {
             "skype": {
-              "text": "Hier ist ein Video von Elie Saab",
+              "text": "",
               "attachments": [
                 {
                   "contentType": "application/vnd.microsoft.card.hero",
                   "content": {
-                    "title": "ELIE SAAB Bridal Spring 2018 | Backstage",
-                    "subtitle": "von Elie Saab",
+                    "title": "Welcome to Visa CheckBot",
+                    "subtitle": "Your one stop solution for Visa check",
                     "images": [
                       {
-                        "url": "https://i.ytimg.com/vi/DwTmaqoSlgs/default.jpg"
+                        "url": "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg"
                       }
                     ],
                     "buttons": [
                       {
-                        "type": "openUrl",
-                        "title": "Auf Youtube ansehen",
-                        "value": "https://youtu.be/DwTmaqoSlgs"
+                        "title": "Yeah Sure",
+                        "postback": "Yeah Sure"
                       },
                       {
-                        "type": "openUrl",
-                        "title": "Elie Saab - Channel",
-                        "value": "https://www.youtube.com/user/ElieSaabChannel"
+                        "title": "No Thanks",
+                        "postback": "No Thanks"
                       }
                     ]
                   }
