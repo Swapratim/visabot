@@ -163,8 +163,7 @@ def welcome():
                       "postback": "No Thanks"
                   }
               ]
-            }
-          }
+           }
         };
     print (res)
     res = json.dumps(res, indent=4)
