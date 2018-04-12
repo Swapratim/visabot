@@ -182,8 +182,8 @@ def welcome():
             }
           }
         }
-        ]
-        };
+       ]
+     };
     print (res)
     res = json.dumps(res, indent=4)
     r = make_response(res)
@@ -252,7 +252,35 @@ def asktheuser(reqContext):
                 },
              }
            } 
-         };
+        "messages": [
+        {
+          "type": 4,
+          "platform": "skype",
+          "payload": {
+            "skype": {
+              "text": "Great! I'll ask two questions only. Then only I can precisely tell whether you need a VISA or NOT to travel your destination country.",
+              "attachments": [
+                {
+                  "contentType": "application/vnd.microsoft.card.hero",
+                  "content": {
+                    "buttons": [
+                      {
+                        "title": "I'm Ready",
+                        "postback": "I'm Ready"
+                      },
+                      {
+                        "title": "No Thanks",
+                        "postback": "No Thanks"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+       ]
+     };
     res = json.dumps(res, indent=4)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
