@@ -147,68 +147,25 @@ def welcome():
                        ] 
                 },
                },
+           {
+              "type": 1,
+              "platform": "skype",
+              "title": "Card Title",
+              "subtitle": "card subtitle",
+              "imageUrl": "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg",
+              "buttons": [
+                  {
+                      "text": "Yeah Sure",
+                      "postback": "Yeah Sure"
+                  },
+                  {
+                      "text": "No Thanks",
+                      "postback": "No Thanks"
+                  }
+              ]
             }
-        },
-            "messages": [
-             {
-                 "type": 4,
-                 "platform": "skype",
-                 "speech": "",
-                 "payload": {
-                 "skype": {
-                      "attachmentLayout": "list",
-                      "attachments": [
-                      {
-                         "contentType": "application\/vnd.microsoft.card.hero",
-                         "content": {
-                         "title": "Unit 2A",
-                         "subtitle": "",
-                         "text": "These timeslots are available for 2017-10-16",
-                         "images": [
-
-                         ],
-                        "buttons": [
-                         {
-                          "type": "imBack",
-                          "title": "from 13:00 until 14:00 Unit 2A",
-                          "value": "from 13:00 until 14:00 Unit 2A"
-                         },
-                         {
-                          "type": "imBack",
-                          "title": "from 14:00 until 15:00 Unit 2A",
-                          "value": "from 14:00 until 15:00 Unit 2A"
-                        }
-                       ]
-                     }
-                    },
-                    {
-                      "contentType": "application\/vnd.microsoft.card.hero",
-                      "content": {
-                        "title": "Unit 1",
-                        "subtitle": "",
-                        "text": "These timeslots are available for 2017-10-16",
-                        "images": [
-
-                       ],
-                      "buttons": [
-                        {
-                         "type": "imBack",
-                         "title": "from 13:00 until 14:00 Unit 1",
-                         "value": "from 13:00 until 14:00 Unit 1"
-                        },
-                        {
-                       "type": "imBack",
-                       "title": "from 14:00 until 15:00 Unit 1",
-                       "value": "from 14:00 until 15:00 Unit 1"
-                        }
-                       ]
-                     }
-                   }
-                 ]
-               }
-             }
-           }
-          ];
+          }
+        };
     print (res)
     res = json.dumps(res, indent=4)
     r = make_response(res)
