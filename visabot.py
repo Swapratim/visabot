@@ -168,10 +168,12 @@ def welcome():
                     ],
                     "buttons": [
                       {
+                        "type": "imBack",
                         "title": "Yeah Sure",
                         "postback": "Yeah Sure"
                       },
                       {
+                        "type": "imBack",
                         "title": "No Thanks",
                         "postback": "No Thanks"
                       }
@@ -265,10 +267,12 @@ def asktheuser(reqContext):
                   "content": {
                     "buttons": [
                       {
+                        "type": "imBack",
                         "title": "I'm Ready",
                         "postback": "I'm Ready"
                       },
                       {
+                        "type": "imBack",
                         "title": "No Thanks",
                         "postback": "No Thanks"
                       }
