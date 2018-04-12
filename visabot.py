@@ -149,7 +149,7 @@ def welcome():
                },
               "skype":
             {
-              "attachmentLayout":"carousel",                                                                    
+              "attachmentLayout":"carousel",
               "attachments":[
                       {        
                         "contentType":"application/vnd.microsoft.card.hero",
@@ -163,6 +163,7 @@ def welcome():
                                         "value": "Yeah Sure"
                                     }]
                           }
+                      }
                  ]
              }
           };
