@@ -281,8 +281,25 @@ def asktheuser(reqContext):
                         [{ "callback_data": "No Thanks", "text": "No Thanks" }] 
                        ] 
                 },
-              }
-           }, 
+              },
+        "slack": {
+                 "text": "Great! I'll ask two questions only. Then only I can precisely tell whether you need a VISA or NOT to travel your destination country.",
+                 "attachment_type": "default",
+                    "actions": [
+                         {
+                            "name": "response",
+                            "text": "I'm Ready",
+                            "type": "button",
+                            "value": "I'm Ready"
+                         },
+                         {
+                            "name": "response",
+                            "text": "No Thanks",
+                            "type": "button",
+                            "value": "No Thanks"
+                         }
+                     ]
+            }, 
         "messages": [
         {
           "type": 4,
