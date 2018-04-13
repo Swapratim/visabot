@@ -299,7 +299,8 @@ def asktheuser(reqContext):
                             "value": "No Thanks"
                          }
                      ]
-            }, 
+            }
+        }
         "messages": [
         {
           "type": 4,
