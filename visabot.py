@@ -315,8 +315,8 @@ def asktheuser(reqContext):
                     "buttons": [
                       {
                         "type": "imBack",
-                        "title": "I'm Ready",
-                        "postback": "I'm Ready"
+                        "title": "Ready",
+                        "postback": "Ready"
                       },
                       {
                         "type": "imBack",
