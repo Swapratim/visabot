@@ -95,6 +95,9 @@ def welcome():
           "speech": speech1,
           "displayText": speech1,
            "data" : {
+              "slack": {
+                 "text": "SLACK------------------------->Bot"
+              },
               "facebook" : [
                    {
                     "sender_action": "typing_on"
@@ -148,38 +151,9 @@ def welcome():
                 },
                },
             "slack": {
-               {
-            "text": "SLACK------------------------->Bot" ,
-            "attachments": [
-                {
-                    "title": "Visa CheckBot",
-                    "title_link": "https://markets.blockchain.info",
-                    "color": "#36a64f",
-
-                    "fields": [
-                        {
-                            "title": "Last",
-                            "value": "last",
-                            "short": "false"
-                        },
-                        {
-                            "title": "Buy",
-                            "value": "buy",
-                            "short": "false"
-                        },
-                        {
-                            "title": "Sell",
-                            "value": "sell",
-                            "short": "false"
-                        }
-                    ],
-
-                    "thumb_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/440px-Bitcoin.svg.png"
-                }
-            ]
-        }
-      }
-     },
+                 "text": "SLACK------------------------->Bot"
+              }
+            },
         "messages": [
         {
           "type": 4,
