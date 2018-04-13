@@ -189,8 +189,19 @@ def welcome():
             }
           }
         }
-       ]
-     };
+       ],
+        "messages": [
+        {
+          "type": 4,
+          "platform": "slack",
+          "payload": {
+            "skype": {
+              "text": "SLACK------------------------->Bot",
+              }
+            }
+          }
+        ]
+      };
     print (res)
     res = json.dumps(res, indent=4)
     r = make_response(res)
