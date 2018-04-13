@@ -89,6 +89,9 @@ def welcome():
     elif platform == "skype":
        first_name = "to Visa CheckBot"
        print ("SKYPE: Within Python")
+    elif platform == "slack":
+       first_name = "to Visa CheckBot"
+       print ("SKYPE: Within Python")
        
     speech1 = "I'm Visa CheckBot - your one stop solution for visa related enquiry. "
     res = {
