@@ -93,7 +93,7 @@ def welcome():
        first_name = "to Visa CheckBot"
        print ("SKYPE: Within Python")
        
-    speech1 = "I'm Visa CheckBot - your one stop solution for visa related enquiry. "
+    speech1 = "Visa CheckBot - your one stop solution for visa related enquiry. "
     res = {
           "speech": speech1,
           "displayText": speech1,
@@ -151,29 +151,30 @@ def welcome():
                 },
                },
             "slack": {
-                 "text": "SLACK-----------within data-------------->Bot",
+                 "text": speech1,
                  "attachments": [
-                {
-                    "title": "Visa CheckBot",
-                    "title_link": "https://markets.blockchain.info",
-                    "color": "#36a64f",
-
-                     "actions": [
-                {
-                    "type": "button",
-                    "text": "Yeah Sure",
-                    "style": "primary"
-                },
-                {
-                    "type": "button",
-                    "text": "No Thanks",
-                    "style": "danger"
-                }
-            ],
-
-                    "thumb_url": "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg"
-                }
-               ]
+                   {
+                     "text": "So, let's start. Shall we?",
+                    "fallback": "You are unable to proceed",
+                    "callback_id": "intro_block",
+                    "color": "#3AA3E3",
+                    "attachment_type": "default",
+                    "actions": [
+                         {
+                            "name": "response",
+                            "text": "Yeah Sure",
+                            "type": "button",
+                            "value": "Yeah Sure"
+                         },
+                         {
+                            "name": "response",
+                            "text": "No Thanks",
+                            "type": "button",
+                            "value": "No Thanks"
+                         }
+                     ]
+                  }
+                ]
               }
             },
         "messages": [
