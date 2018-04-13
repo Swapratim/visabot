@@ -158,20 +158,20 @@ def welcome():
                     "title_link": "https://markets.blockchain.info",
                     "color": "#36a64f",
 
-                    "fields": [
-                        {
-                            "title": "Yeah Sure",
-                            "value": "Yeah Sure",
-                            "short": "false"
-                        },
-                        {
-                            "title": "No Thanks",
-                            "value": "No Thanks",
-                            "short": "false"
-                        }
-                    ],
+                     "actions": [
+                {
+                    "type": "button",
+                    "text": "Yeah Sure",
+                    "style": "primary"
+                },
+                {
+                    "type": "button",
+                    "text": "No Thanks",
+                    "style": "danger"
+                }
+            ],
 
-                    "thumb_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/440px-Bitcoin.svg.png"
+                    "thumb_url": "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg"
                 }
                ]
               }
