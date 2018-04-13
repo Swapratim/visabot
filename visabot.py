@@ -98,10 +98,7 @@ def welcome():
           "speech": speech1,
           "displayText": speech1,
            "data" : {
-              "slack": {
-                 "text": "SLACK------------------------->Bot"
-              },
-              "facebook" : [
+             "facebook" : [
                    {
                     "sender_action": "typing_on"
                   },
@@ -154,7 +151,7 @@ def welcome():
                 },
                },
             "slack": {
-                 "text": "SLACK------------------------->Bot"
+                 "text": "SLACK-----------within data-------------->Bot"
               }
             },
         "messages": [
@@ -200,7 +197,7 @@ def welcome():
           "platform": "slack",
           "payload": {
             "skype": {
-              "text": "SLACK------------------------->Bot",
+              "text": "SLACK-----------outside data-------------->Bot",
               }
             }
           }
