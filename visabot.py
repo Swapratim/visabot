@@ -151,7 +151,29 @@ def welcome():
                 },
                },
             "slack": {
-                 "text": "SLACK-----------within data-------------->Bot"
+                 "text": "SLACK-----------within data-------------->Bot",
+                 "attachments": [
+                {
+                    "title": "Visa CheckBot",
+                    "title_link": "https://markets.blockchain.info",
+                    "color": "#36a64f",
+
+                    "fields": [
+                        {
+                            "title": "Yeah Sure",
+                            "value": "Yeah Sure",
+                            "short": "false"
+                        },
+                        {
+                            "title": "No Thanks",
+                            "value": "No Thanks",
+                            "short": "false"
+                        }
+                    ],
+
+                    "thumb_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/440px-Bitcoin.svg.png"
+                }
+               ]
               }
             },
         "messages": [
@@ -191,18 +213,7 @@ def welcome():
           }
         }
        ],
-        "messages": [
-        {
-          "type": 4,
-          "platform": "slack",
-          "payload": {
-            "skype": {
-              "text": "SLACK-----------outside data-------------->Bot",
-              }
-            }
-          }
-        ]
-      };
+     };
     print (res)
     res = json.dumps(res, indent=4)
     r = make_response(res)
