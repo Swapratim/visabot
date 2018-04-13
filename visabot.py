@@ -149,33 +149,10 @@ def welcome():
                },
             "slack": {
                {
-                  "text": "<@W1A2BC3DD> approved your travel request. Book any airline you like by continuing below.",
-                  "channel": "C061EG9SL",
-                  "attachments": [
-                     {
-                       "fallback": "Book your flights at https://flights.example.com/book/r123456",
-                       "actions": [
-                      {
-                       "type": "button",
-                       "name": "travel_request_123456",
-                       "text": "Book flights 🛫",
-                       "url": "https://flights.example.com/book/r123456",
-                       "style": "primary",
-                       "confirm": "Really?"
-                      },
-                     {
-                      "type": "button",
-                      "name": "travel_cancel_123456",
-                      "text": "Cancel travel request",
-                      "url": "https://requests.example.com/cancel/r123456",
-                      "style": "danger"
-                     }
-                   ]
-                 }
-               ]
-             }
-            }
-           },
+                  "text": speech1
+               }
+              }
+            },
         "messages": [
         {
           "type": 4,
