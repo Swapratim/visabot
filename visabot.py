@@ -729,6 +729,7 @@ def wikipedia_search(reqContext):
                  }
                ],
             "telegram": {
+                 "photo": image_url_final,
                  "text": subtitle + ". Write another country name to continue checking VISA requirement",
                  "reply_markup": { 
                    "inline_keyboard": [ 
