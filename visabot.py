@@ -53,6 +53,10 @@ def webhook():
     elif reqContext.get("result").get("action") == "wikipediasearch":
        print ("User Input-->Country Name -->" + reqContext.get("result").get("resolvedQuery"))
        return wikipedia_search(reqContext)
+    elif reqContext.get("result").get("action") == "nothanks":
+       return noThanks()
+    elif reqContext.get("result").get("action") == "morebots":
+       return moreBots()
     else:
        print("Good Bye")
 
@@ -771,13 +775,47 @@ def wikipedia_search(reqContext):
     return r
 
 
+###   No Thanks        ###
+def noThanks():
+    print ("*********No Thanks*************")
+    statement = "I'm sorry to hear that. But you can always click on menu to start again."
+    res = {
+        "speech": statement,
+        "displayText": statement,
+        "data" : {
+        "facebook" : [
+              {
+                 "text": statement
+              }
+             ],
+        "telegram": {
+                 "text": statement
+             }
+           },
+        "messages": [
+        {
+          "type": 4,
+          "platform": "skype",
+          "payload": {
+            "skype": {
+              "text": statement
+            }
+          }
+        }
+       ]   
+      };
+    res = json.dumps(res, indent=4)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
+
 #************************************************************************************#
 #                                                                                    #
 #   Help Information Providing                                                       #
 #                                                                                    #
 #************************************************************************************#
-def help(resolvedQuery):
-    speech = "I'm sorry if I make you confused. Please select Quick Reply or Menu to chat with me. \n\n 1. Click on 'News' to read latest news from 33 globally leading newspapers \n 2. Click on 'Weather' and write a city name to get weather forecast \n 3. Click on 'Wikipedia' and write a topic you want to know about. No need to ask a full question. \n 4. Click on 'YouTube' and search for your favourite videos. \n 5. You can still chat directly with Marvin without the quick replies like before for - Weather, Wikipedia & Small Talk."
+def help():
+    speech = "Write Hi to start or you can choose option from menu."
     res = {
         "speech": speech,
         "displayText": speech,
@@ -795,71 +833,12 @@ def help(resolvedQuery):
     return r
 #************************************************************************************#
 #                                                                                    #
-#   Contact Information                                                              #
+#   Displaying ALL CHATBOTS - For Sale                                               #
 #                                                                                    #
 #************************************************************************************#
-def contact(resolvedQuery):
-    print ("Within Contact Me method")
-    speech = "Marvin.ai is now present from Denmark to help businesses all over the world. \nRequest for a free Demo now."
-    res = {
-        "speech": speech,
-        "displayText": speech,
-        "data" : {
-        "facebook" : [
-                {
-                 "text": speech
-                },
-                {
-                 "attachment" : {
-                   "type" : "template",
-                     "payload" : {
-                      "template_type" : "generic",
-                       "elements" : [ 
-                                 {
-                                   "title" : "Swapratim Roy",
-                                   "image_url" : "https://marvinchatbot.files.wordpress.com/2017/06/swapratim-roy-founder-owner-of-marvin-ai.jpg?w=700&h=&crop=1",
-                                   "subtitle" : "An innovative entrepreneur, founder at Marvin.ai \nAarhus, Denmark \nCall: +45-7182-5584",
-                                   "buttons": [{
-                                        "type": "web_url",
-                                        "url": "https://www.messenger.com/t/swapratim.roy",
-                                        "title": "Connect on Messenger"
-                                    },
-                                    {
-                                        "type": "web_url",
-                                        "url": "https://marvinai.live",
-                                        "title": "View Website"
-                                    }]
-                                 }
-                           ]
-                       } 
-                   }
-                },
-                {
-                    "sender_action": "typing_on"
-                },
-                {
-                  "text": "Start over again",
-                  "quick_replies": [
-                 {
-                  "content_type": "text",
-                  "title": "News",
-                  "payload": "News",
-                  "image_url": "http://www.freeiconspng.com/uploads/newspaper-icon-20.jpg"
-                 }
-                  ]
-                 }
-             ]
-           } 
-         };
-    res = json.dumps(res, indent=4)
-    r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
-    return r
-
-
-def requestDemo(resolvedQuery):
-    print ("Within requestDemo method")
-    speech = "Marvin.ai is now present from Denmark to help businesses all over the world. \nRequest for a free Demo now."
+def moreBots():
+    print ("Within forsale method")
+    speech = "This bot is been created by marvin.ai. \nDo you like it?"
     res = {
         "speech": speech,
         "displayText": speech,
@@ -868,9 +847,6 @@ def requestDemo(resolvedQuery):
                {
                     "sender_action": "typing_on"
                },
-               {
-                    "text": "Thank you " + user_name + " for requesting a Demo. Please say Hi to Swapratim on Messenger to get him notified. :-)"
-               },
                 {
                  "attachment" : {
                    "type" : "template",
@@ -878,27 +854,120 @@ def requestDemo(resolvedQuery):
                       "template_type" : "generic",
                        "elements" : [ 
                                  {
-                                   "title" : "Swapratim Roy",
-                                   "image_url" : "https://marvinchatbot.files.wordpress.com/2017/06/swapratim-roy-founder-owner-of-marvin-ai.jpg?w=700&h=&crop=1",
-                                   "subtitle" : "An innovative entrepreneur, founder at Marvin.ai \nAarhus, Denmark \nCall: +45-7182-5584",
+                                   "title" : "You like Visa CheckBot?",
+                                   "image_url" : "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg",
+                                   "subtitle" : "Get customized virtual assistant for your organization today",
                                    "buttons": [{
                                         "type": "web_url",
-                                        "url": "https://www.messenger.com/t/swapratim.roy",
-                                        "title": "Connect on Messenger"
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
                                     },
                                     {
                                         "type": "web_url",
+                                        "url": "https://www.facebook.com/marvinai.live",
+                                        "title": "Facebook Page"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "Travel Agency Bot Template",
+                                   "image_url" : "http://www.sunsail.eu/files/Destinations/Mediteranean/Greece/Athens/thira.jpg",
+                                   "subtitle" : "Get customized virtual assistant for your Restaurant today",
+                                   "buttons": [{
+                                        "type": "web_url",
                                         "url": "https://marvinai.live",
-                                        "title": "View Website"
-                                    }]
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/926146750885580",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "Real Estate Bot Template",
+                                   "image_url" : "https://husvild-static.s3.eu-central-1.amazonaws.com/images/files/000/280/915/large/3674bd34e6c1bc42b690adeacfe9c778507f261a?1516032863",
+                                   "subtitle" : "Get qualified buyer and seller leads automatically delivered to your inbox!",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/realestatebotai",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "Restaurant Bot Template",
+                                   "image_url" : "https://www.outlookhindi.com/public/uploads/article/gallery/6eb226c14abd79a801172ab8d473e6d2_342_660.jpg",
+                                   "subtitle" : "Perfectly crafted bot from assisting online customers to handle orders",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/730273667158154",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "Coffee Shop Bot Template",
+                                   "image_url" : "https://images-na.ssl-images-amazon.com/images/I/71Crz9MYPPL._SY355_.jpg",
+                                   "subtitle" : "Your bot can deal with online customers, take orders and many more ",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/200138490717876",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "Gym & Fitness Bot",
+                                   "image_url" : "data:image/jpeg;base64,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",
+                                   "subtitle" : "Get your gym & fitness bot today",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/566837733658925",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
                                  }
                            ]
                        } 
                    }
                 }
-            ]
-           } 
-         };
+           ]
+    } 
+   };
     res = json.dumps(res, indent=4)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
