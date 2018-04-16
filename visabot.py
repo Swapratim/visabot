@@ -539,13 +539,15 @@ def wikipedia_search(reqContext):
     global nationalityNEW
     #To capitalize the first letter
     global destinationcountry
-    destinationcountry = ""
+    #destinationcountry = ""
     destinationcountry = str(resolvedQuery_wiki).title() 
     
     if destinationcountry == nationality:
-       destinationcountry = ""
+        destinationcountry = ""
+        print ("destinationcountry: " + destinationcountry)
+    else:
+        print ("destinationcountry: " + destinationcountry) 
 
-    print ("destinationcountry: " + destinationcountry)
     
     # Check if the country name is abbreviated, put the correct names:
     if "Uae" in destinationcountry:
