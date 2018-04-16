@@ -542,6 +542,9 @@ def wikipedia_search(reqContext):
     destinationcountry = ""
     destinationcountry = str(resolvedQuery_wiki).title() 
     
+    if destinationcountry == nationality:
+       destinationcountry = ""
+
     print ("destinationcountry: " + destinationcountry)
     
     # Check if the country name is abbreviated, put the correct names:
