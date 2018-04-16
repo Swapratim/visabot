@@ -421,6 +421,8 @@ def startOver():
     print ("*********startOver*************")
     nationality = ""
     destinationcountry = ""
+    global nationality
+    global destinationcountry
     res = {
         "speech": "What is your nationality?",
         "displayText": "What is your nationality?",
