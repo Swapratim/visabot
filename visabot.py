@@ -419,10 +419,10 @@ def userNationalityRecheck():
 ###   Start Over        ###
 def startOver():
     print ("*********startOver*************")
-    nationality = ""
-    destinationcountry = ""
     global nationality
     global destinationcountry
+    nationality = ""
+    destinationcountry = ""
     res = {
         "speech": "What is your nationality?",
         "displayText": "What is your nationality?",
