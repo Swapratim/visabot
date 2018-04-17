@@ -97,7 +97,7 @@ def welcome():
        first_name = "to Visa CheckBot"
        print ("SKYPE: Within Python")
        
-    speech1 = "Visa CheckBot - your one stop solution for visa related enquiry. "
+    speech1 = "This is your one stop solution for visa related enquiry. "
     res = {
           "speech": speech1,
           "displayText": speech1,
@@ -114,7 +114,7 @@ def welcome():
                        "elements" : [ 
                                  {
                                    "title" : "Welcome " + first_name + "! ",
-                                   "image_url" : "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg",
+                                   "image_url" : "https://goo.gl/eAfyr9",
                                  } 
                            ]
                        } 
@@ -146,7 +146,7 @@ def welcome():
                 ],
             "telegram": {
                  "parse_mode": "markdown",
-                 "text": "[​​​​​​​​​​​](http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg) Welcome in Telegram -->" + first_name + "! " + speech1 + "So let's start, shall we?",
+                 "text": "[​​​​​​​​​​​](https://goo.gl/eAfyr9) Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
                  "reply_markup": { 
                    "inline_keyboard": [ 
                         [{ "callback_data": "Yeah Sure", "text": "Yeah Sure" }], 
@@ -737,13 +737,13 @@ def wikipedia_search(reqContext):
                  }
                ],
             "telegram": {
-                 "photo": image_url_final,
-                 "text": subtitle + ". Write another country name to continue checking VISA requirement",
+                 "parse_mode": "markdown",
+                 "text": "[​​​​​​​​​​​](https://goo.gl/eAfyr9) "subtitle + ". Write another country name to continue checking VISA requirement",
                  "reply_markup": { 
                    "inline_keyboard": [ 
                         [{ "callback_data": "startover", "text": "Restart" }], 
                         [{ "callback_data": "No", "text": "No" }] 
-                       ] 
+                   ] 
                 },
              }
            },
