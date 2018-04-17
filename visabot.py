@@ -855,33 +855,8 @@ def moreBots():
         "data" : {
         "facebook" : [
                {
-                 "attachment" : {
-                   "type" : "template",
-                     "payload" : {
-                      "template_type" : "generic",
-                       "elements" : [ 
-                                 {
-                                   "title" : "You like Visa CheckBot?",
-                                   "image_url" : "https://goo.gl/eAfyr9",
-                                   "subtitle" : "Get customized virtual assistant for your organization today",
-                                   "buttons": [{
-                                        "type": "web_url",
-                                        "url": "https://marvinai.live",
-                                        "title": "Buy Template"
-                                    },
-                                    {
-                                        "type": "web_url",
-                                        "url": "https://www.facebook.com/marvinai.live",
-                                        "title": "Facebook Page"
-                                    },
-                                    {
-                                        "type": "element_share"
-                                   }]
-                                 }
-                           ]
-                       } 
-                   }
-                }
+                "text": speech
+               }
              ]
            } 
          };
