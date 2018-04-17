@@ -738,7 +738,7 @@ def wikipedia_search(reqContext):
                ],
             "telegram": {
                  "parse_mode": "markdown",
-                 "text": "[​​​​​​​​​​​](https://goo.gl/eAfyr9) "subtitle + ". Write another country name to continue checking VISA requirement",
+                 "text": "[​​​​​​​​​​​]" + image_url_final + "Visa Status: " + subtitle + ". Write another country name to continue checking VISA requirement",
                  "reply_markup": { 
                    "inline_keyboard": [ 
                         [{ "callback_data": "startover", "text": "Restart" }], 
