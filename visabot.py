@@ -672,7 +672,7 @@ def wikipedia_search(reqContext):
             visa_status = infotoStringFinal.split("]]")[0].split("[[")[1]
 
     #########################################################################
-    subtitle = "You need " + visa_status + " for " + destinationcountry
+    subtitle = "You are authorized for " + visa_status + " in " + destinationcountry
     #########################################################################
     if visa_status == "Visa required":
         image_url_final = str("https://www.iconsdb.com/icons/preview/red/visa-xxl.png")
@@ -741,6 +741,7 @@ def wikipedia_search(reqContext):
                  "text": "[​​​​​​​​​​​](" + image_url_final + ") Visa Status: " + subtitle + ". Write another country name to continue checking VISA requirement",
                  "reply_markup": { 
                    "inline_keyboard": [ 
+                        [{ "url": "https://en.wikipedia.org/wiki/Visa_requirements_for_" + nationality + "_citizens", "text": "More Info" }],
                         [{ "callback_data": "startover", "text": "Restart" }], 
                         [{ "callback_data": "No", "text": "No" }] 
                    ] 
