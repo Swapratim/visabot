@@ -855,9 +855,6 @@ def moreBots():
         "data" : {
         "facebook" : [
                {
-                    "sender_action": "typing_on"
-               },
-                {
                  "attachment" : {
                    "type" : "template",
                      "payload" : {
@@ -865,7 +862,7 @@ def moreBots():
                        "elements" : [ 
                                  {
                                    "title" : "You like Visa CheckBot?",
-                                   "image_url" : "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg",
+                                   "image_url" : "https://goo.gl/eAfyr9",
                                    "subtitle" : "Get customized virtual assistant for your organization today",
                                    "buttons": [{
                                         "type": "web_url",
@@ -969,15 +966,14 @@ def moreBots():
                                     },
                                     {
                                         "type": "element_share"
-                                   }]
-                                 }
+                                   } 
                            ]
                        } 
                    }
                 }
-           ]
-    } 
-   };
+             ]
+           } 
+         };
     res = json.dumps(res, indent=4)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
