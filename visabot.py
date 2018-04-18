@@ -608,7 +608,7 @@ def wikipedia_search(reqContext):
            print ("Exception handling for Peru, Belgium and Costa Rica-->" + info)
            #Peru|state<!--Use state flag-->}}\n| {{yes|Visa not required}}<ref>{{Timatic|nationality=CA|destination=PE|accessdate=26 November 2013}}</ref>\n| 183 days\n|\n|- \n| 
            #infotoStringFinal = info.split("|state<!")[0]
-           print ("1111-->" + info.split("flag-->}}\n|")[0])
+           print ("1111-->" + info.split("<ref>")[0])
            print ("2222-->" + info.split("<!--Use state flag-->}}\n|")[1].split("}}<ref>")[0])
            print ("3333-->" + info.split("<!--Use state flag-->}}\n|")[1].split("}}<ref>")[0].split("|")[1])
            infotoStringFinal = info.split("}}\n| {{")[1].split("}}<ref>")[0].split("|")[1]
