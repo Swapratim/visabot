@@ -621,9 +621,8 @@ def wikipedia_search(reqContext):
 
     if "Visa" in infotoStringFinal or "movement" in infotoStringFinal and visa_status != infotoStringFinal:
         #visa_status_primary = infotoStringFinal.split("\n| {{",1)[1]
-        if "<ref>" in infotoStringFinal:
-             visa_status_primary = infotoStringFinal.split("}}<ref>")
-             print ("After splitting }}<ref>, here is the 2nd part -->" + visa_status_primary[0])
+        visa_status_primary = infotoStringFinal.split("}}<ref>")
+        print ("After splitting }}<ref>, here is the 2nd part -->" + visa_status_primary[0])
         
         # Checking for the 1st && 3rd CATEGORY, like --> Denmark}} \n| {{no|Visa required OR Thailand}} \n| {{yes|Visa not required  Germany}}\n| {{free|{{sort|EU|Visa not required}}
         if "|{{" in visa_status_primary[0]:
