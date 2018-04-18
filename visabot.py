@@ -855,26 +855,124 @@ def moreBots():
         "data" : {
         "facebook" : [
                {
-                    "title" : "You like Visa CheckBot?",
-                    "image_url" : "https://goo.gl/eAfyr9",
-                    "subtitle" : "Get customized virtual assistant for your organization today",
-                    "buttons": [{
-                                "type": "web_url",
-                                "url": "https://marvinai.live",
-                                "title": "Buy Template"
-                            },
-                            {
-                                "type": "web_url",
-                                "url": "https://www.facebook.com/marvinai.live",
-                                "title": "Facebook Page"
-                            },
-                            {
-                                "type": "element_share"
-                            }]
+                    "sender_action": "typing_on"
+               },
+                {
+                 "attachment" : {
+                   "type" : "template",
+                     "payload" : {
+                      "template_type" : "generic",
+                       "elements" : [ 
+                                 {
+                                   "title" : "You like Personal Assistant Bot Template?",
+                                   "image_url" : "https://media.sproutsocial.com/uploads/2017/09/Real-Estate-Marketing-Ideas-1.png",
+                                   "subtitle" : "Get customized virtual assistant for your Restaurant today",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://www.facebook.com/marvinai.live",
+                                        "title": "Facebook Page"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "Travel Agency Bot Template",
+                                   "image_url" : "http://www.sunsail.eu/files/Destinations/Mediteranean/Greece/Athens/thira.jpg",
+                                   "subtitle" : "Get customized virtual assistant for your Restaurant today",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/926146750885580",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "Real Estate Bot Template",
+                                   "image_url" : "https://husvild-static.s3.eu-central-1.amazonaws.com/images/files/000/280/915/large/3674bd34e6c1bc42b690adeacfe9c778507f261a?1516032863",
+                                   "subtitle" : "Get qualified buyer and seller leads automatically delivered to your inbox!",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/realestatebotai",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "Restaurant Bot Template",
+                                   "image_url" : "https://www.outlookhindi.com/public/uploads/article/gallery/6eb226c14abd79a801172ab8d473e6d2_342_660.jpg",
+                                   "subtitle" : "Perfectly crafted bot from assisting online customers to handle orders",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/730273667158154",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "Coffee Shop Bot Template",
+                                   "image_url" : "https://images-na.ssl-images-amazon.com/images/I/71Crz9MYPPL._SY355_.jpg",
+                                   "subtitle" : "Your bot can deal with online customers, take orders and many more ",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/200138490717876",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "VISA Check Bot",
+                                   "image_url" : "http://famousdestinations.in/wp-content/uploads/2016/03/howtogetthere.png",
+                                   "subtitle" : "One stop solution for all your VISA requirements...Coming Soon!",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Visit Website"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 }
+                           ]
+                       } 
+                   }
                 }
-             ]
-           } 
-         };
+           ]
+    } 
+   };
     res = json.dumps(res, indent=4)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
