@@ -605,8 +605,9 @@ def wikipedia_search(reqContext):
            print (infotoStringFinal)
            break
         elif destinationcountry in info and "|state<!" in info:
-           print ("Exception handling for Peru, Belgium and Costa Rica")
-           infotoStringFinal = info.split("|state<!")[0]
+           print ("Exception handling for Peru, Belgium and Costa Rica-->" + info)
+           #infotoStringFinal = info.split("|state<!")[0]
+           infotoStringFinal = info.split("}}\n| {{")[1].split("}}<ref>")[0].split("|")[1]
            print ("Country name: -->" + infotoStringFinal)
         else:
            continue
