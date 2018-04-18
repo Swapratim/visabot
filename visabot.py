@@ -864,17 +864,17 @@ def moreBots():
                       "template_type" : "generic",
                        "elements" : [ 
                                  {
-                                   "title" : "You like Personal Assistant Bot Template?",
-                                   "image_url" : "https://media.sproutsocial.com/uploads/2017/09/Real-Estate-Marketing-Ideas-1.png",
-                                   "subtitle" : "Get customized virtual assistant for your Restaurant today",
+                                   "title" : "You like VISA CheckBot?",
+                                   "image_url" : "http://famousdestinations.in/wp-content/uploads/2016/03/howtogetthere.png",
+                                   "subtitle" : "This is one stop solution for all your VISA requirements",
                                    "buttons": [{
                                         "type": "web_url",
                                         "url": "https://marvinai.live",
-                                        "title": "Buy Template"
+                                        "title": "View Website"
                                     },
                                     {
                                         "type": "web_url",
-                                        "url": "https://www.facebook.com/marvinai.live",
+                                        "url": "https://www.facebook.com/visacheckbot/",
                                         "title": "Facebook Page"
                                     },
                                     {
@@ -918,6 +918,42 @@ def moreBots():
                                    }]
                                  },
                                  {
+                                   "title" : "Personal Assistant Bot",
+                                   "image_url" : "http://www.vladtime.ru/uploads/posts/2016-05/1463576691_1.jpg",
+                                   "subtitle" : "Delete your 36 apps and start using it now. Have one for you today",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/marvinai.live",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
+                                   "title" : "Gym & Fitness Bot",
+                                   "image_url" : "http://weetnow.com/wp-content/uploads/2016/05/3-7-2.jpg",
+                                   "subtitle" : "From Gym owner to personal fitness trainers, this bot is a must in business",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/566837733658925",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
                                    "title" : "Restaurant Bot Template",
                                    "image_url" : "https://www.outlookhindi.com/public/uploads/article/gallery/6eb226c14abd79a801172ab8d473e6d2_342_660.jpg",
                                    "subtitle" : "Perfectly crafted bot from assisting online customers to handle orders",
@@ -948,19 +984,6 @@ def moreBots():
                                         "type": "web_url",
                                         "url": "https://m.me/200138490717876",
                                         "title": "Chat"
-                                    },
-                                    {
-                                        "type": "element_share"
-                                   }]
-                                 },
-                                 {
-                                   "title" : "VISA Check Bot",
-                                   "image_url" : "http://famousdestinations.in/wp-content/uploads/2016/03/howtogetthere.png",
-                                   "subtitle" : "One stop solution for all your VISA requirements...Coming Soon!",
-                                   "buttons": [{
-                                        "type": "web_url",
-                                        "url": "https://marvinai.live",
-                                        "title": "Visit Website"
                                     },
                                     {
                                         "type": "element_share"
