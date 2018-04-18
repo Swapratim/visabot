@@ -535,6 +535,7 @@ def userDestinationCountry(reqContext):
 
 def wikipedia_search(reqContext):
     print ("***Nationality has the latest input-->" + nationality)
+    visa_status = ""
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
     global nationalityNEW
     #To capitalize the first letter
@@ -609,6 +610,7 @@ def wikipedia_search(reqContext):
            #Peru|state<!--Use state flag-->}}\n| {{yes|Visa not required}}<ref>{{Timatic|nationality=CA|destination=PE|accessdate=26 November 2013}}</ref>\n| 183 days\n|\n|- \n| 
            #print ("Visa Status-->" + info.split("<ref>")[0].split("{{")[1].split("}}")[0].split("|")[1])
            infotoStringFinal = info.split("<ref>")[0].split("{{")[1].split("}}")[0].split("|")[1]
+           visa_status = infotoStringFinal 
            print ("Country name: -->" + infotoStringFinal)
         else:
            continue
@@ -617,10 +619,11 @@ def wikipedia_search(reqContext):
     print (infotoStringFinal)
     #print ("Section splitlines -->" + infotoStringFinal.splitlines()
 
-    if "Visa" in infotoStringFinal or "movement" in infotoStringFinal:
+    if "Visa" in infotoStringFinal or "movement" in infotoStringFinal and visa_status != infotoStringFinal:
         #visa_status_primary = infotoStringFinal.split("\n| {{",1)[1]
-        visa_status_primary = infotoStringFinal.split("}}<ref>")
-        print ("After splitting }}<ref>, here is the 2nd part -->" + visa_status_primary[0])
+        if "<ref>" in infotoStringFinal:
+             visa_status_primary = infotoStringFinal.split("}}<ref>")
+             print ("After splitting }}<ref>, here is the 2nd part -->" + visa_status_primary[0])
         
         # Checking for the 1st && 3rd CATEGORY, like --> Denmark}} \n| {{no|Visa required OR Thailand}} \n| {{yes|Visa not required  Germany}}\n| {{free|{{sort|EU|Visa not required}}
         if "|{{" in visa_status_primary[0]:
@@ -665,7 +668,7 @@ def wikipedia_search(reqContext):
                 if "}}" in visa_status_primary[0]:
                    visa_status = visa_status_primary[0].split("|")[1].splitlines()
                    print ("5th CATEGORY --->" + visa_status)
-    else:
+    elif visa_status == infotoStringFinal:
         visa_status = infotoStringFinal 
         print ("No change in VISA Status -->" + visa_status)
         # 4th CATEGORY like, Australia}}\n| {{yes|[[eVisitor]]}}<ref>{{Timatic|nationality=DK|destination=AU}}
