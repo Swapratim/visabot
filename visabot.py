@@ -610,8 +610,8 @@ def wikipedia_search(reqContext):
            #infotoStringFinal = info.split("|state<!")[0]
            print ("1111-->" + info.split("<ref>")[0])
            print ("2222-->" + info.split("<ref>")[0].split("{{")[1])
-           print ("3333-->" + info.split("<ref>")[0].split("{{")[1]).split("}}")[0])
-           infotoStringFinal = info.split("}}\n| {{")[1].split("}}<ref>")[0].split("|")[1]
+           print ("3333-->" + info.split("<ref>")[0].split("{{")[1].split("}}")[0])
+           #infotoStringFinal = info.split("}}\n| {{")[1].split("}}<ref>")[0].split("|")[1]
            print ("Country name: -->" + infotoStringFinal)
         else:
            continue
