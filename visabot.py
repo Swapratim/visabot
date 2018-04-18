@@ -920,7 +920,7 @@ def moreBots():
                                  {
                                    "title" : "Personal Assistant Bot",
                                    "image_url" : "http://www.vladtime.ru/uploads/posts/2016-05/1463576691_1.jpg",
-                                   "subtitle" : "Delete your 36 apps and start using it now. Have one for you today",
+                                   "subtitle" : "Delete your 36 apps and start using it now. The ultimate personal assistance experience.",
                                    "buttons": [{
                                         "type": "web_url",
                                         "url": "https://marvinai.live",
