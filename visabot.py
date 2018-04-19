@@ -162,7 +162,7 @@ def welcome():
                     "fallback": "You are unable to proceed",
                     "callback_id": "intro_block",
                     "color": "#3AA3E3",
-                    "attachment_type": "default",
+                    "image_url": "https://goo.gl/eAfyr9",
                     "actions": [
                          {
                             "name": "response",
