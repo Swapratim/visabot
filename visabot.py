@@ -292,6 +292,7 @@ def asktheuser(reqContext):
                  "attachment_type": "default",
                  "fallback": "You are unable to proceed",
                  "callback_id": "second_block",
+                 "text": "OK?",
                  "color": "#3AA3E3",
                  "actions": [
                          {
