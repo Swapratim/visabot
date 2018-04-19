@@ -289,12 +289,13 @@ def asktheuser(reqContext):
               },
         "slack": {
                  "text": "Great! I'll ask two questions only. Then only I can precisely tell whether you need a VISA or NOT to travel your destination country.",
-                 "attachment_type": "default",
-                 "fallback": "You are unable to proceed",
-                 "callback_id": "second_block",
-                 "text": "OK?",
-                 "color": "#3AA3E3",
-                 "actions": [
+                 "attachments": [
+                   {
+                    "fallback": "You are unable to proceed",
+                    "callback_id": "intro_block",
+                    "color": "#3AA3E3",
+                    "attachment_type": "default",
+                    "actions": [
                          {
                             "name": "I'm Ready",
                             "text": "I'm Ready",
@@ -308,7 +309,9 @@ def asktheuser(reqContext):
                             "value": "No Thanks"
                          }
                      ]
-            }
+                  }
+                ]
+              }
            }, 
         "messages": [
         {
