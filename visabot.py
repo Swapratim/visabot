@@ -158,20 +158,20 @@ def welcome():
                  "text": speech1,
                  "attachments": [
                    {
-                     "text": "So, let's start. Shall we?",
                     "fallback": "You are unable to proceed",
                     "callback_id": "intro_block",
                     "color": "#3AA3E3",
                     "image_url": "https://goo.gl/eAfyr9",
+                    "text": "So, let's start. Shall we?",
                     "actions": [
                          {
-                            "name": "response",
+                            "name": "Yeah Sure",
                             "text": "Yeah Sure",
                             "type": "button",
                             "value": "Yeah Sure"
                          },
                          {
-                            "name": "response",
+                            "name": "No Thanks",
                             "text": "No Thanks",
                             "type": "button",
                             "value": "No Thanks"
