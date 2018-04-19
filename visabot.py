@@ -163,6 +163,7 @@ def welcome():
                     "color": "#3AA3E3",
                     "image_url": "https://goo.gl/eAfyr9",
                     "text": "So, let's start. Shall we?",
+                    "attachment_type": "default",
                     "actions": [
                          {
                             "name": "Yeah Sure",
@@ -289,15 +290,18 @@ def asktheuser(reqContext):
         "slack": {
                  "text": "Great! I'll ask two questions only. Then only I can precisely tell whether you need a VISA or NOT to travel your destination country.",
                  "attachment_type": "default",
-                    "actions": [
+                 "fallback": "You are unable to proceed",
+                 "callback_id": "second_block",
+                 "color": "#3AA3E3",
+                 "actions": [
                          {
-                            "name": "response",
+                            "name": "I'm Ready",
                             "text": "I'm Ready",
                             "type": "button",
                             "value": "I'm Ready"
                          },
                          {
-                            "name": "response",
+                            "name": "No Thanks",
                             "text": "No Thanks",
                             "type": "button",
                             "value": "No Thanks"
@@ -350,18 +354,22 @@ data = None
 def userNationality(reqContext):
     nationality = "False"
     destinationcountry = "False"
+    whatisyournationality = "What is your nationality?"
     print (reqContext.get("result").get("action"))
     res = {
-        "speech": "What is your nationality?",
-        "displayText": "What is your nationality?",
+        "speech": whatisyournationality,
+        "displayText": whatisyournationality,
         "data" : {
         "facebook" : [
               {
-                 "text": "What is your nationality?"
+                 "text": whatisyournationality
               }
              ],
         "telegram": {
-                 "text": "What is your nationality?"
+                 "text": whatisyournationality
+             },
+        "slack": {
+                 "text": whatisyournationality
              }
            },
         "messages": [
@@ -370,7 +378,7 @@ def userNationality(reqContext):
           "platform": "skype",
           "payload": {
             "skype": {
-              "text": "What is your nationality?"
+              "text": whatisyournationality
             }
           }
         }
@@ -386,17 +394,21 @@ def userNationalityRecheck():
     print ("******userNationalityRecheck********")
     nationality = ""
     destinationcountry = ""
+    whatisyournationality = "What is your nationality?"
     res = {
-        "speech": "Which country do you want to travel?",
-        "displayText": "Which country do you want to travel?",
+        "speech": whatisyournationality,
+        "displayText": whatisyournationality,
         "data" : {
         "facebook" : [
               {
-                 "text": "Which country do you want to travel?"
+                 "text": whatisyournationality
               }
              ],
         "telegram": {
-                 "text": "Which country do you want to travel?"
+                 "text": whatisyournationality
+             },
+        "slack": {
+                 "text": whatisyournationality
              }
            },
         "messages": [
@@ -405,7 +417,7 @@ def userNationalityRecheck():
           "platform": "skype",
           "payload": {
             "skype": {
-              "text": "Which country do you want to travel?"
+              "text": whatisyournationality
             }
           }
         }
@@ -423,17 +435,21 @@ def startOver():
     global destinationcountry
     nationality = ""
     destinationcountry = ""
+    whatisyournationality = "What is your nationality?"
     res = {
-        "speech": "What is your nationality?",
-        "displayText": "What is your nationality?",
+        "speech": whatisyournationality,
+        "displayText": whatisyournationality,
         "data" : {
         "facebook" : [
               {
-                 "text": "What is your nationality?"
+                 "text": whatisyournationality
               }
              ],
         "telegram": {
-                 "text": "What is your nationality?"
+                 "text": whatisyournationality
+             },
+        "slack": {
+                 "text": whatisyournationality
              }
            },
         "messages": [
@@ -442,7 +458,7 @@ def startOver():
           "platform": "skype",
           "payload": {
             "skype": {
-              "text": "What is your nationality?"
+              "text": whatisyournationality
             }
           }
         }
@@ -507,6 +523,9 @@ def userDestinationCountry(reqContext):
               }
              ],
         "telegram": {
+                 "text": speech
+             },
+        "slack": {
                  "text": speech
              }
            },
@@ -750,7 +769,33 @@ def wikipedia_search(reqContext):
                         [{ "callback_data": "No", "text": "No" }] 
                    ] 
                 },
-             }
+             },
+           "slack": {
+                 "text": "Visa Status: " + subtitle + ". Write another country name to continue checking VISA requirement",
+                 "attachments": [
+                   {
+                    "fallback": "You are unable to proceed",
+                    "callback_id": "visa_block",
+                    "color": "#3AA3E3",
+                    "image_url": image_url_final,
+                    "attachment_type": "default",
+                    "actions": [
+                         {
+                            "name": "Restart",
+                            "text": "Restart",
+                            "type": "button",
+                            "value": "Restart"
+                         },
+                         {
+                            "name": "No",
+                            "text": "No",
+                            "type": "button",
+                            "value": "No"
+                         }
+                     ]
+                  }
+                ]
+              }
            },
          "messages": [
         {
