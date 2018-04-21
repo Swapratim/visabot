@@ -702,17 +702,17 @@ def wikipedia_search(reqContext):
     subtitle = "You are authorized for " + visa_status + " in " + destinationcountry
     #########################################################################
     if visa_status == "Visa required":
-        image_url_final = str("https://goo.gl/D4H5ZZ")
+        image_url_final = str("https://gdurl.com/tPqr")  # https://goo.gl/D4H5ZZ
     elif visa_status == "Visa not required" or visa_status == "Freedom of movement":
-        image_url_final = str("https://goo.gl/NM7yGE")
+        image_url_final = str("https://gdurl.com/YMBa")  # https://goo.gl/NM7yGE
     elif visa_status == "e-Visa required" or visa_status == "eVisa" or visa_status == "Visa on arrival" or visa_status == "eVisa / Visa on arrival":
-        image_url_final = str("https://goo.gl/hh1ypL")
+        image_url_final = str("https://gdurl.com/JyLG")   # https://goo.gl/hh1ypL
     elif visa_status == "0":
         image_url_final = "https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170701095/81349455-no-information-rubber-stamp.jpg"
         visa_status = "Hmm, No VISA details found"
         subtitle = "Please check the spelling or see if it's a valid country name"
     else:
-        image_url_final = str("https://goo.gl/hh1ypL")
+        image_url_final = str("https://gdurl.com/JyLG")
 
     print ("image_url_final---->" + image_url_final)
 ############################################################
