@@ -712,7 +712,7 @@ def wikipedia_search(reqContext):
         visa_status = "Hmm, No VISA details found"
         subtitle = "Please check the spelling or see if it's a valid country name"
     else:
-        image_url_final = str("http://www.iconsplace.com/icons/preview/yellow/visa-256.png")
+        image_url_final = str("https://goo.gl/hh1ypL")
 
     print ("image_url_final---->" + image_url_final)
 ############################################################
