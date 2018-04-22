@@ -318,18 +318,11 @@ def asktheuser(reqContext):
                 {
                   "contentType": "application/vnd.microsoft.card.hero",
                   "content": {
-                    "buttons": [
-                      {
-                        "type": "imBack",
-                        "title": "Ready",
-                        "postback": "Ready"
-                      },
-                      {
-                        "type": "imBack",
-                        "title": "No Thanks",
-                        "postback": "No Thanks"
-                      }
-                    ]
+                    "buttons": [{
+                            "type":"postBack",
+                            "title": "I'm Ready",
+                            "value": "I'm Ready"
+                    }]
                   }
                 }
               ]
@@ -810,18 +803,18 @@ def wikipedia_search(reqContext):
                 {
                   "contentType": "application/vnd.microsoft.card.hero",
                   "content": {
-                    "buttons": [
+                    "title": subtitle,
+                    "subtitle": "Visa Status: " + subtitle + ". Write another country name to continue checking VISA requirement",
+                    "images": [
                       {
-                        "type": "imBack",
-                        "title": "Restart",
-                        "postback": "startover"
-                      },
-                      {
-                        "type": "imBack",
-                        "title": "No",
-                        "postback": "No"
+                        "url": image_url_final
                       }
-                    ]
+                    ],
+                   "buttons": [{
+                            "type":"postBack",
+                            "title": "Restart",
+                            "value": "Restart"
+                    }]
                   }
                 }
               ]
