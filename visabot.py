@@ -203,10 +203,12 @@ def welcome():
                     ],
                     "buttons": [
                       {
+                        "type": "postBack",
                         "title": "Yeah Sure",
                         "postback": "Yeah Sure"
                       },
                       {
+                        "type": "postBack",
                         "title": "No Thanks",
                         "postback": "No Thanks"
                       }
