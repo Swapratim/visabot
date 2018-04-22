@@ -188,7 +188,8 @@ def welcome():
           "platform": "skype",
           "payload": {
             "skype": {
-              "text": "",
+              "type": "message",
+              "text": "Hi",
               "attachments": [
                 {
                   "contentType": "application/vnd.microsoft.card.hero",
@@ -202,12 +203,10 @@ def welcome():
                     ],
                     "buttons": [
                       {
-                        "type": "imBack",
                         "title": "Yeah Sure",
                         "postback": "Yeah Sure"
                       },
                       {
-                        "type": "imBack",
                         "title": "No Thanks",
                         "postback": "No Thanks"
                       }
