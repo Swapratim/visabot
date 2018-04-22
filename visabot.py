@@ -197,7 +197,7 @@ def welcome():
                     "subtitle": "Your one stop solution for Visa check",
                     "images": [
                       {
-                        "url": "http://kredist.ru/wp-content/uploads/2014/10/%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D1%81-%D0%B4%D0%BE%D0%BB%D0%B3%D0%B0%D0%BC%D0%B8.jpg"
+                        "url": "https://goo.gl/eAfyr9"
                       }
                     ],
                     "buttons": [
@@ -699,7 +699,9 @@ def wikipedia_search(reqContext):
             visa_status = infotoStringFinal.split("]]")[0].split("[[")[1]
 
     #########################################################################
-    subtitle = "You are authorized for " + visa_status + " in " + destinationcountry
+
+    subtitle = visa_status + " for " + nationality + " citizen to travel in " + destinationcountry
+
     #########################################################################
     if visa_status == "Visa required":
         image_url_final = str("https://gdurl.com/tPqr")  # https://goo.gl/D4H5ZZ
@@ -843,7 +845,7 @@ def wikipedia_search(reqContext):
 ###   No Thanks        ###
 def noThanks():
     print ("*********No Thanks*************")
-    statement = "I'm sorry to hear that. But you can always click on menu to start again."
+    statement = "I'm sorry to hear that. But you can always say Hi to start again."
     res = {
         "speech": statement,
         "displayText": statement,
@@ -854,6 +856,9 @@ def noThanks():
               }
              ],
         "telegram": {
+                 "text": statement
+             },
+        "slack": {
                  "text": statement
              }
            },
