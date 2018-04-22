@@ -201,18 +201,11 @@ def welcome():
                         "url": "https://goo.gl/eAfyr9"
                       }
                     ],
-                    "buttons": [
-                      {
-                        "type": "postBack",
-                        "title": "Yeah Sure",
-                        "postback": "Yeah Sure"
-                      },
-                      {
-                        "type": "postBack",
-                        "title": "No Thanks",
-                        "postback": "No Thanks"
-                      }
-                    ]
+                   "buttons": [{
+                            "type":"postBack",
+                            "title": "Yeah Sure",
+                            "value": "Yeah Sure"
+                    }]
                   }
                 }
               ]
