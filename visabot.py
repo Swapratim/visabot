@@ -96,6 +96,9 @@ def welcome():
     elif platform == "slack":
        first_name = "to Visa CheckBot"
        print ("SKYPE: Within Python")
+    elif platform == "kik":
+       first_name = data.get('originalRequest').get('data').get('from')
+       print ("KiK: Within Python")
        
     speech1 = "This is your one stop solution for visa related enquiry. "
     res = {
@@ -153,6 +156,10 @@ def welcome():
                         [{ "callback_data": "No Thanks", "text": "No Thanks" }] 
                        ] 
                 },
+            "kik": {
+                 "type": "text",
+                 "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
+                 "picUrl": "https://goo.gl/eAfyr9",
                },
             "slack": {
                  "text": speech1,
