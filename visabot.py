@@ -158,8 +158,16 @@ def welcome():
                    }
                 },
             "kik": {
-                 "type": "text",
-                 "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?"
+                 "messages": [
+                    {
+                        "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?", 
+                        "type": "text"
+                    },
+                    {
+                        "body": "https://goo.gl/eAfyr9", 
+                        "type": "picture"
+                    },
+                ]
                },
             "slack": {
                  "text": speech1,
