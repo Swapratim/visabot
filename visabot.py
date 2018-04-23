@@ -155,6 +155,7 @@ def welcome():
                         [{ "callback_data": "Yeah Sure", "text": "Yeah Sure" }], 
                         [{ "callback_data": "No Thanks", "text": "No Thanks" }] 
                        ] 
+                   }
                 },
             "kik": {
                  "type": "text",
