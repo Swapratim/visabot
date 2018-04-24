@@ -631,7 +631,7 @@ def wikipedia_search(reqContext):
     file_path = '/app/country_name_JSON.txt'
     with open(file_path) as f:
        data = json.loads(f.read())
-       print("First Element from Nationality_List -->" + data[0]['nationality'])
+       # print("First Element from Nationality_List -->" + data[0]['nationality'])
 
     # Loading the Nationality list to validate nationality input:
     for data_item in data:
