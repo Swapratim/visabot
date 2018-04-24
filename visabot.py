@@ -157,26 +157,7 @@ def welcome():
                        ] 
                    }
                 },
-            "kik": {
-                 "type": "text",
-                 "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
-                 "keyboards": [
-                        {
-                    "type": "suggested",
-                    "responses": [
-                        {
-                            "type": "text",
-                            "body": "Yeah Sure"
-                        },
-                        {
-                            "type": "text",
-                            "body": "No Thanks"
-                        }
-                      ]
-                     }
-                  ]
-                },
-            "slack": {
+           "slack": {
                  "text": speech1,
                  "attachments": [
                    {
@@ -202,8 +183,27 @@ def welcome():
                      ]
                   }
                 ]
+              },
+           "kik": {
+                 "type": "text",
+                 "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
+                 "keyboards": [
+                        {
+                    "type": "suggested",
+                    "responses": [
+                        {
+                            "type": "text",
+                            "body": "Yeah Sure"
+                        },
+                        {
+                            "type": "text",
+                            "body": "No Thanks"
+                        }
+                      ]
+                    }
+                 ]
               }
-            },
+          },
         "messages": [
         {
           "type": 4,
@@ -261,6 +261,7 @@ def reply(user_id, msg):
 def asktheuser(reqContext):
     print (reqContext.get("result").get("action"))
     option = reqContext.get("result").get("action")
+    otherplatformstatement = "Great! I'll ask two questions only. Then only I can precisely tell whether you need a VISA or NOT to travel your destination country."
     res = {
         "speech": "Great! I'll ask two questions only",
         "displayText": "Great! I'll ask two questions only",
@@ -295,7 +296,7 @@ def asktheuser(reqContext):
                  }
              ],
         "telegram": {
-                 "text": "Great! I'll ask two questions only. Then only I can precisely tell whether you need a VISA or NOT to travel your destination country.",
+                 "text": otherplatformstatement,
                  "reply_markup": { 
                    "inline_keyboard": [ 
                         [{ "callback_data": "I'm Ready", "text": "I'm Ready" }], 
@@ -304,7 +305,7 @@ def asktheuser(reqContext):
                 },
               },
         "slack": {
-                 "text": "Great! I'll ask two questions only. Then only I can precisely tell whether you need a VISA or NOT to travel your destination country.",
+                 "text": otherplatformstatement,
                  "attachments": [
                    {
                     "fallback": "You are unable to proceed",
@@ -327,6 +328,25 @@ def asktheuser(reqContext):
                      ]
                   }
                 ]
+              },
+         "kik": {
+                 "type": "text",
+                 "body": otherplatformstatement,
+                 "keyboards": [
+                        {
+                    "type": "suggested",
+                    "responses": [
+                        {
+                            "type": "text",
+                            "body": "Yeah Sure"
+                        },
+                        {
+                            "type": "text",
+                            "body": "No Thanks"
+                        }
+                      ]
+                    }
+                 ]
               }
            }, 
         "messages": [
@@ -383,6 +403,10 @@ def userNationality(reqContext):
              },
         "slack": {
                  "text": whatisyournationality
+             },
+        "kik": {
+                 "type": "text",
+                 "body": whatisyournationality
              }
            },
         "messages": [
@@ -422,6 +446,10 @@ def userNationalityRecheck():
              },
         "slack": {
                  "text": whatisyournationality
+             },
+        "kik": {
+                 "type": "text",
+                 "body": whatisyournationality
              }
            },
         "messages": [
@@ -463,6 +491,10 @@ def startOver():
              },
         "slack": {
                  "text": whatisyournationality
+             },
+        "kik": {
+                 "type": "text",
+                 "body": whatisyournationality
              }
            },
         "messages": [
@@ -540,6 +572,10 @@ def userDestinationCountry(reqContext):
              },
         "slack": {
                  "text": speech
+             },
+        "kik": {
+                 "type": "text",
+                 "body": speech
              }
            },
         "messages": [
@@ -812,6 +848,25 @@ def wikipedia_search(reqContext):
                      ]
                   }
                 ]
+              },
+           "kik": {
+                 "type": "text",
+                 "body": "Visa Status: " + subtitle + ". Write another country name to continue checking VISA requirement",
+                 "keyboards": [
+                        {
+                    "type": "suggested",
+                    "responses": [
+                        {
+                            "type": "text",
+                            "body": "Restart"
+                        },
+                        {
+                            "type": "text",
+                            "body": "No"
+                        }
+                      ]
+                    }
+                 ]
               }
            },
          "messages": [
@@ -869,6 +924,10 @@ def noThanks():
              },
         "slack": {
                  "text": statement
+             },
+        "kik": {
+                 "type": "text",
+                 "body": statement
              }
            },
         "messages": [
