@@ -159,7 +159,22 @@ def welcome():
                 },
             "kik": {
                  "type": "text",
-                 "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?"
+                 "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
+                 "keyboards": [
+                        {
+                    "type": "suggested",
+                    "responses": [
+                        {
+                            "type": "text",
+                            "body": "Yeah Sure"
+                        },
+                        {
+                            "type": "text",
+                            "body": "No Thanks"
+                        }
+                      ]
+                     }
+                  ]
                 },
             "slack": {
                  "text": speech1,
