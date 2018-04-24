@@ -185,12 +185,6 @@ def welcome():
                 ]
               },
            "kik": {
-                "messages": [ 
-                {
-                  "type": "text",
-                 "body": "Hiiiiiiiiiiii"
-                },
-                {
                  "type": "text",
                  "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
                  "keyboards": [
@@ -206,10 +200,8 @@ def welcome():
                             "body": "No Thanks"
                         }
                       ]
-                     }
-                   ]
-                 }
-                ]
+                    }
+                 ]
               }
           },
         "messages": [
