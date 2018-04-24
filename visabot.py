@@ -644,6 +644,9 @@ def wikipedia_search(reqContext):
 
     print ("wikipedia_search Method nationality --> " + nationality)
     nationalityNEW = nationality
+    if " " in nationality:
+        nationalityNEW = nationality.replace(" ", "%20")
+        print ("Nationality with SPACE--------->" + nationalityNEW)
     jsoncountryappendage = "}}"
     destinationcountry1 = str(destinationcountry + jsoncountryappendage)
     print ("destinationcountry1--------->" + destinationcountry1)
