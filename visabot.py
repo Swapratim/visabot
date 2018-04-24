@@ -758,6 +758,10 @@ def wikipedia_search(reqContext):
         image_url_final = "https://gdurl.com/Xn4F"
         visa_status = "Hmm, No VISA details found"
         subtitle = "Please check the spelling or see if it's a valid country name"
+    elif infotoStringFinal == "0":
+        image_url_final = "https://gdurl.com/Xn4F"
+        visa_status = "Hmm, No VISA details found"
+        subtitle = "Please check the spelling or see if it's a valid country name"
     else:
         image_url_final = str("https://gdurl.com/JyLG")
 
