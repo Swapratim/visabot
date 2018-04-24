@@ -160,8 +160,10 @@ def welcome():
             "kik": {
                  "messages": [
                     {
-                        "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?", 
-                        "type": "text"
+                        "type": "text",
+                        "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
+                        
+                        
                     }
                 ]
                },
