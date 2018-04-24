@@ -161,9 +161,7 @@ def welcome():
                  "messages": [
                     {
                         "type": "text",
-                        "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
-                        
-                        
+                        "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?"
                     }
                 ]
                },
