@@ -186,7 +186,6 @@ def welcome():
               },
            "kik": {
                  "type": "text",
-                 "picUrl": "https://goo.gl/eAfyr9",
                  "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
                  "keyboards": [
                         {
