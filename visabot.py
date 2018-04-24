@@ -160,21 +160,12 @@ def welcome():
             "kik": {
                  "messages": [
                     {
-                        "type": 1,
-                        "platform": "kik",
-                        "title": "Hey " + first_name,
-                        "subtitle": "Welcome to Visa CheckBot",
-                        "imageUrl": "https://goo.gl/eAfyr9",
-                        "buttons": [
-                          {
-                            "text": "Yeah Sure",
-                            "postback": "Yeah Sure"
-                          },
-                          {
-                            "text": "No Thanks",
-                            "postback": "No Thanks"
-                          }
-                        ]
+                        "body": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?", 
+                        "type": "text"
+                    },
+                    {
+                        "body": "https://goo.gl/eAfyr9", 
+                        "type": "picture"
                     }
                 ]
                },
