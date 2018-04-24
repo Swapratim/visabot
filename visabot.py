@@ -755,7 +755,7 @@ def wikipedia_search(reqContext):
     elif visa_status == "e-Visa required" or visa_status == "eVisa" or visa_status == "Visa on arrival" or visa_status == "eVisa / Visa on arrival":
         image_url_final = str("https://gdurl.com/JyLG")   # https://goo.gl/hh1ypL
     elif visa_status == "0":
-        image_url_final = "https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170701095/81349455-no-information-rubber-stamp.jpg"
+        image_url_final = "https://gdurl.com/Xn4F"
         visa_status = "Hmm, No VISA details found"
         subtitle = "Please check the spelling or see if it's a valid country name"
     else:
