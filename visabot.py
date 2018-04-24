@@ -160,16 +160,6 @@ def welcome():
             "kik": {
                  "messages": [
                     {
-                       "type": 0,
-                       "platform": "kik",
-                       "speech": "Welcome " + first_name + "! " + speech1 + "So let's start, shall we?"
-                    },
-                    {
-                        "type": 3,
-                        "platform": "kik",
-                        "imageUrl": "https://goo.gl/eAfyr9"
-                    },
-                    {
                         "type": 1,
                         "platform": "kik",
                         "title": "Hey " + first_name,
@@ -185,16 +175,7 @@ def welcome():
                             "postback": "No Thanks"
                           }
                         ]
-                    },
-                    {
-                        "type": 2,
-                        "platform": "kik",
-                        "title": "What do you want?",
-                        "replies": [
-                              "Yeah Sure",
-                              "No Thanks",
-                         ]
-                   }
+                    }
                 ]
                },
             "slack": {
