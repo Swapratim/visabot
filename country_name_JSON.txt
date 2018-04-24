@@ -61,7 +61,11 @@
     },
     {
         "country_name": "Azerbaijan",
-        "nationality": "Azerbaijani, Azeri"
+        "nationality": "Azerbaijani"
+    },
+    {
+        "country_name": "Azerbaijan",
+        "nationality": "Azeri"
     },
     {
         "country_name": "Bahamas",
@@ -93,11 +97,19 @@
     },
     {
         "country_name": "Benin",
-        "nationality": "Beninese, Beninois"
+        "nationality": "Beninese"
+    },
+    {
+        "country_name": "Benin",
+        "nationality": "Beninois"
     },
     {
         "country_name": "Bermuda",
-        "nationality": "Bermudian, Bermudan"
+        "nationality": "Bermudian"
+    },
+    {
+        "country_name": "Bermuda",
+        "nationality": "Bermudan"
     },
     {
         "country_name": "Bhutan",
@@ -353,7 +365,11 @@
     },
     {
         "country_name": "Guam",
-        "nationality": "Guamanian, Guambat"
+        "nationality": "Guamanian"
+    },
+    {
+        "country_name": "Guam",
+        "nationality": "Guambat"
     },
     {
         "country_name": "Guatemala",
@@ -461,7 +477,7 @@
     },
     {
         "country_name": "Kiribati",
-        "nationality": "I-Kiribati"
+        "nationality": "Kiribati"
     },
     {
         "country_name": "North Korea",
@@ -608,6 +624,10 @@
         "nationality": "Burmese"
     },
     {
+        "country_name": "Myanmar",
+        "nationality": "Myanmar"
+    },
+    {
         "country_name": "Namibia",
         "nationality": "Namibian"
     },
@@ -672,7 +692,7 @@
         "nationality": "Palauan"
     },
     {
-        "country_name": "Palestine, State of",
+        "country_name": "Palestine",
         "nationality": "Palestinian"
     },
     {
@@ -693,7 +713,15 @@
     },
     {
         "country_name": "Philippines",
-        "nationality": "Philippine, Filipino"
+        "nationality": "Philippine"
+    },
+    {
+        "country_name": "Philippines",
+        "nationality": "Filipino"
+    },
+    {
+        "country_name": "Philippines",
+        "nationality": "Philippines"
     },
     {
         "country_name": "Pitcairn",
@@ -942,6 +970,10 @@
     {
         "country_name": "United States",
         "nationality": "American"
+    },
+    {
+        "country_name": "United States",
+        "nationality": "United States"
     },
     {
         "country_name": "Uruguay",
