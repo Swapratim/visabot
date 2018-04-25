@@ -1003,14 +1003,14 @@ def noThanks():
 #                                                                                    #
 #************************************************************************************#
 def help():
-    speech = "Write Hi to start or you can choose option from menu."
+    speech = "Write Hi to start again."
     res = {
         "speech": speech,
         "displayText": speech,
         "data" : {
         "facebook" : [
                {
-                "text": speech
+                "text": "Write Hi to start or you can choose option from menu."
                }
              ],
         "telegram": {
