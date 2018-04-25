@@ -55,6 +55,8 @@ def webhook():
        return wikipedia_search(reqContext)
     elif reqContext.get("result").get("action") == "nothanks":
        return noThanks()
+    elif reqContext.get("result").get("action") == "listen.help":
+       return help()
     elif reqContext.get("result").get("action") == "morebots":
        return moreBots()
     else:
@@ -296,6 +298,11 @@ def asktheuser(reqContext):
                   "content_type": "text",
                   "title": "No Thanks",
                   "payload": "No Thanks",
+                  },
+                 {
+                  "content_type": "text",
+                  "title": "Help",
+                  "payload": "Help",
                   }
                   ]
                  }
@@ -305,7 +312,8 @@ def asktheuser(reqContext):
                  "reply_markup": { 
                    "inline_keyboard": [ 
                         [{ "callback_data": "I'm Ready", "text": "I'm Ready" }], 
-                        [{ "callback_data": "No Thanks", "text": "No Thanks" }] 
+                        [{ "callback_data": "No Thanks", "text": "No Thanks" }],
+                        [{ "callback_data": "Help", "text": "Help" }]
                        ] 
                 },
               },
@@ -329,6 +337,12 @@ def asktheuser(reqContext):
                             "text": "No Thanks",
                             "type": "button",
                             "value": "No Thanks"
+                         },
+                         {
+                            "name": "Help",
+                            "text": "Help",
+                            "type": "button",
+                            "value": "Help"
                          }
                      ]
                   }
@@ -348,6 +362,10 @@ def asktheuser(reqContext):
                         {
                             "type": "text",
                             "body": "No Thanks"
+                        },
+                        {
+                            "type": "text",
+                            "body": "Help"
                         }
                       ]
                     }
@@ -374,6 +392,11 @@ def asktheuser(reqContext):
                             "type":"postBack",
                             "title": "No Thanks",
                             "value": "No Thanks"
+                    },
+                    {
+                            "type":"postBack",
+                            "title": "Help",
+                            "value": "Help"
                     }]
                   }
                 }
@@ -911,8 +934,13 @@ def wikipedia_search(reqContext):
                     },
                     {
                             "type":"postBack",
-                            "title": "Restart",
-                            "value": "Restart"
+                            "title": "No",
+                            "value": "No"
+                    },
+                    {
+                            "type":"postBack",
+                            "title": "Help",
+                            "value": "Help"
                     }]
                   }
                 }
@@ -984,8 +1012,29 @@ def help():
                {
                 "text": speech
                }
-             ]
-           } 
+             ],
+        "telegram": {
+                 "text": speech
+             },
+        "slack": {
+                 "text": speech
+             },
+        "kik": {
+                 "type": "text",
+                 "body": speech
+             }
+           },
+        "messages": [
+        {
+          "type": 4,
+          "platform": "skype",
+          "payload": {
+            "skype": {
+              "text": speech
+            }
+          }
+        }
+       ] 
          };
     res = json.dumps(res, indent=4)
     r = make_response(res)
