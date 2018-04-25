@@ -227,6 +227,11 @@ def welcome():
                             "type":"postBack",
                             "title": "Yeah Sure",
                             "value": "Yeah Sure"
+                    },
+                    {
+                            "type":"postBack",
+                            "title": "No Thanks",
+                            "value": "No Thanks"
                     }]
                   }
                 }
@@ -364,6 +369,11 @@ def asktheuser(reqContext):
                             "type":"postBack",
                             "title": "I'm Ready",
                             "value": "I'm Ready"
+                    },
+                    {
+                            "type":"postBack",
+                            "title": "No Thanks",
+                            "value": "No Thanks"
                     }]
                   }
                 }
@@ -895,6 +905,11 @@ def wikipedia_search(reqContext):
                       }
                     ],
                    "buttons": [{
+                            "type":"postBack",
+                            "title": "Restart",
+                            "value": "Restart"
+                    },
+                    {
                             "type":"postBack",
                             "title": "Restart",
                             "value": "Restart"
