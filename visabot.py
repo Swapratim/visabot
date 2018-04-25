@@ -898,7 +898,7 @@ def wikipedia_search(reqContext):
                   "contentType": "application/vnd.microsoft.card.hero",
                   "content": {
                     "title": subtitle,
-                    "subtitle": "Visa Status: " + subtitle + ". Write another country name to continue checking VISA requirement",
+                    "subtitle": "Write another country name to continue checking VISA requirement",
                     "images": [
                       {
                         "url": image_url_final
