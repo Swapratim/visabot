@@ -859,7 +859,9 @@ def wikipedia_search(reqContext):
                    "inline_keyboard": [ 
                         [{ "url": "https://en.wikipedia.org/wiki/Visa_requirements_for_" + nationality + "_citizens", "text": "More Info" }],
                         [{ "callback_data": "startover", "text": "Restart" }], 
-                        [{ "callback_data": "No", "text": "No" }] 
+                        [{ "callback_data": "No", "text": "No" }],
+                        [{ "callback_data": "morebots", "text": "More Bots" }],
+                        [{ "callback_data": "Help", "text": "Help" }]
                    ] 
                 },
              },
@@ -1192,7 +1194,27 @@ def moreBots():
                        } 
                    }
                 }
-           ]
+           ],
+        "telegram": [{
+                "parse_mode": "Markdown",
+                "text": "[​​​​​​​​​​​](http://famousdestinations.in/wp-content/uploads/2016/03/howtogetthere.png) You like VISA CheckBot?",
+                "reply_markup": { 
+                   "inline_keyboard": [ 
+                        [{ "callback_data": "https://marvinai.live", "text": "View Website" }], 
+                        [{ "callback_data": "https://www.facebook.com/visacheckbot", "text": "Facebook Page" }] 
+                       ] 
+                   }
+             },
+             {
+                "parse_mode": "Markdown",
+                "text": "[​​​​​​​​​​​](http://www.sunsail.eu/files/Destinations/Mediteranean/Greece/Athens/thira.jpg) Travel Agency Bot Template",
+                "reply_markup": { 
+                   "inline_keyboard": [ 
+                        [{ "callback_data": "https://marvinai.live", "text": "Buy Template" }], 
+                        [{ "callback_data": "https://m.me/926146750885580", "text": "Chat" }] 
+                       ] 
+                   }
+             }]
     } 
    };
     res = json.dumps(res, indent=4)
