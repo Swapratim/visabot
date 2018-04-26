@@ -1194,7 +1194,8 @@ def moreBots():
                    }
                 }
            ],
-        "telegram": [{
+        "telegram": [
+                [{
                 "parse_mode": "Markdown",
                 "text": "[​​​​​​​​​​​](http://famousdestinations.in/wp-content/uploads/2016/03/howtogetthere.png) You like VISA CheckBot?",
                 "reply_markup": { 
@@ -1204,6 +1205,7 @@ def moreBots():
                        ] 
                    }
              }]
+         ]
     } 
    };
     res = json.dumps(res, indent=4)
