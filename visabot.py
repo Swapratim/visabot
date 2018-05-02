@@ -111,6 +111,8 @@ def welcome():
 
        row = [data.get('first_name'), data.get('last_name'), data.get('gender'), data.get('id')]
        index = sheet.row_count + 1
+       print (row)
+       print (index)
        sheet.insert_row(row, index)
 
     elif platform == "telegram":
