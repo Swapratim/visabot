@@ -109,7 +109,7 @@ def welcome():
        print (sheet.row_count)
        print (user_table)
 
-       row = [first_name, last_name, gender, id]
+       row = [data.get('first_name'), data.get('last_name'), data.get('gender'), data.get('id')]
        index = sheet.row_count + 1
        sheet.insert_row(row, index)
 
