@@ -113,9 +113,9 @@ def welcome():
        print (row)
        #index = sheet.row_count + 1
        #print (index)
-       if str(data.get('id')) in sheet:
+       if str(data.get('id')) in sheet.get_all_records():
           print ("Nothing to print")
-       elif str(data.get('id')) not in sheet:
+       elif str(data.get('id')) not in sheet.get_all_records():
           sheet.insert_row(row)
        
        
