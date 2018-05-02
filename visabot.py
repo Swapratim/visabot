@@ -107,6 +107,7 @@ def welcome():
        sheet = client.open("Visa CheckBot Global User Database").worksheet("user_table")
        user_table = sheet.get_all_records()
        print (sheet.row_count)
+       print (sheet.getLastRow())
        print (user_table)
 
        row = [data.get('first_name'), data.get('last_name'), data.get('gender'), data.get('id')]
