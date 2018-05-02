@@ -100,7 +100,7 @@ def welcome():
        creds = ServiceAccountCredentials.from_json_keyfile_name("client_secret.json", scope)
        client = gspread.authorize(creds)
        
-       sheet = client.open("Visa CheckBot Global User Database").sheet1
+       sheet = client.open("Visa CheckBot Global User Database").worksheet("user_table")
        user_table = sheet.get_all_records()
        print ("////////////////////" + user_table)
     elif platform == "telegram":
