@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 from future import standard_library
-from lxml import html
+#from lxml import html
 import requests
 standard_library.install_aliases()
 import urllib.request, urllib.parse, urllib.error
