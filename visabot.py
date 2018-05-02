@@ -115,7 +115,7 @@ def welcome():
        #print (index)
        if str(data.get('id')) in sheet.get_all_records():
           print ("Nothing to print")
-       else 
+       else:
           sheet.insert_row(row)
        
        
