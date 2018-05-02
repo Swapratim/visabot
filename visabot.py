@@ -95,7 +95,8 @@ def welcome():
        print ("FACEBOOK: First Name -->" + first_name)
        #gc = gspread.login("sroy@marvinai.live", "swapbib08")
        # Opening Google Drive Excel to read and write userbase
-       scope = ["https://spreadsheets.google.com/feeds"]
+       scope = ['https://spreadsheets.google.com/feeds',
+         'https://www.googleapis.com/auth/drive']
        creds = ServiceAccountCredentials.from_json_keyfile_name("client_secret.json", scope)
        client = gspread.authorize(creds)
        
