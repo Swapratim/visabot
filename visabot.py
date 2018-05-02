@@ -102,8 +102,7 @@ def welcome():
        
        sheet = client.open("Visa CheckBot Global User Database").worksheet("user_table")
        user_table = sheet.get_all_records()
-       rows = sheet.get_all_values(range='A2:D2')
-       print ("////////////////////" + rows)
+       print (user_table)
     elif platform == "telegram":
        first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
        print ("TELEGRAM: First Name -->" + first_name)
