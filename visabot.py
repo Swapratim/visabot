@@ -109,6 +109,10 @@ def welcome():
        print (sheet.row_count)
        print (user_table)
 
+       row = [first_name, last_name, gender, id]
+       index = sheet.row_count + 1
+       sheet.insert_row(row, index)
+
     elif platform == "telegram":
        first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
        print ("TELEGRAM: First Name -->" + first_name)
