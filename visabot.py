@@ -18,9 +18,6 @@ from flask import request, render_template
 from flask import make_response
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from oauth2client.client import OAuth2WebServerFlow
-from oauth2client.tools import run
-from oauth2client.file import Storage
 
 
 # Flask should start in global layout
