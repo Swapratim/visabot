@@ -106,7 +106,7 @@ def welcome():
        
        sheet = client.open("Visa CheckBot Global User Database").worksheet("user_table")
        user_table = sheet.get_all_records()
-       print (user_table.row_count)
+       print (sheet.row_count)
        print (user_table)
 
     elif platform == "telegram":
