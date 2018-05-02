@@ -93,8 +93,12 @@ def welcome():
        data = json.loads(result)
        first_name = data.get('first_name')
        print ("FACEBOOK: First Name -->" + first_name)
-       #gc = gspread.login("sroy@marvinai.live", "swapbib08")
+
+       #####################################################################
        # Opening Google Drive Excel to read and write userbase
+       # https://www.youtube.com/watch?v=vISRn5qFrkM
+       #####################################################################
+
        scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
        creds = ServiceAccountCredentials.from_json_keyfile_name("client_secret.json", scope)
@@ -102,7 +106,9 @@ def welcome():
        
        sheet = client.open("Visa CheckBot Global User Database").worksheet("user_table")
        user_table = sheet.get_all_records()
+       print (user_table.row_count)
        print (user_table)
+
     elif platform == "telegram":
        first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
        print ("TELEGRAM: First Name -->" + first_name)
