@@ -113,7 +113,7 @@ def welcome():
        index = sheet.row_count + 1
        print (row)
        print (index)
-       sheet.InsertRow(row)
+       sheet.insert_row(row)
 
     elif platform == "telegram":
        first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
