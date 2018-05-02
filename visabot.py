@@ -106,14 +106,17 @@ def welcome():
        
        sheet = client.open("Visa CheckBot Global User Database").worksheet("user_table")
        user_table = sheet.get_all_records()
-       print (sheet.row_count)
+       #print (sheet.row_count)
        print (user_table)
 
        row = [str(data.get('first_name')), str(data.get('last_name')), str(data.get('gender')), str(data.get('id'))]
-       index = sheet.row_count + 1
        print (row)
-       print (index)
-       sheet.insert_row(row)
+       #index = sheet.row_count + 1
+       #print (index)
+       if str(data.get('id')) not in sheet.get_all_records():
+          sheet.insert_row(row)
+       
+       
 
     elif platform == "telegram":
        first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
