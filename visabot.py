@@ -16,13 +16,20 @@ import emoji
 from flask import Flask
 from flask import request, render_template
 from flask import make_response
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from oauth2client.client import OAuth2WebServerFlow
+from oauth2client.tools import run
+from oauth2client.file import Storage
 
 
 # Flask should start in global layout
 context = Flask(__name__)
 # Facbook Access Token
 ACCESS_TOKEN = "EAADSsDjm6gIBANlzUbBmbFLGpNvZBhnZCEw71BSMvwQZCK8n9KjaY5Pf8P5ZAZBlt9mKcLHe2AmU5hgq7XZAc4vedP5ISpyuRIBKuWMvYx6YI6976r5qpZBsI8vSoU4pmqvVqffjNVJuvCttk7EykTb9tUfHWCnjfivwKUZAA1S4WQZDZD"
-
+# Google Sheet Credentials
+#CLIENT_ID = "107898040430223609451"
+#LIENT_SECRET = '<Client secret from Google API Console>'
 #************************************************************************************#
 #                                                                                    #
 #    All Webhook requests lands within the method --webhook                          #
@@ -89,6 +96,15 @@ def welcome():
        data = json.loads(result)
        first_name = data.get('first_name')
        print ("FACEBOOK: First Name -->" + first_name)
+       #gc = gspread.login("sroy@marvinai.live", "swapbib08")
+       # Opening Google Drive Excel to read and write userbase
+       scope = ["https://spreadsheets.google.com/feeds"]
+       creds = ServiceAccountCredentials.from_json_keyfile_name("client_secret.json", scope)
+       client = gspread.authorize(creds)
+       
+       sheet = client.open("Visa CheckBot Global User Database").sheet1
+       user_table = sheet.get_all_records()
+       print ("////////////////////" + user_table)
     elif platform == "telegram":
        first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
        print ("TELEGRAM: First Name -->" + first_name)
@@ -1194,8 +1210,7 @@ def moreBots():
                    }
                 }
            ],
-        "telegram": [
-                [{
+        "telegram": {
                 "parse_mode": "Markdown",
                 "text": "[​​​​​​​​​​​](http://famousdestinations.in/wp-content/uploads/2016/03/howtogetthere.png) You like VISA CheckBot?",
                 "reply_markup": { 
@@ -1204,8 +1219,7 @@ def moreBots():
                         [{ "callback_data": "https://www.facebook.com/visacheckbot", "text": "Facebook Page" }] 
                        ] 
                    }
-             }]
-         ]
+             }
     } 
    };
     res = json.dumps(res, indent=4)
