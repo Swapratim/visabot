@@ -114,10 +114,10 @@ def welcome():
        row = [str(data.get('first_name')), str(data.get('last_name')), str(data.get('gender')), str(data.get('id'))]
        print (row)
        #index = sheet.row_count + 1
-       #print (index)
-       if str(data.get('id')) in sheet.get_all_records():
+       print (sheet.col_values(4))
+       if str(data.get('id')) in sheet.col_values(4):
           print ("Nothing to print")
-       elif str(data.get('id')) not in sheet.get_all_records():
+       elif str(data.get('id')) not in col_values(4):
           sheet.insert_row(row)
        
        
