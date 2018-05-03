@@ -12,6 +12,7 @@ import sys
 #import urlparse
 from urllib.parse import urljoin
 import emoji
+import pprint
 
 from flask import Flask
 from flask import request, render_template
@@ -95,8 +96,8 @@ def welcome():
        print ("FACEBOOK: First Name -->" + first_name)
 
        #####################################################################
-       # Opening Google Drive Excel to read and write userbase
-       # https://www.youtube.com/watch?v=vISRn5qFrkM
+       # Opening Google Drive Excel to read and write userbase             #
+       # https://www.youtube.com/watch?v=vISRn5qFrkM                       #
        #####################################################################
 
        scope = ['https://spreadsheets.google.com/feeds',
@@ -106,8 +107,9 @@ def welcome():
        
        sheet = client.open("Visa CheckBot Global User Database").worksheet("user_table")
        user_table = sheet.get_all_records()
+       pp = pprint.PrettyPrinter()
        #print (sheet.row_count)
-       print (user_table)
+       pp.pprint (user_table)
 
        row = [str(data.get('first_name')), str(data.get('last_name')), str(data.get('gender')), str(data.get('id'))]
        print (row)
