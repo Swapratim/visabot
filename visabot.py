@@ -117,7 +117,7 @@ def welcome():
        print (sheet.col_values(4))
        if str(data.get('id')) in sheet.col_values(4):
           print ("Nothing to print")
-       elif str(data.get('id')) not in col_values(4):
+       elif str(data.get('id')) not in sheet.col_values(4):
           sheet.insert_row(row)
        
        
