@@ -111,17 +111,16 @@ def welcome():
        #print (sheet.row_count)
        pp.pprint (user_table)
 
+       # INSERT USER DETAILS FROM FACEBOOK API
        row = [str(data.get('first_name')), str(data.get('last_name')), str(data.get('gender')), str(data.get('id'))]
        print (row)
-       #index = sheet.row_count + 1
-       print (sheet.col_values(4))
+       
+       # STOP DUPLICACY OF USER DATA
        if str(data.get('id')) in sheet.col_values(4):
           print ("Nothing to print")
        elif str(data.get('id')) not in sheet.col_values(4):
           sheet.insert_row(row)
        
-       
-
     elif platform == "telegram":
        first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
        print ("TELEGRAM: First Name -->" + first_name)
@@ -689,8 +688,11 @@ def wikipedia_search(reqContext):
         destinationcountry = "United Arab Emirates"
     elif "Usa" in destinationcountry or "Us" in destinationcountry and "Russia" not in destinationcountry and "Mauritius" not in destinationcountry and "Cyprus" not in destinationcountry and "Australia" not in destinationcountry and "Austria" not in destinationcountry and "Belarus" not in destinationcountry:
         destinationcountry = "United States"
-    elif "Uk" in destinationcountry or "England" in  destinationcountry and "Ukraine" not in destinationcountry:
-        destinationcountry =  "United Kingdom"
+    elif "Uk" in destinationcountry or "England" in  destinationcountry: #and "Ukraine" not in destinationcountry:
+        if "Ukraine" not in destinationcountry:
+            destinationcountry =  "United Kingdom"
+        else:
+            destinationcountry =  "Ukraine"
             
     
     # Loading Nationality List into Array to validate against the user nationality input
