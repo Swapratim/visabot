@@ -151,7 +151,7 @@ def welcome():
                        "elements" : [ 
                                  {
                                    "title" : "Welcome " + first_name + "! ",
-                                   "image_url" : "https://goo.gl/eAfyr9",
+                                   "image_url" : "http://gdurl.com/eDd3J",
                                  } 
                            ]
                        } 
