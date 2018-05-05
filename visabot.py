@@ -1100,7 +1100,7 @@ def moreBots():
                        "elements" : [ 
                                  {
                                    "title" : "You like VISA CheckBot?",
-                                   "image_url" : "http://famousdestinations.in/wp-content/uploads/2016/03/howtogetthere.png",
+                                   "image_url" : "http://gdurl.com/qYXU",
                                    "subtitle" : "This is one stop solution for all your VISA requirements",
                                    "buttons": [{
                                         "type": "web_url",
