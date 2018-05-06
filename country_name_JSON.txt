@@ -261,7 +261,7 @@
     },
     {
         "country_name": "Dominican Republic",
-        "nationality": "Dominican"
+        "nationality": "Dominican Republic"
     },
     {
         "country_name": "Ecuador",

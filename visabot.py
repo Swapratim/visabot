@@ -711,6 +711,11 @@ def wikipedia_search(reqContext):
         
 
     print ("wikipedia_search Method nationality --> " + nationality)
+
+    # Check if the nationality is abbreviated, put the correct names:
+    if "Dominican" in nationality:
+        nationality = "Dominican Republic"
+
     nationalityNEW = nationality
     if " " in nationality:
         nationalityNEW = nationality.replace(" ", "%20")
