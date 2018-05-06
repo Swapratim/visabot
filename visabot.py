@@ -667,7 +667,7 @@ def userDestinationCountry(reqContext):
 #************************************************************************************#
 
 def wikipedia_search(reqContext):
-    #print ("***Nationality has the latest input-->" + nationality)
+    print ("***Nationality has the latest input-->" + nationality)
     visa_status = ""
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
     global nationalityNEW
@@ -711,10 +711,9 @@ def wikipedia_search(reqContext):
         
 
     print ("wikipedia_search Method nationality --> " + nationality)
-
     # Check if the nationality is abbreviated, put the correct names:
-    if "Dominican" in nationality:
-        nationality = "Dominican Republic"
+    if "Uae" in destinationcountry:
+        destinationcountry = "United Arab Emirates"
 
     nationalityNEW = nationality
     if " " in nationality:
