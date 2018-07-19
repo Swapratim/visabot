@@ -24,7 +24,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 # Flask should start in global layout
 context = Flask(__name__)
 # Facbook Access Token
-ACCESS_TOKEN = "EAADSsDjm6gIBADKSosnsJ43ZBUDAVb3ukUmWLe3pUamteV6Ha1A7VzAMfxoVSENNuZAXYapznZBVF0yMRuxVkRrYu7JlpPgHrZBnyU8KPCbFTBcyymCSmsYo3awanAFZB17IPPDbQOZCgSV8ZBG4W08DsX0ykVbM7vUrMZAS3z44lAZDZD"
+ACCESS_TOKEN = "EAADSsDjm6gIBALq0KNMZBdmwRKe2G2w4sLN1o27c22Hl4hhN2zmyRZCnSONlqA8ZAgB3toVrNtjSheJ7lzdZCTFXy4i3RPs5wAbOKNkDtGWLHofDQfZBvy2gbrNsdbaY8Ud2wjILm5X5bAU4ievEDmZA6yyKK6TFnSdMeHNZBmOZCAZDZD"
 # Google Sheet Credentials
 #CLIENT_ID = "107898040430223609451"
 #LIENT_SECRET = '<Client secret from Google API Console>'
@@ -70,7 +70,7 @@ def webhook():
  
 #************************************************************************************#
 #                                                                                    #
-#   This method is to get the Facebook User Deatails via graph.facebook.com/v2.6     #
+#   This method is to get the Facebook User Deatails via graph.facebook.com/v3.0     #
 #                                                                                    #
 #************************************************************************************#
 nationality = "False"
@@ -87,7 +87,8 @@ def welcome():
     if platform == "facebook":
        id = data.get('originalRequest').get('data').get('sender').get('id')
        print ("id :" + id)
-       fb_info = "https://graph.facebook.com/v2.6/" + id + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + ACCESS_TOKEN
+       #fb_info = "https://graph.facebook.com/v3.0/" + id + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + ACCESS_TOKEN
+       fb_info = "https://graph.facebook.com/v3.0/" + id + "?fields=first_name,last_name&access_token=" + ACCESS_TOKEN
        print (fb_info)
        result = urllib.request.urlopen(fb_info).read()
        print (result)
@@ -289,7 +290,7 @@ def reply(user_id, msg):
     }
     print ("Data.........")
     print (data)
-    resp = requests.post("https://graph.facebook.com/v2.6/me/messages?access_token=" + ACCESS_TOKEN, json=data)
+    resp = requests.post("https://graph.facebook.com/v3.0/me/messages?access_token=" + ACCESS_TOKEN, json=data)
     print(resp.content)
 
 #************************************************************************************#
