@@ -184,7 +184,7 @@ def welcome():
                 ],
             "telegram": {
                  "parse_mode": "markdown",
-                 "text": "[​​​​​​​​​​​](https://goo.gl/eAfyr9) Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
+                 "text": "[​​​​​​​​​​​](http://gdurl.com/eDd3J) Welcome " + first_name + "! " + speech1 + "So let's start, shall we?",
                  "reply_markup": { 
                    "inline_keyboard": [ 
                         [{ "callback_data": "Yeah Sure", "text": "Yeah Sure" }], 
@@ -199,7 +199,7 @@ def welcome():
                     "fallback": "You are unable to proceed",
                     "callback_id": "intro_block",
                     "color": "#3AA3E3",
-                    "image_url": "https://goo.gl/eAfyr9",
+                    "image_url": "http://gdurl.com/eDd3J",
                     "text": "So, let's start. Shall we?",
                     "attachment_type": "default",
                     "actions": [
@@ -255,7 +255,7 @@ def welcome():
                     "subtitle": "Your one stop solution for Visa check",
                     "images": [
                       {
-                        "url": "https://goo.gl/eAfyr9"
+                        "url": "http://gdurl.com/eDd3J"
                       }
                     ],
                    "buttons": [{
