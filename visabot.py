@@ -70,7 +70,7 @@ def webhook():
  
 #************************************************************************************#
 #                                                                                    #
-#   This method is to get the Facebook User Deatails via graph.facebook.com/v3.0     #
+#   This method is to get the Facebook User Deatails via graph.facebook.com/v2.6     #
 #                                                                                    #
 #************************************************************************************#
 nationality = "False"
@@ -87,8 +87,8 @@ def welcome():
     if platform == "facebook":
        id = data.get('originalRequest').get('data').get('sender').get('id')
        print ("id :" + id)
-       #fb_info = "https://graph.facebook.com/v3.0/" + id + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + ACCESS_TOKEN
-       fb_info = "https://graph.facebook.com/v3.0/" + id + "?fields=first_name,last_name&access_token=" + ACCESS_TOKEN
+       #fb_info = "https://graph.facebook.com/v2.6/" + id + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + ACCESS_TOKEN
+       fb_info = "https://graph.facebook.com/v2.6/" + id + "?fields=first_name,last_name&access_token=" + ACCESS_TOKEN
        print (fb_info)
        result = urllib.request.urlopen(fb_info).read()
        print (result)
@@ -290,7 +290,7 @@ def reply(user_id, msg):
     }
     print ("Data.........")
     print (data)
-    resp = requests.post("https://graph.facebook.com/v3.0/me/messages?access_token=" + ACCESS_TOKEN, json=data)
+    resp = requests.post("https://graph.facebook.com/v2.6/me/messages?access_token=" + ACCESS_TOKEN, json=data)
     print(resp.content)
 
 #************************************************************************************#
