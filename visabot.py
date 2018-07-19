@@ -24,7 +24,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 # Flask should start in global layout
 context = Flask(__name__)
 # Facbook Access Token
-ACCESS_TOKEN = "EAADSsDjm6gIBANlzUbBmbFLGpNvZBhnZCEw71BSMvwQZCK8n9KjaY5Pf8P5ZAZBlt9mKcLHe2AmU5hgq7XZAc4vedP5ISpyuRIBKuWMvYx6YI6976r5qpZBsI8vSoU4pmqvVqffjNVJuvCttk7EykTb9tUfHWCnjfivwKUZAA1S4WQZDZD"
+ACCESS_TOKEN = "EAADSsDjm6gIBALq0KNMZBdmwRKe2G2w4sLN1o27c22Hl4hhN2zmyRZCnSONlqA8ZAgB3toVrNtjSheJ7lzdZCTFXy4i3RPs5wAbOKNkDtGWLHofDQfZBvy2gbrNsdbaY8Ud2wjILm5X5bAU4ievEDmZA6yyKK6TFnSdMeHNZBmOZCAZDZD"
 #ACCESS_TOKEN = "EAAXRzkKCxVQBALPcRAP9sXZBNFdrKJrJALYhWiKFz4juZA7NY0uTR3vIy8kmyxhjfT3JkRqjVRLvkYbiHmIpy7iMG4QKKIrnVwKqdKA93350DigLLprcalzdQxcuLrbioL3R4iZAS0m4LZCIeIEXZAdRC14TZAgTBINeXXCTor7AZDZD"
 # Google Sheet Credentials
 #CLIENT_ID = "107898040430223609451"
@@ -91,7 +91,7 @@ def welcome():
        fb_info = "https://graph.facebook.com/v2.6/" + id + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + ACCESS_TOKEN
        print (fb_info)
        result = urllib.request.urlopen(fb_info).read()
-       #print (result)
+       print (result)
        data = json.loads(result)
        first_name = data.get('first_name')
        print ("FACEBOOK: First Name -->" + first_name)
