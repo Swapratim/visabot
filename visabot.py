@@ -24,8 +24,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 # Flask should start in global layout
 context = Flask(__name__)
 # Facbook Access Token
-ACCESS_TOKEN = "EAADSsDjm6gIBALq0KNMZBdmwRKe2G2w4sLN1o27c22Hl4hhN2zmyRZCnSONlqA8ZAgB3toVrNtjSheJ7lzdZCTFXy4i3RPs5wAbOKNkDtGWLHofDQfZBvy2gbrNsdbaY8Ud2wjILm5X5bAU4ievEDmZA6yyKK6TFnSdMeHNZBmOZCAZDZD"
-#ACCESS_TOKEN = "EAAXRzkKCxVQBALPcRAP9sXZBNFdrKJrJALYhWiKFz4juZA7NY0uTR3vIy8kmyxhjfT3JkRqjVRLvkYbiHmIpy7iMG4QKKIrnVwKqdKA93350DigLLprcalzdQxcuLrbioL3R4iZAS0m4LZCIeIEXZAdRC14TZAgTBINeXXCTor7AZDZD"
+ACCESS_TOKEN = "EAADSsDjm6gIBADKSosnsJ43ZBUDAVb3ukUmWLe3pUamteV6Ha1A7VzAMfxoVSENNuZAXYapznZBVF0yMRuxVkRrYu7JlpPgHrZBnyU8KPCbFTBcyymCSmsYo3awanAFZB17IPPDbQOZCgSV8ZBG4W08DsX0ykVbM7vUrMZAS3z44lAZDZD"
 # Google Sheet Credentials
 #CLIENT_ID = "107898040430223609451"
 #LIENT_SECRET = '<Client secret from Google API Console>'
