@@ -609,6 +609,8 @@ def userDestinationCountry(reqContext):
         #print (str_nationality)
         if str_nationality == nationality:
            correct_nationality = nationality
+           if nationality == "American":
+               nationality = "United States"
            print ("This is the CORRECT nationality--->" + nationality)
            break
         
@@ -714,10 +716,7 @@ def wikipedia_search(reqContext):
         
 
     print ("wikipedia_search Method nationality --> " + nationality)
-    # Check if the nationality is abbreviated, put the correct names:
-    if "American" in nationality:
-        nationality = "United States"
-
+    
     nationalityNEW = nationality
     if " " in nationality:
         nationalityNEW = nationality.replace(" ", "%20")
