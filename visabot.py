@@ -636,8 +636,12 @@ def userDestinationCountry(reqContext):
         #print (str_nationality)
         if str_nationality == nationality:
            correct_nationality = nationality
+           # PLEASE INSERT THE NATIONALITY EXCEPTION TO TACKLE THE USER INPUT ***********************#######
+           #***********************************************************************************************#
            if nationality == "American":
                nationality = "United States"
+           elif nationality == "Saudi Arabian":
+               nationality = "Saudi"
            print ("This is the CORRECT nationality--->" + nationality)
            break
         
