@@ -952,6 +952,15 @@ def wikipedia_search(reqContext):
                  ]
               }
            },
+           "contextOut": [
+                     {
+                         "name": "wikipediasearch",
+                         "lifespan": 1,
+                         "parameters": {
+                            "param": "$countryname"
+                          }
+                     }
+           ],
          "messages": [
         {
           "type": 4,
