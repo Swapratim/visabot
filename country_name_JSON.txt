@@ -800,7 +800,7 @@
         "nationality": "Sao Tomean"
     },
     {
-        "country_name": "Saudi Arabia",
+        "country_name": "Saudi",
         "nationality": "Saudi Arabian"
     },
     {
