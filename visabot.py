@@ -475,6 +475,15 @@ def userNationality(reqContext):
                  "body": whatisyournationality
              }
            },
+        "contextOut": [
+                     {
+                         "name": "destinationcountry",
+                         "lifespan": 1,
+                         "parameters": {
+                            "param": "$nationality"
+                          }
+                     }
+         ],
         "messages": [
         {
           "type": 4,
@@ -518,6 +527,15 @@ def userNationalityRecheck():
                  "body": whatisyournationality
              }
            },
+        "contextOut": [
+                     {
+                         "name": "destinationcountry",
+                         "lifespan": 1,
+                         "parameters": {
+                            "param": "$nationality"
+                          }
+                     }
+         ],
         "messages": [
         {
           "type": 4,
@@ -563,6 +581,15 @@ def startOver():
                  "body": whatisyournationality
              }
            },
+        "contextOut": [
+                     {
+                         "name": "destinationcountry",
+                         "lifespan": 1,
+                         "parameters": {
+                            "param": "$nationality"
+                          }
+                     }
+         ],
         "messages": [
         {
           "type": 4,
@@ -646,6 +673,15 @@ def userDestinationCountry(reqContext):
                  "body": speech
              }
            },
+        "contextOut": [
+                     {
+                         "name": "wikipediasearch",
+                         "lifespan": 1,
+                         "parameters": {
+                            "param": "$countryname"
+                          }
+                     }
+         ],
         "messages": [
         {
           "type": 4,
