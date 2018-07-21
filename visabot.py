@@ -668,6 +668,7 @@ def userDestinationCountry(reqContext):
 #************************************************************************************#
 
 def wikipedia_search(reqContext):
+    nationality = reqContext.get("result").get("resolvedQuery")
     print ("***Nationality has the latest input-->" + nationality)
     visa_status = ""
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
