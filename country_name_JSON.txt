@@ -153,7 +153,7 @@
     },
     {
         "country_name": "Burkina Faso",
-        "nationality": "Burkinab Faso"
+        "nationality": "Burkina Faso"
     },
     {
         "country_name": "Burundi",
@@ -209,7 +209,11 @@
     },
     {
         "country_name": "Comoros",
-        "nationality": "Comoran, Comorian"
+        "nationality": "Comoran"
+    },
+    {
+        "country_name": "Comoros",
+        "nationality": "Comorian"
     },
     {
         "country_name": "Republic of the Congo",
@@ -933,7 +937,11 @@
     },
     {
         "country_name": "Trinidad and Tobago",
-        "nationality": "Trinidadian or Tobagonian"
+        "nationality": "Trinidadian"
+    },
+    {
+        "country_name": "Trinidad and Tobago",
+        "nationality": "Tobagonian"
     },
     {
         "country_name": "Tunisia",
@@ -1013,7 +1021,11 @@
     },
     {
         "country_name": "Wallis and Futuna",
-        "nationality": "Wallisian or Futunan"
+        "nationality": "Wallisian"
+    },
+    {
+        "country_name": "Wallis and Futuna",
+        "nationality": "Futunan"
     },
     {
         "country_name": "Western Sahara",
