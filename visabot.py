@@ -685,7 +685,9 @@ def wikipedia_search(reqContext):
 
     
     # Check if the country name is abbreviated, put the correct names:
-    if "Uae" in destinationcountry:
+    if "Srilanka" in destinationcountry:
+        destinationcountry = "Sri Lanka"
+    elif "Uae" in destinationcountry:
         destinationcountry = "United Arab Emirates"
     elif "Usa" in destinationcountry or "Us" in destinationcountry and "Russia" not in destinationcountry and "Mauritius" not in destinationcountry and "Cyprus" not in destinationcountry and "Australia" not in destinationcountry and "Austria" not in destinationcountry and "Belarus" not in destinationcountry:
         destinationcountry = "United States"
