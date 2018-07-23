@@ -506,7 +506,8 @@ def userNationalityRecheck():
     print ("******userNationalityRecheck********")
     nationality = ""
     destinationcountry = ""
-    whatisyournationality = "What is your nationality?"
+    whatisyournationality = "Hmm, I think the spelling is not correct. Could you please try again."
+    print ("!!!!!" + whatisyournationality)
     res = {
         "speech": whatisyournationality,
         "displayText": whatisyournationality,
