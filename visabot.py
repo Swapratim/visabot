@@ -754,9 +754,9 @@ def wikipedia_search(reqContext):
            print ("This is the CORRECT destinationcountry--->" + correct_str_destinationcountry)
            break
         
-    if not correct_str_destinationcountry:
-        print ("Destinationcountry is wrong!!!")
-        speech = "It seems the destination country name is not exactly correct. Please try once more."
+    # if not correct_str_destinationcountry:
+        # print ("Destinationcountry is wrong!!!")
+        # speech = "It seems the destination country name is not exactly correct. Please try once more."
     
     print ("wikipedia_search Method nationality --> " + nationality)
     
