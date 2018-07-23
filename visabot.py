@@ -650,7 +650,6 @@ def userDestinationCountry(reqContext):
     if correct_nationality:
         print ("Which country do you want to travel?")
         speech = "Which country do you want to travel?"
-        
     else:
         speech = "This is not a valid citizenship. Please enter a valid citizenship"
         print ("This is not a valid citizenship. Please enter a valid citizenship")
@@ -741,21 +740,24 @@ def wikipedia_search(reqContext):
             destinationcountry =  "Ukraine"
             
     
-    # Loading Nationality List into Array to validate against the user nationality input
+    # Loading Nationality List into Array to validate against the destination country input
     file_path = '/app/country_name_JSON.txt'
     with open(file_path) as f:
        data = json.loads(f.read())
        # print("First Element from Nationality_List -->" + data[0]['nationality'])
 
-    # Loading the Nationality list to validate nationality input:
+    # Loading the COUNTRY list to validate DESTINATION COUNTRY input:
     for data_item in data:
         str_destinationcountry = str(data_item['country_name'])
         if str_destinationcountry == destinationcountry:
            correct_str_destinationcountry = destinationcountry
-           print ("This is the CORRECT destinationcountry--->" + destinationcountry)
+           print ("This is the CORRECT destinationcountry--->" + correct_str_destinationcountry)
            break
         
-
+    if not correct_str_destinationcountry:
+        print ("Destinationcountry is wrong!!!")
+        speech = "It seems the destination country name is not exactly correct. Please try once more."
+    
     print ("wikipedia_search Method nationality --> " + nationality)
     
     nationalityNEW = nationality
