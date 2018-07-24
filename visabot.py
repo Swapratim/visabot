@@ -709,14 +709,14 @@ def userDestinationCountry(reqContext):
 #   This method is to get the Wikipedia Information via Google API                   #
 #                                                                                    #
 #************************************************************************************#
-
+global destinationcountry
 def wikipedia_search(nationality, destinationcountry):
     print ("***Nationality has the latest input-->" + nationality)
     visa_status = ""
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
     global nationalityNEW
     #To capitalize the first letter
-    global destinationcountry
+    #global destinationcountry
     destinationcountry = ""
     destinationcountry = str(resolvedQuery_wiki).title() 
     
