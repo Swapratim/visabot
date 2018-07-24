@@ -13,6 +13,7 @@ import sys
 from urllib.parse import urljoin
 import emoji
 import pprint
+import cProfile
 
 from flask import Flask
 from flask import request, render_template
@@ -709,7 +710,7 @@ def userDestinationCountry(reqContext):
 #                                                                                    #
 #************************************************************************************#
 
-def wikipedia_search(reqContext):
+def wikipedia_search(nationality, destinationcountry):
     print ("***Nationality has the latest input-->" + nationality)
     visa_status = ""
     resolvedQuery_wiki = reqContext.get("result").get("resolvedQuery")
@@ -1201,3 +1202,8 @@ if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
     print("Starting APPLICATION on port %d" % port)
     context.run(debug=True, port=port, host='0.0.0.0')
+    pr = cProfile.Profile()
+    pr.enable()
+    wikipedia_search(indian, denmark)
+    pr.disable()
+    pr.print_stats()
