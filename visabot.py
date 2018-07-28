@@ -135,7 +135,8 @@ def welcome():
        first_name = data.get('originalRequest').get('data').get('from')
        print ("KiK: Within Python")
        
-    speech1 = "This is your one stop solution for visa related enquiry. "
+    speech1 = "This is your one stop solution for visa related enquiry."
+    speech2 = "I'm Visa Check Bot and I can help you find correct visa requirement before travelling to other countries."
     res = {
           "speech": speech1,
           "displayText": speech1,
@@ -163,6 +164,9 @@ def welcome():
                   },
                  {
                  "text": speech1
+                  },
+                 {
+                 "text": speech2
                   },
                  {
                   "text": "So, let's start. Shall we?",
@@ -877,11 +881,11 @@ def wikipedia_search(reqContext):
     elif visa_status == "0":
         image_url_final = "https://gdurl.com/Xn4F"
         visa_status = "Hmm, No VISA details found"
-        subtitle = "Please check the spelling or see if it's a valid country name"
+        subtitle = "Please check the spelling or see if it's a valid country name. Write 'Restart'."
     elif infotoStringFinal == "0":
         image_url_final = "https://gdurl.com/Xn4F"
         visa_status = "Hmm, No VISA details found"
-        subtitle = "Please check the spelling or see if it's a valid country name"
+        subtitle = "Please check the spelling or see if it's a valid country name. Write 'Restart'."
     else:
         image_url_final = str("https://gdurl.com/JyLG")
 
