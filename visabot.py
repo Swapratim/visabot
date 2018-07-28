@@ -1108,7 +1108,7 @@ def help():
         "data" : {
         "facebook" : [
                {
-                "text": "Write Hi to start or you can choose option from menu."
+                "text": "Write 'Restart' to start again quickly. You can also start fresh by saying 'Hi' to the Bot or select Menu 'Restart Bot'."
                }
              ],
         "telegram": {
