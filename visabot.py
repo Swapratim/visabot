@@ -655,7 +655,7 @@ def userDestinationCountry(reqContext):
         print ("Which country do you want to travel?")
         speech = "Which country do you want to travel?"
     else:
-        speech = "This is not a valid citizenship. Please enter a valid citizenship"
+        speech = "This is not a valid citizenship. Please enter a valid citizenship. Type 'Help' to know more."
         print ("This is not a valid citizenship. Please enter a valid citizenship")
         userNationalityRecheck()
         
@@ -881,11 +881,11 @@ def wikipedia_search(reqContext):
     elif visa_status == "0":
         image_url_final = "https://gdurl.com/Xn4F"
         visa_status = "Hmm, No VISA details found"
-        subtitle = "Please check the spelling or see if it's a valid country name. Write 'Restart'."
+        subtitle = "Please check the spelling or see if it's a valid country name. Write 'Help'."
     elif infotoStringFinal == "0":
         image_url_final = "https://gdurl.com/Xn4F"
         visa_status = "Hmm, No VISA details found"
-        subtitle = "Please check the spelling or see if it's a valid country name. Write 'Restart'."
+        subtitle = "Please check the spelling or see if it's a valid country name. Write 'Help'."
     else:
         image_url_final = str("https://gdurl.com/JyLG")
 
@@ -1108,7 +1108,7 @@ def help():
         "data" : {
         "facebook" : [
                {
-                "text": "Write 'Restart' to start again quickly. You can also start fresh by saying 'Hi' to the Bot or select Menu 'Restart Bot'."
+                "text": "The bot works by taking your nationality and destination country as input. Too many mistakes in nationality & country name can confuse it. :) Write 'Restart' to start again quickly. You can also start fresh by saying 'Hi' to the Bot or select Menu 'Restart Bot'."
                }
              ],
         "telegram": {
