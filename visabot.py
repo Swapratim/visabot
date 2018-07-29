@@ -49,7 +49,7 @@ def webhook():
     elif reqContext.get("result").get("action") == "nationality":
        return userNationality(reqContext)
     elif reqContext.get("result").get("action") == "nationalityrecheck":
-       return userNationalityRecheck()
+       return userNationalityRecheck(reqContext)
     elif reqContext.get("result").get("action") == "startover":
        return startOver()
     elif reqContext.get("result").get("action") == "destinationcountry":
@@ -506,8 +506,10 @@ def userNationality(reqContext):
     return r
 
 ###     START AGAIN       ###
-def userNationalityRecheck():
+def userNationalityRecheck(reqContext):
     print ("******userNationalityRecheck********")
+    resolvedQuery = reqContext.get("result").get("resolvedQuery")
+    print ("resolvedQuery-->" + resolvedQuery)
     nationality = ""
     destinationcountry = ""
     whatisyournationality = "Hmm, I think the spelling is not correct. Could you please try again."
