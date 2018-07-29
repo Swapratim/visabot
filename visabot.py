@@ -509,10 +509,13 @@ def userNationality(reqContext):
 def userNationalityRecheck(reqContext):
     print ("******userNationalityRecheck********")
     resolvedQuery = reqContext.get("result").get("resolvedQuery")
-    print ("resolvedQuery-->" + resolvedQuery)
+    print ("resolvedQuery-->" + resolvedQuery.lower())
     nationality = ""
     destinationcountry = ""
-    whatisyournationality = "Hmm, I think the spelling is not correct. Could you please try again."
+    if resolvedQuery.lower() == "no" or resolvedQuery.lower() == "exit":
+       whatisyournationality = "Great! I'll wait here until you come back next time. Just say 'Hi' to catch my attention :)"
+    else:
+       whatisyournationality = "Hmm, I think the spelling is not correct. Could you please try again."
     print ("!!!!!" + whatisyournationality)
     res = {
         "speech": whatisyournationality,
@@ -654,8 +657,8 @@ def userDestinationCountry(reqContext):
         
         
     if correct_nationality:
-        print ("Which country do you want to travel?")
-        speech = "Which country do you want to travel?"
+        print ("Which country do you want to visit?")
+        speech = "Which country do you want to visit?"
     else:
         speech = "This is not a valid citizenship. Please enter a valid citizenship. Type 'Help' to know more."
         print ("This is not a valid citizenship. Please enter a valid citizenship")
