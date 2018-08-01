@@ -512,8 +512,8 @@ def userNationalityRecheck(reqContext):
     print ("resolvedQuery-->" + resolvedQuery.lower())
     nationality = ""
     destinationcountry = ""
-    if resolvedQuery.lower() == "no" or resolvedQuery.lower() == "exit":
-       whatisyournationality = "Great! I'll wait here until you come back next time. Just say 'Hi' to catch my attention :)"
+    if resolvedQuery.lower() == "no" or resolvedQuery.lower() == "exit" or resolvedQuery.lower() == "stop":
+       whatisyournationality = "Great! I'll wait here until you come back next time. Just say 'start' to catch my attention :)"
     else:
        whatisyournationality = "Hmm, I think the spelling is not correct. Could you please try again."
     print ("!!!!!" + whatisyournationality)
