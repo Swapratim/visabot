@@ -216,7 +216,7 @@
         "nationality": "Comorian"
     },
     {
-        "country_name": "Republic of the Congo",
+        "country_name": "Republic of Congo",
         "nationality": "Congolese"
     },
     {
@@ -482,6 +482,10 @@
     {
         "country_name": "Kiribati",
         "nationality": "Kiribati"
+    },
+    {
+        "country_name": "Kosovo",
+        "nationality": "Kosovan"
     },
     {
         "country_name": "North Korea",
