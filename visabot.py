@@ -882,7 +882,7 @@ def wikipedia_search(reqContext):
     elif visa_status == "Visa not required" or visa_status == "Freedom of movement":
         image_url_final = str("https://gdurl.com/h4ZFb")  # Green Flag for Visa Status
     elif visa_status == "e-Visa required" or visa_status == "eVisa" or visa_status == "Visa on arrival" or visa_status == "eVisa / Visa on arrival":
-        image_url_final = str("https://gdurl.com/OafX")   # Amber Flag for Visa Status
+        image_url_final = str("https://gdurl.com/pvdt")   # Amber Flag for Visa Status
     elif visa_status == "0":
         image_url_final = "https://gdurl.com/Xn4F"
         visa_status = "Hmm, No VISA details found"
@@ -892,7 +892,7 @@ def wikipedia_search(reqContext):
         visa_status = "Hmm, No VISA details found"
         subtitle = "Please check the spelling or see if it's a valid country name. Write 'Help'."
     else:
-        image_url_final = str("https://gdurl.com/OafX")
+        image_url_final = str("https://gdurl.com/pvdt")
 
     print ("image_url_final---->" + image_url_final)
 ############################################################
