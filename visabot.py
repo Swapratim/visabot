@@ -878,9 +878,9 @@ def wikipedia_search(reqContext):
 
     #########################################################################
     if visa_status == "Visa required":
-        image_url_final = str("https://gdurl.com/x0uH")  # Red Flag for Visa Status
+        image_url_final = str("https://gdurl.com/a52g")  # Red Flag for Visa Status
     elif visa_status == "Visa not required" or visa_status == "Freedom of movement":
-        image_url_final = str("https://gdurl.com/h4ZFb")  # Green Flag for Visa Status
+        image_url_final = str("https://gdurl.com/xuN8")  # Green Flag for Visa Status
     elif visa_status == "e-Visa required" or visa_status == "eVisa" or visa_status == "Visa on arrival" or visa_status == "eVisa / Visa on arrival":
         image_url_final = str("https://gdurl.com/pvdt")   # Amber Flag for Visa Status
     elif visa_status == "0":
