@@ -101,26 +101,26 @@ def welcome():
        # https://www.youtube.com/watch?v=vISRn5qFrkM                       #
        #####################################################################
 
-       #scope = ['https://spreadsheets.google.com/feeds',
-       #  'https://www.googleapis.com/auth/drive']
-       #creds = ServiceAccountCredentials.from_json_keyfile_name("client_secret.json", scope)
-       #client = gspread.authorize(creds)
+       scope = ['https://spreadsheets.google.com/feeds',
+         'https://www.googleapis.com/auth/drive']
+       creds = ServiceAccountCredentials.from_json_keyfile_name("client_secret.json", scope)
+       client = gspread.authorize(creds)
        
-       #sheet = client.open("Visa CheckBot Global User Database").worksheet("user_table")
-       #user_table = sheet.get_all_records()
-       #pp = pprint.PrettyPrinter()
-       #print (sheet.row_count)
-       #pp.pprint (user_table)
+       sheet = client.open("Visa CheckBot Global User Database").worksheet("user_table")
+       user_table = sheet.get_all_records()
+       pp = pprint.PrettyPrinter()
+       print (sheet.row_count)
+       pp.pprint (user_table)
 
        # INSERT USER DETAILS FROM FACEBOOK API
-       #row = [str(data.get('first_name')), str(data.get('last_name')), str(data.get('gender')), str(data.get('id'))]
-       #print (row)
+       row = [str(data.get('first_name')), str(data.get('last_name')), str(data.get('gender')), str(data.get('id'))]
+       print (row)
        
        # STOP DUPLICACY OF USER DATA
-       #if str(data.get('id')) in sheet.col_values(4):
-       #   print ("Nothing to print")
-       #elif str(data.get('id')) not in sheet.col_values(4):
-       #   sheet.insert_row(row)
+       if str(data.get('id')) in sheet.col_values(4):
+          print ("Nothing to print")
+       elif str(data.get('id')) not in sheet.col_values(4):
+          sheet.insert_row(row)
        
     elif platform == "telegram":
        first_name = data.get('originalRequest').get('data').get('message').get('chat').get('first_name')
